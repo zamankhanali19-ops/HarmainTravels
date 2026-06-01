@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
               <div className="bg-white p-4 rounded-2xl inline-block mb-6 shadow-2xl border border-slate-100">
-                <img src="/logo.png" alt="Harmain Travels Logo" className="h-12 sm:h-14 object-contain" />
+                <img src="/logo.png" alt="Harmain Travels Logo" className="h-12 sm:h-14 object-contain" loading="lazy" />
               </div>
               <p className="text-white/90 text-sm sm:text-base font-bold tracking-wide uppercase leading-relaxed max-w-sm mb-6">
                 Your high-end travel partner. Curating elite escapes and world-class itineraries since 2010.

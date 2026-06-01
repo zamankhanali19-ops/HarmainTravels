@@ -30,6 +30,7 @@ const DestinationsGrid = ({ destinations }) => {
                 src={`${dest.image}?auto=format&fit=crop&q=80&w=1200`} 
                 alt={dest.name} 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s]" 
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10 opacity-95 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute inset-0 p-4 sm:p-6 md:p-10 flex flex-col justify-end text-white">

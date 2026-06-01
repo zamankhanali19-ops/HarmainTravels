@@ -44,6 +44,7 @@ const Destinations = () => {
               src={dest.image}
               alt={dest.name}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#002147] via-[#002147]/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-5 md:p-10 text-white w-full">

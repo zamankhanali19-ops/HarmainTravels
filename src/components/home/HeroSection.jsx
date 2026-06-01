@@ -33,6 +33,8 @@ const HeroSection = ({ scrollY }) => {
           src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=90&w=2400" 
           className="w-full h-full object-cover brightness-[0.7]"
           alt="Hero Background"
+          fetchpriority="high"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-tr from-[#A61D24]/75 via-[#002147]/60 to-[#002147]/95 md:to-[#002147]/20"></div>
       </div>
