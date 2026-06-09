@@ -20,6 +20,12 @@ const AiAssistant = () => {
     scrollToBottom();
   }, [messages, isOpen]);
 
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener('open-seo-ai', handleOpen);
+    return () => window.removeEventListener('open-seo-ai', handleOpen);
+  }, []);
+
   const generateResponse = (userText) => {
     const lowerText = userText.toLowerCase();
     

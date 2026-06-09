@@ -375,3 +375,63 @@ input, textarea, select {
 .skeleton {
   border-radius: var(--radius-md);
 }
+
+/* ========== EXTRA BUTTON VARIANTS ========== */
+.btn-neutral {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border-primary);
+}
+
+.btn-neutral:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--text-tertiary);
+}
+
+.btn-error {
+  background: var(--error-bg);
+  color: var(--error);
+  border: 1.5px solid rgba(239, 68, 68, 0.2);
+}
+
+.btn-error:hover {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+/* ========== UTILITY ========== */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  aside, header, .fixed {
+    display: none !important;
+  }
+
+  main {
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+}
+

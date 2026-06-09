@@ -2,7 +2,11 @@ import { useState, useCallback } from 'react';
 import { analyzeUrl } from '../services/seoAnalyzer';
 
 export const useAudit = () => {
-  const [results, setResults] = useState(null);
+  const [results, setResults] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('seopulse-last-results') || 'null');
+    } catch { return null; }
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [history, setHistory] = useState(() => {
@@ -18,6 +22,7 @@ export const useAudit = () => {
     try {
       const data = await analyzeUrl(url);
       setResults(data);
+      localStorage.setItem('seopulse-last-results', JSON.stringify(data));
       
       const entry = {
         url: data.url,
@@ -40,7 +45,9 @@ export const useAudit = () => {
 
   const clearHistory = useCallback(() => {
     setHistory([]);
+    setResults(null);
     localStorage.removeItem('seopulse-history');
+    localStorage.removeItem('seopulse-last-results');
   }, []);
 
   return { results, loading, error, history, runAudit, clearHistory, setResults };

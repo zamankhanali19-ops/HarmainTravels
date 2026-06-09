@@ -61,6 +61,12 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
               <NavLink
                 key={item.path}
                 to={item.path}
+                onClick={(e) => {
+                  if (item.path === '/ai') {
+                    e.preventDefault();
+                    window.dispatchEvent(new CustomEvent('open-seo-ai'));
+                  }
+                }}
                 className={`group flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200 ${
                   collapsed ? 'justify-center' : ''
                 } ${
