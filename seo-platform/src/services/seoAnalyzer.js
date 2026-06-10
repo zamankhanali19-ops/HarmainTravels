@@ -32,6 +32,7 @@ export async function analyzeUrl(url) {
       schema: analyzeSchema(doc),
       technical: analyzeTechnical(doc, url, html),
       security: analyzeSecurity(url),
+      localSeo: analyzeLocalSeo(doc),
     };
 
     results.scores = calculateScores(results);
@@ -464,6 +465,7 @@ function calculateScores(results) {
   const schemaScore = calcModuleScore(results.schema);
   const techScore = calcModuleScore(results.technical);
   const securityScore = calcModuleScore(results.security);
+  const localScore = calcModuleScore(results.localSeo);
 
   const seoScore = Math.round((metaScore * 0.25 + headingScore * 0.15 + contentScore * 0.2 + linkScore * 0.15 + schemaScore * 0.1 + imageScore * 0.15));
   const healthScore = Math.round((techScore * 0.3 + securityScore * 0.3 + metaScore * 0.2 + imageScore * 0.2));
@@ -477,14 +479,14 @@ function calculateScores(results) {
     overall, seo: seoScore, health: healthScore, performance: performanceScore,
     technical: technicalScore, content: contentScore, ux: uxScore,
     meta: metaScore, heading: headingScore, image: imageScore,
-    link: linkScore, schema: schemaScore, security: securityScore,
+    link: linkScore, schema: schemaScore, security: securityScore, localSeo: localScore,
   };
 }
 
 /* ========== ISSUE COLLECTION ========== */
 function collectIssues(results) {
   const all = { critical: [], warnings: [], opportunities: [], passed: [] };
-  const modules = ['meta', 'headings', 'images', 'links', 'content', 'schema', 'technical', 'security'];
+  const modules = ['meta', 'headings', 'images', 'links', 'content', 'schema', 'technical', 'security', 'localSeo'];
   
   modules.forEach(mod => {
     const m = results[mod];
@@ -495,3 +497,79 @@ function collectIssues(results) {
 
   return all;
 }
+
+/* ========== LOCAL SEO ANALYSIS ========== */
+function analyzeLocalSeo(doc) {
+  const issues = [];
+  const warnings = [];
+  const passed = [];
+  
+  let hasLocalSchema = false;
+  let hasGoogleMaps = false;
+  let hasPhoneLink = false;
+  let hasEmailLink = false;
+  let phoneNumbers = [];
+  let emails = [];
+
+  // Check Schema for LocalBusiness, Organization, etc.
+  doc.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+    try {
+      const data = JSON.parse(script.textContent);
+      const strData = JSON.stringify(data).toLowerCase();
+      if (strData.includes('localbusiness') || strData.includes('organization') || strData.includes('restaurant') || strData.includes('hotel') || strData.includes('travelagency')) {
+        hasLocalSchema = true;
+      }
+    } catch { }
+  });
+
+  // Check for Maps
+  doc.querySelectorAll('iframe').forEach(iframe => {
+    const src = iframe.getAttribute('src') || '';
+    if (src.includes('google.com/maps') || src.includes('maps.google.com')) {
+      hasGoogleMaps = true;
+    }
+  });
+
+  // Check Contact Links
+  doc.querySelectorAll('a[href]').forEach(a => {
+    const href = a.getAttribute('href') || '';
+    if (href.startsWith('tel:')) {
+      hasPhoneLink = true;
+      phoneNumbers.push(href.replace('tel:', ''));
+    }
+    if (href.startsWith('mailto:')) {
+      hasEmailLink = true;
+      emails.push(href.replace('mailto:', ''));
+    }
+  });
+
+  if (hasLocalSchema) {
+    passed.push({ message: 'LocalBusiness/Organization schema detected' });
+  } else {
+    warnings.push({ type: 'warning', message: 'No LocalBusiness schema found', fix: 'Add JSON-LD LocalBusiness schema to help search engines understand your location.' });
+  }
+
+  if (hasGoogleMaps) {
+    passed.push({ message: 'Google Maps embed found' });
+  } else {
+    warnings.push({ type: 'warning', message: 'No embedded map detected', fix: 'Embed a Google Map of your business location to boost local trust.' });
+  }
+
+  if (hasPhoneLink) {
+    passed.push({ message: `Clickable phone links found (${phoneNumbers.length})` });
+  } else {
+    warnings.push({ type: 'warning', message: 'No clickable phone numbers (tel:) found', fix: 'Make phone numbers clickable for mobile users.' });
+  }
+
+  if (hasEmailLink) {
+    passed.push({ message: `Clickable email links found (${emails.length})` });
+  } else {
+    warnings.push({ type: 'warning', message: 'No clickable email addresses (mailto:) found', fix: 'Provide an easy way for customers to email you directly.' });
+  }
+  
+  phoneNumbers = [...new Set(phoneNumbers)];
+  emails = [...new Set(emails)];
+
+  return { hasLocalSchema, hasGoogleMaps, hasPhoneLink, hasEmailLink, phoneNumbers, emails, issues, warnings, passed };
+}
+

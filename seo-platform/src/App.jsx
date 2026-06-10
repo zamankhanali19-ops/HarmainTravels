@@ -8,6 +8,7 @@ import Keywords from './pages/Keywords';
 import ContentOptimizer from './pages/ContentOptimizer';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
+import LocalSeo from './pages/LocalSeo';
 import AiAssistant from './components/ai/AiAssistant';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="audit" element={<SiteAudit />} />
           <Route path="on-page" element={<OnPageSeo />} />
           <Route path="technical" element={<TechnicalSeo />} />
+          <Route path="local-seo" element={<LocalSeo />} />
           <Route path="keywords" element={<Keywords />} />
           <Route path="content" element={<ContentOptimizer />} />
           <Route path="reports" element={<Reports />} />

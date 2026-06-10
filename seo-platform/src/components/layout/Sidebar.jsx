@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, Search, FileText, Code2, Key, PenTool,
-  BarChart3, Settings, Bot, ChevronLeft, ChevronRight, Zap, Globe
+  BarChart3, Settings, Bot, ChevronLeft, ChevronRight, Zap, Globe, MapPin
 } from 'lucide-react';
 
 const navItems = [
@@ -10,6 +10,7 @@ const navItems = [
   { path: '/audit', icon: Search, label: 'Site Audit' },
   { path: '/on-page', icon: FileText, label: 'On-Page SEO' },
   { path: '/technical', icon: Code2, label: 'Technical SEO' },
+  { path: '/local-seo', icon: MapPin, label: 'Local SEO' },
   { path: '/keywords', icon: Key, label: 'Keywords' },
   { path: '/content', icon: PenTool, label: 'Content' },
   { path: '/reports', icon: BarChart3, label: 'Reports' },

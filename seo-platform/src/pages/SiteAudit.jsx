@@ -3,7 +3,7 @@ import { useAudit } from '../hooks/useAudit';
 import ScoreGauge from '../components/ui/ScoreGauge';
 import {
   Globe, Search, Loader2, AlertCircle, AlertTriangle, CheckCircle2,
-  FileText, Image, Link2, Code2, Shield, Heading, Tag, ExternalLink
+  FileText, Image, Link2, Code2, Shield, Heading, Tag, ExternalLink, MapPin
 } from 'lucide-react';
 
 const SiteAudit = () => {
@@ -24,6 +24,7 @@ const SiteAudit = () => {
     { id: 'links', label: 'Links', icon: Link2 },
     { id: 'content', label: 'Content', icon: FileText },
     { id: 'schema', label: 'Schema', icon: Code2 },
+    { id: 'localSeo', label: 'Local SEO', icon: MapPin },
     { id: 'security', label: 'Security', icon: Shield },
   ];
 
@@ -124,8 +125,9 @@ const SiteAudit = () => {
             {activeTab === 'images' && <ImagesTab images={results.images} />}
             {activeTab === 'links' && <LinksTab links={results.links} />}
             {activeTab === 'content' && <ContentTab content={results.content} />}
-            {activeTab === 'schema' && <SchemaTab schema={results.schema} />}
-            {activeTab === 'security' && <SecurityTab security={results.security} technical={results.technical} />}
+            { activeTab === 'schema' && <SchemaTab schema={results.schema} /> }
+            { activeTab === 'localSeo' && <LocalSeoTab localSeo={results.localSeo} /> }
+            { activeTab === 'security' && <SecurityTab security={results.security} technical={results.technical} /> }
           </div>
         </>
       )}
@@ -498,6 +500,24 @@ const TechItem = ({ label, value, good }) => (
     <div className="flex items-center gap-2">
       <span className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{value}</span>
       {good ? <CheckCircle2 size={14} className="text-emerald-500" /> : <AlertCircle size={14} className="text-red-500" />}
+    </div>
+  </div>
+);
+
+const LocalSeoTab = ({ localSeo }) => (
+  <div className="space-y-4">
+    <IssuesList issues={localSeo.issues} warnings={localSeo.warnings} passed={localSeo.passed} />
+    
+    <div className="card p-5">
+      <h3 className="text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2" style={{ color: 'var(--text-secondary)' }}>
+        <MapPin size={16} /> Local SEO Signals
+      </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <TechItem label="LocalBusiness Schema" value={localSeo.hasLocalSchema ? 'Found' : 'Missing'} good={localSeo.hasLocalSchema} />
+        <TechItem label="Embedded Map" value={localSeo.hasGoogleMaps ? 'Found' : 'Missing'} good={localSeo.hasGoogleMaps} />
+        <TechItem label="Clickable Phones" value={`${localSeo.phoneNumbers.length} found`} good={localSeo.hasPhoneLink} />
+        <TechItem label="Clickable Emails" value={`${localSeo.emails.length} found`} good={localSeo.hasEmailLink} />
+      </div>
     </div>
   </div>
 );
