@@ -36,8 +36,8 @@ async function startServer() {
   // Serve static files from dist
   app.use(express.static(distPath));
   
-  // Fallback to index.html for SPA routing
-  app.get('*', (req, res) => {
+  // Fallback to index.html for SPA routing (Express v5 syntax)
+  app.get('/{*path}', (req, res) => {
     res.sendFile(path.join(distPath, 'index.html'));
   });
 
