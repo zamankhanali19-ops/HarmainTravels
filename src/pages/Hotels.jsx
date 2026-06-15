@@ -382,7 +382,7 @@ const Hotels = () => {
           <p className="text-xl md:text-2xl text-white/60 font-medium tracking-widest uppercase mb-16 relative z-10 leading-relaxed">
             We have access to private villas, boutique estates, and long-term residences across Asia.
           </p>
-          <a href="/contact" className="btn-primary !rounded-full !px-16 !py-8 !text-sm shadow-2xl inline-block relative z-10">
+          <a href="https://wa.me/923175477919?text=Hello%20Harmain%20Travels%2C%20I%20am%20looking%20for%20a%20bespoke%20hotel%20stay." target="_blank" rel="noopener noreferrer" className="btn-primary !rounded-full !px-16 !py-8 !text-sm shadow-2xl inline-block relative z-10">
             Consult a Travel Architect
           </a>
         </div>

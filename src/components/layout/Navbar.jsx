@@ -63,8 +63,8 @@ const Header = ({ children }) => {
             <a href="tel:+923175477919" className="flex items-center gap-2 hover:text-[#A61D24] transition-colors">
               <Phone size={12} className="text-[#A61D24]" /> +92 317 5477919
             </a>
-            <a href="mailto:vip@harmaintravels.com" className="hidden md:flex items-center gap-2 hover:text-[#A61D24] transition-colors">
-              <Mail size={12} className="text-[#A61D24]" /> vip@harmaintravels.com
+            <a href="mailto:harmaintravelisb@gmail.com" className="hidden md:flex items-center gap-2 hover:text-[#A61D24] transition-colors">
+              <Mail size={12} className="text-[#A61D24]" /> harmaintravelisb@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-6">
@@ -80,10 +80,10 @@ const Header = ({ children }) => {
 
       {/* Main Navigation Bar */}
       <nav 
-        style={{ backgroundColor: scrolled ? 'rgba(166, 29, 36, 0.1)' : 'rgba(255, 255, 255, 0.65)' }}
+        style={{ backgroundColor: scrolled ? 'rgba(15, 23, 42, 0.65)' : 'rgba(255, 255, 255, 0.65)' }}
         className={`relative transition-all duration-500 border-b backdrop-blur-2xl ${
           scrolled 
-            ? 'border-[#A61D24]/30 shadow-xl py-1.5 text-white' 
+            ? 'border-white/10 shadow-2xl py-1.5 text-white' 
             : 'border-slate-100/50 py-2 text-[#002147]'
         }`}
       >
@@ -108,7 +108,7 @@ const Header = ({ children }) => {
                   {link.name}
                 </Link>
               ))}
-              <button className="btn-primary !px-5 !py-2.5 !text-[10px] !rounded-full shadow-lg hover:shadow-2xl">Book Iconic Trip</button>
+              <a href="https://wa.me/923175477919?text=Hello%20Harmain%20Travels%2C%20I%20would%20like%20to%20plan%20an%20iconic%20trip." target="_blank" rel="noopener noreferrer" className="btn-primary !px-5 !py-2.5 !text-[10px] !rounded-full shadow-lg hover:shadow-2xl">Book Iconic Trip</a>
             </div>
 
             {/* Mobile Toggle */}
@@ -141,11 +141,11 @@ const Header = ({ children }) => {
             </div>
 
             <div className="pt-6 border-t border-slate-100">
-              <button className="btn-primary w-full !rounded-2xl !py-4 !text-sm">Book Your Journey</button>
+              <a href="https://wa.me/923175477919?text=Hello%20Harmain%20Travels%2C%20I%20would%20like%20to%20plan%20a%20journey." target="_blank" rel="noopener noreferrer" className="btn-primary w-full !rounded-2xl !py-4 !text-sm text-center block">Book Your Journey</a>
               <div className="mt-6 flex flex-col gap-4 text-xs font-bold text-slate-500">
                 <div className="flex items-center gap-4"><MapPin size={16} className="text-[#A61D24]" /> Blue Area, Islamabad</div>
                 <div className="flex items-center gap-4"><Phone size={16} className="text-[#A61D24]" /> +92 317 5477919</div>
-                <div className="flex items-center gap-4"><Mail size={16} className="text-[#A61D24]" /> vip@harmaintravels.com</div>
+                <div className="flex items-center gap-4"><Mail size={16} className="text-[#A61D24]" /> harmaintravelisb@gmail.com</div>
               </div>
             </div>
           </div>

@@ -115,7 +115,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <span className="text-white/60 block text-[9px] font-black uppercase tracking-widest mb-1">Email Inquiries</span>
-                  <a href="mailto:vip@harmaintravels.com" className="text-white font-bold tracking-wide uppercase text-xs sm:text-sm hover:text-white/80 transition-all">vip@harmaintravels.com</a>
+                  <a href="mailto:harmaintravelisb@gmail.com" className="text-white font-bold tracking-wide uppercase text-xs sm:text-sm hover:text-white/80 transition-all">harmaintravelisb@gmail.com</a>
                 </div>
               </li>
             </ul>

@@ -114,19 +114,21 @@ const CountryDetail = () => {
               {/* Conversion / Call to Action */}
               <div className="flex flex-col sm:flex-row items-center gap-4 border-t border-slate-100 pt-8 mt-4">
                 <a
-                  href="https://wa.me/923175477919"
+                  href={`https://wa.me/923175477919?text=${encodeURIComponent(`Hello Harmain Travels, I would like to book a journey to ${country.name}.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary w-full sm:w-auto !px-8 !py-4 !rounded-2xl !text-[11px] shadow-xl hover:shadow-2xl flex items-center justify-center gap-2.5"
                 >
                   <Send size={16} /> Book Journey Now
                 </a>
-                <Link
-                  to="/contact"
+                <a
+                  href={`https://wa.me/923175477919?text=${encodeURIComponent(`Hello Harmain Travels, I want to inquire about ${country.name}.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-[#002147] font-black uppercase text-[11px] tracking-wider py-4 px-8 rounded-2xl text-center transition-all border border-slate-200/50"
                 >
-                  Inquire via Form
-                </Link>
+                  Inquire via WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -186,9 +188,9 @@ const CountryDetail = () => {
                     </li>
                   </ul>
                 </div>
-                <Link to="/contact" className="text-center bg-slate-100 hover:bg-slate-200 text-[#002147] font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all border border-slate-200/50">
+                <a href={`https://wa.me/923175477919?text=${encodeURIComponent(`Hello Harmain Travels, I am interested in the 3-Day Express Plan for ${country.name}.`)}`} target="_blank" rel="noopener noreferrer" className="text-center bg-slate-100 hover:bg-slate-200 text-[#002147] font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all border border-slate-200/50">
                   Select Express Itinerary
-                </Link>
+                </a>
               </div>
 
               {/* 5-Day Plan */}
@@ -212,9 +214,9 @@ const CountryDetail = () => {
                     </li>
                   </ul>
                 </div>
-                <Link to="/contact" className="text-center bg-[#A61D24] hover:bg-[#002147] text-white font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all shadow-lg">
+                <a href={`https://wa.me/923175477919?text=${encodeURIComponent(`Hello Harmain Travels, I am interested in the 5-Day Classic Plan for ${country.name}.`)}`} target="_blank" rel="noopener noreferrer" className="text-center bg-[#A61D24] hover:bg-[#002147] text-white font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all shadow-lg">
                   Select Classic Itinerary
-                </Link>
+                </a>
               </div>
 
               {/* 10-Day Plan */}
@@ -237,9 +239,9 @@ const CountryDetail = () => {
                     </li>
                   </ul>
                 </div>
-                <Link to="/contact" className="text-center bg-slate-100 hover:bg-slate-200 text-[#002147] font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all border border-slate-200/50">
+                <a href={`https://wa.me/923175477919?text=${encodeURIComponent(`Hello Harmain Travels, I am interested in the 10-Day Grande Plan for ${country.name}.`)}`} target="_blank" rel="noopener noreferrer" className="text-center bg-slate-100 hover:bg-slate-200 text-[#002147] font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all border border-slate-200/50">
                   Select Grande Itinerary
-                </Link>
+                </a>
               </div>
             </div>
           </div>
