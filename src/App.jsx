@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MessageCircle } from 'lucide-react';
 import LoadingSpinner from './components/common/LoadingSpinner';
 import LiveBookingPopup from './components/common/LiveBookingPopup';
+import { Analytics } from "@vercel/analytics/react";
 
 const Home = lazy(() => import('./pages/Home'));
 const Destinations = lazy(() => import('./pages/Destinations'));
@@ -44,6 +45,7 @@ const App = () => {
 
         {/* Global Live Booking Social Proof */}
         <LiveBookingPopup />
+        <Analytics />
       </div>
     </Router>
   );
