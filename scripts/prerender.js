@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
 import { asianRegions } from '../src/data/asianRegions.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -53,7 +54,12 @@ async function prerender() {
   const { server, port } = await startServer();
   const baseUrl = `http://localhost:${port}`;
   
-  const browser = await puppeteer.launch({ headless: 'new' });
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
+  });
   const page = await browser.newPage();
   
   for (const route of pathsToPrerender) {
