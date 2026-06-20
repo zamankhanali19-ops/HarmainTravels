@@ -3,20 +3,20 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { History } from 'lucide-react';
 
-import { useSEOAnalyzer } from '../hooks/useSEOAnalyzer';
+import SEO from '../components/common/SEO';
 
 const About = () => {
-  useSEOAnalyzer('about', {
-    title: "About Our Legacy & Excellence | Harmain Travels",
-    description: "Learn about the legacy of Harmain Travels. Discover our core values, accredited excellence, and dedication to delivering top-tier global travel services."
-  });
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="About Our Legacy & Excellence | Harmain Travels"
+        description="Learn about the legacy of Harmain Travels. Discover our core values, accredited excellence, and dedication to delivering top-tier global travel services."
+        url="https://harmaintravels.com/about"
+      />
       <Navbar />
       
       <section className="pt-48 pb-32 bg-[#002147] text-center px-4 overflow-hidden relative">

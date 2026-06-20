@@ -7,15 +7,26 @@ import DestinationsGrid from '../components/home/DestinationsGrid';
 import ServicesShowroom from '../components/home/ServicesShowroom';
 import Testimonials from '../components/home/Testimonials';
 
-import { useSEOAnalyzer } from '../hooks/useSEOAnalyzer';
+import SEO from '../components/common/SEO';
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
 
-  useSEOAnalyzer('home', {
-    title: "Harmain Travels - Pakistan's Top Rated Travel Agency & Visa Consultant",
-    description: "Harmain Travels is Pakistan's leading premium travel agency. Discover custom holiday packages, luxury hotels, easy flights, and comprehensive visa services for world-class travel experiences."
-  });
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Harmain Travels",
+    "image": "https://harmaintravels.com/logo.png",
+    "url": "https://harmaintravels.com/",
+    "telephone": "+923175477919",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PK"
+    },
+    "sameAs": [
+      "https://www.facebook.com/harmaintravels"
+    ]
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -35,6 +46,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white selection:bg-[#A61D24] selection:text-white">
+      <SEO 
+        title="Harmain Travels - Pakistan's Top Rated Travel Agency & Visa Consultant"
+        description="Harmain Travels is Pakistan's leading premium travel agency. Discover custom holiday packages, luxury hotels, easy flights, and comprehensive visa services for world-class travel experiences."
+        schema={schema}
+      />
       <Navbar />
       <HeroSection scrollY={scrollY} />
       <PartnersMarquee />

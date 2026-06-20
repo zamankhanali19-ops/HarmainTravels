@@ -4,8 +4,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { FileCheck, Calendar, Wallet, UserCheck, ShieldAlert, ArrowLeft, Send, Sparkles, Compass, CheckCircle } from 'lucide-react';
 import { useEffect } from 'react';
-
-import { useSEOAnalyzer } from '../hooks/useSEOAnalyzer';
+import SEO from '../components/common/SEO';
 
 const CountryDetail = () => {
   const { countrySlug } = useParams();
@@ -16,11 +15,7 @@ const CountryDetail = () => {
     .flatMap((r) => r.countries)
     .find((c) => c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') === countrySlug);
 
-  useSEOAnalyzer('destinations', {
-    title: country ? `${country.name} Tours & Visa Requirements - Harmain Travels` : 'Tours & Visa Requirements',
-    description: country ? `Plan your next premium tour to ${country.name} with Harmain Travels. Check the must-visit spots, complete document requirements, and apply for a visa today.` : '',
-    keywords: country ? [country.name, `${country.name} tour`, `${country.name} visa requirements`, `book ${country.name} packages`] : []
-  });
+  const canonicalUrl = `https://harmaintravels.com/destinations/${countrySlug}`;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -51,6 +46,11 @@ const CountryDetail = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
+      <SEO 
+        title={`${country.name} Tours & Visa Requirements | Harmain Travels`}
+        description={`Plan your next premium tour to ${country.name} with Harmain Travels. Check the must-visit spots, complete document requirements, and apply for a visa today.`}
+        url={canonicalUrl}
+      />
       <Navbar />
 
       {/* Main Content Area */}

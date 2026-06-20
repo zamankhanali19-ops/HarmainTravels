@@ -1,0 +1,37 @@
+import { Helmet } from 'react-helmet-async';
+
+const SEO = ({ title, description, url = "https://harmaintravels.com", image = "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=90&w=1200", schema }) => {
+  return (
+    <Helmet>
+      {/* Standard metadata tags */}
+      <title>{title}</title>
+      <meta name='description' content={description} />
+      
+      {/* Canonical Link */}
+      <link rel="canonical" href={url} />
+
+      {/* Open Graph tags */}
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:url" content={url} />
+
+      {/* Twitter tags */}
+      <meta name="twitter:creator" content="Harmain Travels" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+
+      {/* Schema Markup */}
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
+    </Helmet>
+  );
+};
+
+export default SEO;

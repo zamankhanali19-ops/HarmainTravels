@@ -3,7 +3,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { Send, CheckCircle, Sparkles, ShieldCheck, Heart, Moon, Calendar } from 'lucide-react';
 import { TravelCalendar } from '../components/common/TravelCalendar';
-import { useSEOAnalyzer } from '../hooks/useSEOAnalyzer';
+import SEO from '../components/common/SEO';
 
 const umrahPackages = [
   {
@@ -67,10 +67,7 @@ const Umrah = () => {
   const [children, setChildren] = useState(0);
   const [infants, setInfants] = useState(0);
 
-  useSEOAnalyzer('umrah', {
-    title: "Premium & Luxury Umrah Packages | Harmain Travels",
-    description: "Book complete 5-star and premium Umrah packages with Harmain Travels. Includes top-tier hotels near the Haram, hassle-free visas, flights, and comprehensive Ziarat."
-  });
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -78,6 +75,11 @@ const Umrah = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Premium Umrah Packages from Pakistan | Harmain Travels"
+        description="Experience a peaceful spiritual journey. Explore our premium and VIP Umrah packages featuring 5-star Makkah/Madinah hotels and luxury transport."
+        url="https://harmaintravels.com/umrah"
+      />
       <Navbar />
 
       {/* 1. Dynamic Hero Section with Glorified Picture and Search Bar */}

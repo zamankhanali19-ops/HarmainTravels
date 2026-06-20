@@ -3,24 +3,22 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { TravelCalendar } from '../components/common/TravelCalendar';
+import SEO from '../components/common/SEO';
 
 const Contact = () => {
   const [travelDate, setTravelDate] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Contact Our Experts - Support & Queries | Harmain Travels";
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.content = "Get in touch with the premium travel experts at Harmain Travels. Reach out today for personalized tour inquiries, flight support, or elite hotel bookings.";
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Contact Our Experts - Support & Queries | Harmain Travels"
+        description="Get in touch with the premium travel experts at Harmain Travels. Reach out today for personalized tour inquiries, flight support, or elite hotel bookings."
+        url="https://harmaintravels.com/contact"
+      />
       <Navbar />
       
       <section className="pt-48 pb-24 bg-slate-50 text-center px-4">

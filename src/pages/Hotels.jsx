@@ -3,7 +3,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { Search, MapPin, Star, Calendar, ArrowRight, Building2, BedDouble, ShieldCheck } from 'lucide-react';
 import { TravelCalendar } from '../components/common/TravelCalendar';
-
+import SEO from '../components/common/SEO';
 const featuredHotels = [
   {
     name: "Burj Al Arab",
@@ -68,18 +68,15 @@ const Hotels = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Luxury Hotels & Premium Stays - Book Online | Harmain Travels";
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.content = "Find your ultimate luxury stay with Harmain Travels. Curated premium hotels, pristine resorts, and bespoke guest experiences across the Asian continent.";
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Luxury Hotels & Premium Stays in Asia | Harmain Travels"
+        description="Book exclusive 5-star hotels, private villas, and premium resorts across Thailand, Malaysia, Indonesia & more with guaranteed best rates."
+        url="https://harmaintravels.com/hotels"
+      />
       <Navbar />
       
       {/* Hero Section with Search */}

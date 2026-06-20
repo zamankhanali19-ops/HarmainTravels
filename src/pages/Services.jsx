@@ -2,6 +2,7 @@
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { Plane, Map, ShieldCheck, Ticket, Users, Globe } from 'lucide-react';
+import SEO from '../components/common/SEO';
 
 const Services = () => {
   const allServices = [
@@ -15,6 +16,11 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Premium Travel Services & Visa Consulting | Harmain Travels"
+        description="Comprehensive travel services including luxury bookings, corporate tours, and expedited visa processing for destinations across Asia."
+        url="https://harmaintravels.com/services"
+      />
       <Navbar />
       
       <section className="pt-48 pb-24 bg-slate-50 text-center px-4">

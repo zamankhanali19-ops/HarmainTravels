@@ -6,15 +6,12 @@ import RegionSelector from '../components/destinations/RegionSelector';
 import CountriesGrid from '../components/destinations/CountriesGrid';
 import { asianRegions } from '../data/asianRegions';
 
-import { useSEOAnalyzer } from '../hooks/useSEOAnalyzer';
+import SEO from '../components/common/SEO';
 
 const Destinations = () => {
   const [activeRegion, setActiveRegion] = useState('south');
 
-  useSEOAnalyzer('destinations', {
-    title: "Asian Destinations Hub - Tours & Packages | Harmain Travels",
-    description: "Explore the complete Harmain Travels Asian Destinations Hub. Choose from high-fidelity tour packages across South Asia, Southeast Asia, East Asia, and West Asia."
-  });
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,6 +19,11 @@ const Destinations = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Best Asian Travel Destinations & Tour Packages | Harmain Travels"
+        description="Explore curated tours to Thailand, Malaysia, Maldives, and 40+ Asian destinations. Plan your perfect luxury escape with our travel architects."
+        url="https://harmaintravels.com/destinations"
+      />
       <Navbar>
         <RegionSelector 
           asianRegions={asianRegions} 

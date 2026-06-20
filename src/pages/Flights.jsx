@@ -3,6 +3,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { MapPin, Calendar, Search, ShieldCheck, Clock, Award, ArrowRight } from 'lucide-react';
 import { TravelCalendar } from '../components/common/TravelCalendar';
+import SEO from '../components/common/SEO';
 
 const popularRoutes = [
   { from: "Islamabad (ISB)", to: "Dubai (DXB)", price: "From $350", image: "https://images.unsplash.com/photo-1512453979798-5eaad0ff3b0d?auto=format&fit=crop&q=80&w=800" },
@@ -28,18 +29,15 @@ const Flights = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Direct & Cheap Flights Booking - Online | Harmain Travels";
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.content = "Book affordable flight tickets to top worldwide destinations with Harmain Travels. Best deals, secure bookings, and direct airline bookings available.";
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Cheap Flights & Airline Ticketing | Harmain Travels"
+        description="Book affordable international flights instantly. Harmain Travels offers exclusive airfare deals and 24/7 corporate ticketing support."
+        url="https://harmaintravels.com/flights"
+      />
       <Navbar />
       
       {/* Hero Section with Search */}
