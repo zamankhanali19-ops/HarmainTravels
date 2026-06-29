@@ -14,7 +14,7 @@ const Contact = () => {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "TravelAgency",
+    "@type": "LocalBusiness",
     "name": "Harmain Travels",
     "image": "https://harmaintravels.com/logo.png",
     "url": "https://harmaintravels.com/contact",
@@ -24,15 +24,18 @@ const Contact = () => {
       "@type": "PostalAddress",
       "streetAddress": "Office no.11, Alay plaza, Fazal-e-Haq Road, Blue Area",
       "addressLocality": "Islamabad",
+      "addressRegion": "ICT",
+      "postalCode": "44000",
       "addressCountry": "PK"
-    }
+    },
+    "openingHours": "Mo,Tu,We,Th,Fr,Sa 09:00-18:00"
   };
 
   return (
     <div className="min-h-screen bg-white">
       <SEO 
-        title="Contact Our Experts - Support & Queries | Harmain Travels"
-        description="Get in touch with the premium travel experts at Harmain Travels. Reach out today for personalized tour inquiries, flight support, or elite hotel bookings."
+        title="Contact Harmain Travels | Premium Travel Agency in Islamabad"
+        description="Visit our office in Blue Area, Islamabad. Contact Harmain Travels for VIP Umrah packages, customized Asian tours, and priority visa processing."
         url="https://harmaintravels.com/contact"
         schema={schema}
       />

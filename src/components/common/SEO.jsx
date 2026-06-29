@@ -16,19 +16,28 @@ const SEO = ({ title, description, url = "https://harmaintravels.com", image = "
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:url" content={url} />
+      <meta property="og:site_name" content="Harmain Travels" />
 
       {/* Twitter tags */}
-      <meta name="twitter:creator" content="Harmain Travels" />
+      <meta name="twitter:creator" content="@HarmainTravels" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
-      {/* Schema Markup */}
+      {/* Schema Markup — supports single object or array of objects */}
       {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
+        Array.isArray(schema)
+          ? schema.map((s, i) => (
+              <script key={i} type="application/ld+json">
+                {JSON.stringify(s)}
+              </script>
+            ))
+          : (
+            <script type="application/ld+json">
+              {JSON.stringify(schema)}
+            </script>
+          )
       )}
     </Helmet>
   );

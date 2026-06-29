@@ -78,5 +78,75 @@ If you prioritize comfort, have elderly family members, or wish to focus 100% on
 
 <a href="https://wa.me/923175477919?text=Hello%20Harmain%20Travels,%20I%20want%20to%20inquire%20about%20Umrah%20Packages." target="_blank" rel="noopener noreferrer" class="inline-block bg-[#A61D24] text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-[#002147] transition-colors">Inquire About Umrah Packages</a>
     `
+  },
+  {
+    id: 3,
+    slug: "anti-gravity-hill-medina-wadi-al-jinn",
+    title: "The Ultimate Guide to Medina's Anti-Gravity Hill (Wadi Al-Jinn)",
+    excerpt: "Discover the mystery of Wadi Al-Jinn (Medina's Magnetic Hill). Watch cars roll uphill! Learn the science, get directions, and book a VIP Ziyarat tour today.",
+    date: "2026-06-29",
+    author: "Harmain Travels Expert Guides",
+    image: "https://images.unsplash.com/photo-1542044801-44fb17013e89?auto=format&fit=crop&q=80&w=1200",
+    content: `
+## What is the Anti-Gravity Hill in Medina?
+
+Located roughly 30 kilometers northwest of Medina, **Wadi Al-Jinn** (also known as Wadi Al-Baida) is a world-famous natural phenomenon that has captured the imagination of millions of pilgrims and tourists. 
+
+### The Phenomenon: Cars Rolling Uphill
+The primary attraction is the bewildering optical and physical illusion: if you put your car in neutral at the bottom of the valley, it appears to slowly roll *uphill*, sometimes reaching speeds of 120 km/h. Similarly, water poured onto the road seems to defy gravity, flowing upwards against the incline. This "anti-gravity" effect draws thousands of visitors eager to witness the impossible during their Ziyarat tours.
+
+## The Science vs. The Myths
+
+### Topographical Optical Illusions Explained
+While the visual experience is mind-bending, geologists and physicists have a clear explanation. Wadi Al-Jinn is a **gravity hill** (or magnetic hill). The surrounding landscape and the completely obstructed horizon create a powerful optical illusion. What appears to be an uphill slope is actually a slight downward incline. Your brain, lacking a true reference point for the horizon, misinterprets the angle of the slope. So, when your car "rolls uphill," gravity is actually just pulling it downhill.
+
+### The Folklore of Wadi e Jinn
+Despite the scientific consensus, rich local folklore surrounds the area. Many locals and pilgrims refer to it as "Wadi e Jinn," believing that invisible supernatural entities (Jinn) are physically pushing the cars up the hill. Whether you believe in the physics or the folklore, the experience is undeniably surreal.
+
+## How to Get to Wadi Al-Jinn from Masjid an-Nabawi
+
+### Distance, Travel Time, and Map Coordinates
+Wadi Al-Jinn is a relatively short trip from the Prophet's Mosque (Masjid an-Nabawi). 
+*   **Distance:** Approximately 30-40 kilometers depending on the route.
+*   **Travel Time:** A 30 to 45-minute drive.
+*   **Coordinates:** You can easily find it on Google Maps by searching for "Wadi Al Baida" or "Magnetic Hill Medina."
+
+## What to Expect When You Visit (Tips for Pilgrims)
+*   **Rent a Private Taxi:** There is no public transport. Negotiate a return fare with a local taxi driver, or better yet, book a dedicated Ziyarat vehicle.
+*   **Bring Water:** It is a desert valley. Bring plenty of hydration.
+*   **Test the Gravity:** Bring a bottle of water to pour on the road, or ask your driver to put the car in neutral!
+
+## Frequently Asked Questions (FAQ)
+
+**Is the anti-gravity hill in Medina real?**
+Yes, the location and the effect are entirely real, though science explains it as an incredibly convincing topographical optical illusion rather than true anti-gravity or magnetism.
+
+**Is Wadi Al Jinn included in standard Umrah packages?**
+Standard economy Umrah packages typically only cover the most common Ziyarats (Quba Mosque, Mount Uhud). To visit Wadi Al-Jinn, you usually need to book a custom or premium package.
+
+## 🕋 Add Wadi Al-Jinn to Your Umrah Journey Today
+
+Don't miss out on Medina's most fascinating natural wonder. At **Harmain Travels**, our premium Umrah packages from Islamabad include dedicated, private GMC transport for Ziyarat. Let our expert local guides handle the driving while you experience the impossible.
+
+<a href="/umrah-packages" class="inline-block bg-[#A61D24] text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-[#002147] transition-colors">Explore Our VIP Umrah Packages</a>
+<a href="https://wa.me/923175477919?text=Hello%20Harmain%20Travels,%20I%20want%20to%20visit%20Wadi%20Al-Jinn%20during%20my%20Umrah." target="_blank" rel="noopener noreferrer" class="inline-block bg-[#25D366] text-white font-bold py-3 px-6 rounded-full mt-4 sm:ml-4 hover:bg-[#128C7E] transition-colors">WhatsApp a Travel Consultant</a>
+    `,
+    customSchema: {
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      "name": "Wadi Al-Jinn (Anti-Gravity Hill)",
+      "description": "A famous gravity hill and tourist attraction located in Wadi Al-Baida, Medina, Saudi Arabia, known for the optical illusion where cars appear to roll uphill.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Medina",
+        "addressCountry": "SA"
+      },
+      "tourBookingPage": "https://harmaintravels.com/umrah-packages",
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "Harmain Travels",
+        "address": "Islamabad, Pakistan"
+      }
+    }
   }
 ];

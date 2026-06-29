@@ -14,12 +14,25 @@ const Services = () => {
     { title: "Event Management", icon: <Ticket size={40} />, desc: "Complete ground handling for destination weddings and corporate retreats." }
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Comprehensive Travel Services",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Harmain Travels"
+    },
+    "serviceType": "Travel Management",
+    "description": "Comprehensive travel services including luxury bookings, corporate tours, and expedited visa processing."
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <SEO 
         title="Premium Travel Services & Visa Consulting | Harmain Travels"
         description="Comprehensive travel services including luxury bookings, corporate tours, and expedited visa processing for destinations across Asia."
         url="https://harmaintravels.com/services"
+        schema={schema}
       />
       <Navbar />
       

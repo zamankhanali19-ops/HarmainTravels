@@ -1,4 +1,13 @@
+# Harmain Travels — robots.txt
+# https://harmaintravels.com
+
 User-agent: *
 Allow: /
 
+# Block internal tooling / admin paths
+Disallow: /seo-platform/
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemap
 Sitemap: https://harmaintravels.com/sitemap.xml

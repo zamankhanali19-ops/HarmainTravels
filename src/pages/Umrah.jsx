@@ -73,12 +73,58 @@ const Umrah = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const umrahSchema = [
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "14-Day Premium VIP Umrah Package from Islamabad",
+      "description": "5-Star accommodations at Fairmont Makkah and Pullman Zamzam, including direct flights from ISB and VIP transport.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Harmain Travels"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "PKR",
+        "price": "345000",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Harmain Travels"
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a 5-star VIP Umrah package cost from Pakistan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our Premium VIP Umrah packages typically start from PKR 345,000, which includes 5-star accommodations near the Haram, direct flights, and VIP ground transport."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which 5-star Makkah hotels are closest to the Haram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We partner with the closest 5-star luxury hotels including the Fairmont Makkah Clock Royal Tower, Swissôtel Al Maqam, and Conrad Makkah, allowing you to step right into the Haram courtyard."
+          }
+        }
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <SEO 
-        title="Premium Umrah Packages from Pakistan | Harmain Travels"
-        description="Experience a peaceful spiritual journey. Explore our premium and VIP Umrah packages featuring 5-star Makkah/Madinah hotels and luxury transport."
+        title="Premium Umrah Packages from Islamabad [2026] | Harmain Travels"
+        description="Book your 5-Star VIP Umrah package from Islamabad today. Experience elite comfort with Haram-view hotels, direct flights, and a dedicated 24/7 concierge."
         url="https://harmaintravels.com/umrah-packages"
+        schema={umrahSchema}
       />
       <Navbar />
 
@@ -536,25 +582,17 @@ const Umrah = () => {
               </p>
             </div>
             <div className="bg-white p-8 sm:p-12 rounded-[2.5rem] border border-slate-100 shadow-2xl hover:scale-[1.02] transition-transform duration-500">
-              <h4 className="text-xl md:text-2xl font-black text-[#002147] uppercase tracking-tighter mb-6">Expert Focus Keywords</h4>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3.5 h-3.5 bg-[#A61D24] rounded-full shrink-0 flex items-center justify-center text-white text-[8px] font-black">✓</span>
-                  Licensed Umrah Operator Pakistan
-                </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3.5 h-3.5 bg-[#A61D24] rounded-full shrink-0 flex items-center justify-center text-white text-[8px] font-black">✓</span>
-                  Economy Saver & 5-Star Luxury Packages
-                </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3.5 h-3.5 bg-[#A61D24] rounded-full shrink-0 flex items-center justify-center text-white text-[8px] font-black">✓</span>
-                  Hotels Next To The Courtyard of Haram
-                </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3.5 h-3.5 bg-[#A61D24] rounded-full shrink-0 flex items-center justify-center text-white text-[8px] font-black">✓</span>
-                  Makkah & Madinah Guided Historical Tours
-                </li>
-              </ul>
+              <h4 className="text-xl md:text-2xl font-black text-[#002147] uppercase tracking-tighter mb-6">Frequently Asked Questions</h4>
+              <div className="space-y-6">
+                <div>
+                  <h5 className="font-bold text-[#A61D24] mb-2 text-sm uppercase tracking-wide">How much does a 5-star VIP Umrah package cost?</h5>
+                  <p className="text-slate-600 text-sm leading-relaxed">Our Premium VIP Umrah packages typically start from PKR 345,000, which includes 5-star accommodations near the Haram, direct flights, and VIP ground transport.</p>
+                </div>
+                <div className="pt-4 border-t border-slate-100">
+                  <h5 className="font-bold text-[#A61D24] mb-2 text-sm uppercase tracking-wide">Which 5-star Makkah hotels are closest?</h5>
+                  <p className="text-slate-600 text-sm leading-relaxed">We partner with the closest 5-star luxury hotels including the Fairmont Makkah Clock Royal Tower, Swissôtel Al Maqam, and Conrad Makkah, allowing you to step right into the Haram courtyard.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -31,12 +31,25 @@ const Flights = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "International Airline Ticketing",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Harmain Travels"
+    },
+    "serviceType": "Flight Reservations",
+    "description": "Premium corporate and leisure airline ticketing services specializing in fast processing and VIP connections."
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <SEO 
-        title="Cheap Flights & Airline Ticketing | Harmain Travels"
+        title="Cheap Flights & Airline Ticketing from Pakistan | Harmain Travels"
         description="Book affordable international flights instantly. Harmain Travels offers exclusive airfare deals and 24/7 corporate ticketing support."
         url="https://harmaintravels.com/flights"
+        schema={schema}
       />
       <Navbar />
       

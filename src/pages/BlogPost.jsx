@@ -72,7 +72,7 @@ const BlogPost = () => {
         description={post.excerpt}
         url={`https://harmaintravels.com/blog/${post.slug}`}
         image={post.image}
-        schema={postSchema}
+        schema={post.customSchema ? [postSchema, post.customSchema] : postSchema}
       />
       <Navbar />
       

@@ -12,35 +12,47 @@ import SEO from '../components/common/SEO';
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "Harmain Travels",
-    "image": "https://harmaintravels.com/logo.png",
-    "url": "https://harmaintravels.com/",
-    "telephone": "+923175477919",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "PK"
-    },
-    "affiliation": [
-      {
-        "@type": "Organization",
-        "name": "Emirates"
-      },
-      {
-        "@type": "Organization",
-        "name": "Qatar Airways"
-      },
-      {
-        "@type": "Organization",
-        "name": "Marriott"
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Harmain Travels",
+      "url": "https://harmaintravels.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://harmaintravels.com/asia-tours?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
-    ],
-    "sameAs": [
-      "https://www.facebook.com/harmaintravels"
-    ]
-  };
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Harmain Travels",
+      "image": "https://harmaintravels.com/logo.png",
+      "url": "https://harmaintravels.com/",
+      "telephone": "+923175477919",
+      "email": "harmaintravelisb@gmail.com",
+      "foundingDate": "2011",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office no.11, Alay plaza, Fazal-e-Haq Road, Blue Area",
+        "addressLocality": "Islamabad",
+        "addressRegion": "ICT",
+        "postalCode": "44000",
+        "addressCountry": "PK"
+      },
+      "affiliation": [
+        { "@type": "Organization", "name": "Emirates" },
+        { "@type": "Organization", "name": "Qatar Airways" },
+        { "@type": "Organization", "name": "Turkish Airlines" },
+        { "@type": "Organization", "name": "Marriott International" }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/harmaintravels"
+      ],
+      "openingHours": "Mo,Tu,We,Th,Fr,Sa 09:00-18:00"
+    }
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);

@@ -44,12 +44,28 @@ const CountryDetail = () => {
     { icon: <CheckCircle size={24} className="text-[#002147]" />, title: 'End-to-End Concierge', text: 'Enjoy a frictionless, end-to-end luxury travel experience from premium arrivals to high-end stays.' }
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    "name": country.name,
+    "description": country.desc,
+    "touristType": [
+      "Leisure",
+      "Cultural"
+    ],
+    "includesAttraction": {
+      "@type": "TouristAttraction",
+      "name": country.famousPlace
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
       <SEO 
         title={`${country.name} Tours & Visa Requirements | Harmain Travels`}
         description={`Plan your next premium tour to ${country.name} with Harmain Travels. Check the must-visit spots, complete document requirements, and apply for a visa today.`}
         url={canonicalUrl}
+        schema={schema}
       />
       <Navbar />
 

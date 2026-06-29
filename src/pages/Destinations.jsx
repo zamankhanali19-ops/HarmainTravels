@@ -17,12 +17,26 @@ const Destinations = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Luxury Asian Tour Packages",
+    "description": "Curated travel packages to South Asia, Southeast Asia, East Asia, and the Middle East.",
+    "itemListElement": asianRegions.map((region, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": region.name,
+      "url": `https://harmaintravels.com/asia-tours`
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <SEO 
-        title="Best Asian Travel Destinations & Tour Packages | Harmain Travels"
+        title="Luxury Asian Tours from Pakistan [2026] | Harmain Travels"
         description="Explore curated tours to Thailand, Malaysia, Maldives, and 40+ Asian destinations. Plan your perfect luxury escape with our travel architects."
         url="https://harmaintravels.com/asia-tours"
+        schema={schema}
       />
       <Navbar>
         <RegionSelector 
@@ -53,23 +67,28 @@ const Destinations = () => {
               </p>
             </div>
             <div className="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-2xl">
-              <h4 className="text-xl md:text-2xl font-black text-[#002147] uppercase tracking-tighter mb-6">Advanced Tour Search Terms</h4>
+              <h4 className="text-xl md:text-2xl font-black text-[#002147] uppercase tracking-tighter mb-6">Why Choose Our Asian Tours?</h4>
               <ul className="space-y-4">
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#A61D24] rounded-full shrink-0"></span>
-                  Top Asian Destination Tour Packages
+                <li className="flex items-start gap-4 text-sm font-bold tracking-wide text-slate-600">
+                  <span className="w-6 h-6 bg-[#A61D24]/10 text-[#A61D24] rounded-full shrink-0 flex items-center justify-center font-black mt-0.5">✓</span>
+                  <div>
+                    <span className="block text-[#002147] uppercase tracking-wider mb-1">Guaranteed Visas</span>
+                    <span className="font-medium text-slate-500 text-xs">Our expert consultants handle 100% of the complicated e-visa and sticker visa paperwork.</span>
+                  </div>
                 </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#A61D24] rounded-full shrink-0"></span>
-                  Custom Asia Holiday Excursions
+                <li className="flex items-start gap-4 text-sm font-bold tracking-wide text-slate-600">
+                  <span className="w-6 h-6 bg-[#A61D24]/10 text-[#A61D24] rounded-full shrink-0 flex items-center justify-center font-black mt-0.5">✓</span>
+                  <div>
+                    <span className="block text-[#002147] uppercase tracking-wider mb-1">Curated Luxury Networks</span>
+                    <span className="font-medium text-slate-500 text-xs">Direct API partnerships guarantee you the best rates at verified 4 and 5-star resorts.</span>
+                  </div>
                 </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#A61D24] rounded-full shrink-0"></span>
-                  Verified High-End Travel Agent Islamabad
-                </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#A61D24] rounded-full shrink-0"></span>
-                  Bespoke Group Holiday Booking
+                <li className="flex items-start gap-4 text-sm font-bold tracking-wide text-slate-600">
+                  <span className="w-6 h-6 bg-[#A61D24]/10 text-[#A61D24] rounded-full shrink-0 flex items-center justify-center font-black mt-0.5">✓</span>
+                  <div>
+                    <span className="block text-[#002147] uppercase tracking-wider mb-1">Tailored Itineraries</span>
+                    <span className="font-medium text-slate-500 text-xs">No rigid group tours. You control the pace, from arrival to departure.</span>
+                  </div>
                 </li>
               </ul>
             </div>

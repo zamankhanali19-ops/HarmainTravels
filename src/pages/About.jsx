@@ -10,12 +10,36 @@ const About = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Harmain Travels",
+    "url": "https://harmaintravels.com",
+    "logo": "https://harmaintravels.com/logo.png",
+    "foundingDate": "2011",
+    "description": "Harmain Travels is a premium travel agency based in Islamabad, Pakistan, specializing in VIP Umrah packages, corporate travel management, and luxury Asian tours.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Office no.11, Alay plaza, Fazal-e-Haq Road, Blue Area",
+      "addressLocality": "Islamabad",
+      "addressRegion": "ICT",
+      "postalCode": "44000",
+      "addressCountry": "PK"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+92-317-5477919",
+      "contactType": "customer service"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <SEO 
         title="About Our Legacy & Excellence | Harmain Travels"
         description="Learn about the legacy of Harmain Travels. Discover our core values, accredited excellence, and dedication to delivering top-tier global travel services."
         url="https://harmaintravels.com/about"
+        schema={schema}
       />
       <Navbar />
       
@@ -74,23 +98,23 @@ const About = () => {
               </p>
             </div>
             <div className="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-2xl">
-              <h4 className="text-xl md:text-2xl font-black text-[#002147] uppercase tracking-tighter mb-6">Advanced Corporate Terms</h4>
+              <h4 className="text-xl md:text-2xl font-black text-[#002147] uppercase tracking-tighter mb-6">Why Trust Us?</h4>
               <ul className="space-y-4">
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#931328] rounded-full shrink-0"></span>
-                  Top Global Travel Agency Islamabad
+                <li className="flex items-center gap-4 text-sm font-bold tracking-wide text-slate-600">
+                  <span className="w-8 h-8 bg-[#931328]/10 text-[#931328] rounded-full shrink-0 flex items-center justify-center font-black">1</span>
+                  Officially Licensed by the Ministry of Religious Affairs
                 </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#931328] rounded-full shrink-0"></span>
-                  Expert Business Trip Management
+                <li className="flex items-center gap-4 text-sm font-bold tracking-wide text-slate-600">
+                  <span className="w-8 h-8 bg-[#931328]/10 text-[#931328] rounded-full shrink-0 flex items-center justify-center font-black">2</span>
+                  Over 15 Years of Verifiable Industry Experience
                 </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#931328] rounded-full shrink-0"></span>
-                  Direct Access Five-Star Hotel Network
+                <li className="flex items-center gap-4 text-sm font-bold tracking-wide text-slate-600">
+                  <span className="w-8 h-8 bg-[#931328]/10 text-[#931328] rounded-full shrink-0 flex items-center justify-center font-black">3</span>
+                  Direct API Partnerships with 5-Star Hotel Chains
                 </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#931328] rounded-full shrink-0"></span>
-                  Elite Visa Consulting Firm Pakistan
+                <li className="flex items-center gap-4 text-sm font-bold tracking-wide text-slate-600">
+                  <span className="w-8 h-8 bg-[#931328]/10 text-[#931328] rounded-full shrink-0 flex items-center justify-center font-black">4</span>
+                  IATA Accredited Travel Agency
                 </li>
               </ul>
             </div>

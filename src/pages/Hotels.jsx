@@ -70,12 +70,25 @@ const Hotels = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Luxury Hotel Reservations",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Harmain Travels"
+    },
+    "serviceType": "Hotel Booking",
+    "description": "Exclusive 5-star hotel, private villa, and premium resort bookings across Asia with VIP perks."
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <SEO 
         title="Luxury Hotels & Premium Stays in Asia | Harmain Travels"
         description="Book exclusive 5-star hotels, private villas, and premium resorts across Thailand, Malaysia, Indonesia & more with guaranteed best rates."
         url="https://harmaintravels.com/hotels"
+        schema={schema}
       />
       <Navbar />
       
