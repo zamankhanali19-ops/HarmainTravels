@@ -42,11 +42,12 @@ const Header = ({ children }) => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Destinations', path: '/destinations' },
+    { name: 'Asia Tours', path: '/asia-tours' },
     { name: 'Hotels', path: '/hotels' },
     { name: 'Flights', path: '/flights' },
     { name: 'Services', path: '/services' },
-    { name: 'Umrah', path: '/umrah' },
+    { name: 'Umrah Packages', path: '/umrah-packages' },
+    { name: 'Insights', path: '/blog' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];

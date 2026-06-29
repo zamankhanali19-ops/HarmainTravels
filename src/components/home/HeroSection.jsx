@@ -20,7 +20,7 @@ const HeroSection = ({ scrollY }) => {
     if (!isFormValid) return;
     if (activeTab === 'flights') navigate('/flights');
     if (activeTab === 'hotels') navigate('/hotels');
-    if (activeTab === 'umrah') navigate('/umrah');
+    if (activeTab === 'umrah') navigate('/umrah-packages');
   };
 
   return (
@@ -30,7 +30,9 @@ const HeroSection = ({ scrollY }) => {
         style={{ transform: typeof window !== 'undefined' && window.innerWidth > 768 ? `translateY(${scrollY * 0.3}px) scale(1.1)` : 'none' }}
       >
         <img 
-          src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=90&w=2400" 
+          src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=90&w=2400&fm=webp" 
+          srcSet="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=600&fm=webp 600w, https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=1200&fm=webp 1200w, https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=90&w=2400&fm=webp 2400w"
+          sizes="100vw"
           className="w-full h-full object-cover brightness-[0.7]"
           alt="Hero Background"
           fetchpriority="high"
@@ -43,8 +45,8 @@ const HeroSection = ({ scrollY }) => {
         <div className="inline-block px-5 py-1.5 md:px-6 md:py-2 bg-[#002147]/30 backdrop-blur-md border border-[#A61D24]/20 rounded-full text-white font-black text-[9px] md:text-[10px] uppercase tracking-[0.5em] mb-4 md:mb-8 animate-reveal">
           Welcome to the Asian Gateway
         </div>
-        <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[8rem] font-[900] mb-4 md:mb-6 text-white tracking-tighter uppercase leading-[0.8] animate-reveal [text-shadow:0_10px_40px_rgba(0,0,0,0.6)]">
-          Explore <br/> <span className="text-white drop-shadow-md">Iconic Asia</span>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[7rem] font-[900] mb-4 md:mb-6 text-white tracking-tighter uppercase leading-[0.9] animate-reveal [text-shadow:0_10px_40px_rgba(0,0,0,0.6)]">
+          Premium Umrah <br/> <span className="text-white drop-shadow-md">& Asian Tours</span>
         </h1>
         <p className="text-sm sm:text-base md:text-xl lg:text-2xl mb-8 md:mb-12 text-white max-w-4xl mx-auto font-[900] tracking-widest uppercase leading-relaxed animate-reveal delay-100 drop-shadow-lg pr-4 pl-4 md:px-0">
           Harmain Travels — Redefining Your Journey to the Orient

@@ -12,12 +12,29 @@ const Contact = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Harmain Travels",
+    "image": "https://harmaintravels.com/logo.png",
+    "url": "https://harmaintravels.com/contact",
+    "telephone": "+923175477919",
+    "email": "harmaintravelisb@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Office no.11, Alay plaza, Fazal-e-Haq Road, Blue Area",
+      "addressLocality": "Islamabad",
+      "addressCountry": "PK"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <SEO 
         title="Contact Our Experts - Support & Queries | Harmain Travels"
         description="Get in touch with the premium travel experts at Harmain Travels. Reach out today for personalized tour inquiries, flight support, or elite hotel bookings."
         url="https://harmaintravels.com/contact"
+        schema={schema}
       />
       <Navbar />
       

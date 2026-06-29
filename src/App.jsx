@@ -14,6 +14,8 @@ const Hotels = lazy(() => import('./pages/Hotels'));
 const Flights = lazy(() => import('./pages/Flights'));
 const Umrah = lazy(() => import('./pages/Umrah'));
 const CountryDetail = lazy(() => import('./pages/CountryDetail'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
 
 const App = () => {
   return (
@@ -22,14 +24,16 @@ const App = () => {
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/destinations" element={<Destinations />} />
-            <Route path="/destinations/:countrySlug" element={<CountryDetail />} />
+            <Route path="/asia-tours" element={<Destinations />} />
+            <Route path="/asia-tours/:countrySlug" element={<CountryDetail />} />
             <Route path="/hotels" element={<Hotels />} />
             <Route path="/flights" element={<Flights />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/umrah" element={<Umrah />} />
+            <Route path="/umrah-packages" element={<Umrah />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </Suspense>
 

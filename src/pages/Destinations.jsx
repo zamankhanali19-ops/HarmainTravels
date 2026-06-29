@@ -22,7 +22,7 @@ const Destinations = () => {
       <SEO 
         title="Best Asian Travel Destinations & Tour Packages | Harmain Travels"
         description="Explore curated tours to Thailand, Malaysia, Maldives, and 40+ Asian destinations. Plan your perfect luxury escape with our travel architects."
-        url="https://harmaintravels.com/destinations"
+        url="https://harmaintravels.com/asia-tours"
       />
       <Navbar>
         <RegionSelector 

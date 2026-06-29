@@ -12,7 +12,7 @@ const DestinationsGrid = ({ destinations }) => {
               Iconic <br/> <span className="italic font-light text-[#A61D24]">Destinations</span>
             </h2>
           </div>
-          <Link to="/destinations" className="flex md:flex items-center gap-4 text-[#002147] font-black uppercase tracking-widest text-xs group">
+          <Link to="/asia-tours" className="flex md:flex items-center gap-4 text-[#002147] font-black uppercase tracking-widest text-xs group">
             View All <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-slate-100 flex items-center justify-center group-hover:bg-[#A61D24] group-hover:border-[#A61D24] group-hover:text-white transition-all duration-300">
               <ChevronRight size={20} className="sm:w-6 sm:h-6" />
             </div>
@@ -23,11 +23,13 @@ const DestinationsGrid = ({ destinations }) => {
           {destinations.map((dest, i) => (
             <Link 
               key={i} 
-              to="/destinations"
+              to="/asia-tours"
               className={`${i === 0 || i === 3 || i === 5 ? 'md:col-span-8' : 'md:col-span-4'} group relative overflow-hidden rounded-[1.25rem] sm:rounded-[2.5rem] md:rounded-[3.5rem] h-[250px] sm:h-[320px] md:h-[550px] cursor-pointer shadow-2xl block`}
             >
               <img 
-                src={`${dest.image}?auto=format&fit=crop&q=80&w=1200`} 
+                src={`${dest.image}?auto=format&fit=crop&q=80&w=600`} 
+                srcSet={`${dest.image}?auto=format&fit=crop&q=80&w=400 400w, ${dest.image}?auto=format&fit=crop&q=80&w=800 800w, ${dest.image}?auto=format&fit=crop&q=80&w=1200 1200w`}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 alt={dest.name} 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s]" 
                 loading="lazy"

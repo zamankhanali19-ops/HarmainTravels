@@ -23,6 +23,20 @@ const Home = () => {
       "@type": "PostalAddress",
       "addressCountry": "PK"
     },
+    "affiliation": [
+      {
+        "@type": "Organization",
+        "name": "Emirates"
+      },
+      {
+        "@type": "Organization",
+        "name": "Qatar Airways"
+      },
+      {
+        "@type": "Organization",
+        "name": "Marriott"
+      }
+    ],
     "sameAs": [
       "https://www.facebook.com/harmaintravels"
     ]
@@ -47,7 +61,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white selection:bg-[#A61D24] selection:text-white">
       <SEO 
-        title="Harmain Travels - Pakistan's Top Rated Travel Agency & Visa Consultant"
+        title="Harmain Travels | Premium Umrah Packages & Asian Luxury Tours from Islamabad"
         description="Harmain Travels is Pakistan's leading premium travel agency. Discover custom holiday packages, luxury hotels, easy flights, and comprehensive visa services for world-class travel experiences."
         schema={schema}
       />
@@ -75,25 +89,18 @@ const Home = () => {
               </p>
             </div>
             <div className="bg-white p-8 sm:p-12 rounded-[2rem] border border-slate-100 shadow-2xl">
-              <h4 className="text-xl md:text-2xl font-black text-[#002147] uppercase tracking-tighter mb-6">Trending Travel Keywords</h4>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#A61D24] rounded-full shrink-0"></span>
-                  Pakistan's Top Rated Travel Consultant
-                </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#A61D24] rounded-full shrink-0"></span>
-                  Bespoke Corporate Tour Management
-                </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#A61D24] rounded-full shrink-0"></span>
-                  Luxury Hotel & Resorts Network Asia
-                </li>
-                <li className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                  <span className="w-3 h-3 bg-[#A61D24] rounded-full shrink-0"></span>
-                  Comprehensive E-Visa Advisory Service
-                </li>
-              </ul>
+              <h4 className="text-xl md:text-2xl font-black text-[#002147] uppercase tracking-tighter mb-6">Expert Travel & Visa Consulting</h4>
+              <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                <p>
+                  As <strong>Pakistan's top rated travel consultant</strong>, our dedicated team in Islamabad ensures your journey is seamless from the first inquiry to your safe return. We believe that booking an international trip shouldn't be stressful. That's why we provide a <strong>comprehensive e-visa advisory service</strong> that simplifies the complex paperwork for popular destinations. We guide you step-by-step, maximizing your approval chances so you can focus on the excitement of your trip.
+                </p>
+                <p>
+                  Beyond personal holidays, we excel in <strong>bespoke corporate tour management</strong>. Whether you're organizing an executive retreat in the Maldives or a team-building conference, our travel architects handle all logistics, flight coordination, and elite ground transport. 
+                </p>
+                <p>
+                  We also grant you exclusive access to a <strong>luxury hotel & resorts network Asia</strong>. Through our deep-rooted partnerships, we secure VIP upgrades, flexible check-ins, and the best available rates, ensuring your stay is nothing short of extraordinary.
+                </p>
+              </div>
             </div>
           </div>
         </div>
