@@ -40,7 +40,7 @@ for (const route of staticRoutes) {
 // Add country routes
 for (const region of asianRegions) {
   for (const country of region.countries) {
-    const slug = country.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    const slug = country.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
     urls.push({
       loc: `${BASE_URL}/asia-tours/${slug}`,
       lastmod: currentDate,

@@ -13,7 +13,7 @@ const CountryDetail = () => {
   // Read the country either from navigation state or fallback to global lookup
   const country = location.state?.country || asianRegions
     .flatMap((r) => r.countries)
-    .find((c) => c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') === countrySlug);
+    .find((c) => c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '') === countrySlug);
 
   const canonicalUrl = `https://harmaintravels.com/asia-tours/${countrySlug}`;
 

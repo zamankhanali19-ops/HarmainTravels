@@ -5,30 +5,40 @@ import express from 'express';
 import puppeteer from 'puppeteer-core';
 import chromium from '@sparticuz/chromium';
 import { asianRegions } from '../src/data/asianRegions.js';
+import { blogPosts } from '../src/data/blogPosts.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const distPath = path.join(__dirname, '../dist');
 
+// --- Static routes matching React Router in App.jsx ---
 const staticRoutes = [
   '',
-  'destinations',
+  'asia-tours',
   'hotels',
   'flights',
   'services',
-  'umrah',
+  'umrah-packages',
+  'hajj-packages',
+  'visa-services',
+  'blog',
   'about',
   'contact'
 ];
 
 const pathsToPrerender = [...staticRoutes];
 
-// Add country routes
+// Add country detail routes (matching /asia-tours/:countrySlug)
 for (const region of asianRegions) {
   for (const country of region.countries) {
-    const slug = country.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    pathsToPrerender.push(`destinations/${slug}`);
+    const slug = country.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
+    pathsToPrerender.push(`asia-tours/${slug}`);
   }
+}
+
+// Add blog post routes (matching /blog/:slug)
+for (const post of blogPosts) {
+  pathsToPrerender.push(`blog/${post.slug}`);
 }
 
 async function startServer() {
@@ -49,6 +59,18 @@ async function startServer() {
   });
 }
 
+/**
+ * Strip localhost modulepreload links that leak from the dev server
+ * into prerendered HTML. These break production and confuse crawlers.
+ */
+function cleanHtml(html, port) {
+  // Remove any <link> tags pointing to localhost (modulepreload leaks)
+  html = html.replace(/<link[^>]*href="http:\/\/localhost[^"]*"[^>]*>/gi, '');
+  // Also remove any script tags pointing to localhost
+  html = html.replace(/<script[^>]*src="http:\/\/localhost[^"]*"[^>]*><\/script>/gi, '');
+  return html;
+}
+
 async function prerender() {
   console.log(`Starting prerender process for ${pathsToPrerender.length} pages...`);
   const { server, port } = await startServer();
@@ -62,6 +84,9 @@ async function prerender() {
   });
   const page = await browser.newPage();
   
+  let successCount = 0;
+  let failCount = 0;
+
   for (const route of pathsToPrerender) {
     const url = `${baseUrl}/${route}`;
     console.log(`Rendering: /${route}`);
@@ -69,11 +94,14 @@ async function prerender() {
     try {
       await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
       
-      // Give React a small moment to fully render dynamic parts if needed
+      // Give React a small moment to fully render dynamic parts
       await new Promise(resolve => setTimeout(resolve, 500));
       
-      const html = await page.evaluate(() => document.documentElement.outerHTML);
+      let html = await page.evaluate(() => document.documentElement.outerHTML);
       const doctype = '<!DOCTYPE html>';
+      
+      // Clean localhost references from the captured HTML
+      html = cleanHtml(html, port);
       
       // Determine the output path
       let outputDir = path.join(distPath, route);
@@ -88,15 +116,17 @@ async function prerender() {
       
       const outputPath = path.join(outputDir, 'index.html');
       fs.writeFileSync(outputPath, doctype + '\n' + html, 'utf8');
+      successCount++;
       
     } catch (err) {
-      console.error(`Failed to render /${route}:`, err);
+      console.error(`Failed to render /${route}:`, err.message);
+      failCount++;
     }
   }
 
   await browser.close();
   server.close();
-  console.log('Prerendering complete!');
+  console.log(`\nPrerendering complete! ${successCount} succeeded, ${failCount} failed.`);
 }
 
 prerender().catch(console.error);

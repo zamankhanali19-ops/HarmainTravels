@@ -9,7 +9,7 @@ const CountriesGrid = ({ asianRegions, activeRegion }) => {
           <div key={region.id} className="animate-in fade-in slide-in-from-bottom-10 duration-700">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 items-stretch">
               {region.countries.map((country, idx) => {
-                const slug = country.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                const slug = country.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
                 return (
                   <Link 
                     key={idx} 
