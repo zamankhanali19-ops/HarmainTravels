@@ -46,17 +46,32 @@ const CountryDetail = () => {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "TouristDestination",
-    "name": country.name,
-    "description": country.desc,
-    "touristType": [
-      "Leisure",
-      "Cultural"
-    ],
-    "includesAttraction": {
-      "@type": "TouristAttraction",
-      "name": country.famousPlace
-    }
+    "@graph": [
+      {
+        "@type": "TouristDestination",
+        "name": country.name,
+        "description": country.desc,
+        "touristType": [
+          "Leisure",
+          "Cultural"
+        ],
+        "includesAttraction": {
+          "@type": "TouristAttraction",
+          "name": country.famousPlace
+        }
+      },
+      ...(country.faq ? [{
+        "@type": "FAQPage",
+        "mainEntity": country.faq.map(item => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a
+          }
+        }))
+      }] : [])
+    ]
   };
 
   return (
@@ -115,15 +130,28 @@ const CountryDetail = () => {
                   </p>
                 </div>
 
-                {/* Requirements Grid */}
-                <h4 className="text-brand-white font-black uppercase text-xs tracking-wider mb-5">Standard Document Checklist:</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                  {standardRequirements.map((req, idx) => (
-                    <div key={idx} className="flex items-center gap-3.5 bg-brand-bg-secondary border border-white/5 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all">
-                      {req.icon}
-                      <span className="text-brand-white font-bold text-xs sm:text-sm tracking-wide uppercase leading-tight">{req.text}</span>
+                {/* Dynamic Visa Requirements Grid */}
+                <h4 className="text-brand-white font-black uppercase text-xs tracking-wider mb-5">Latest Visa Requirements (Pakistani Passport):</h4>
+                <div className="bg-brand-bg-secondary border border-brand-red/20 rounded-2xl p-6 shadow-sm mb-10">
+                  <div className="flex flex-col sm:flex-row justify-between border-b border-white/5 pb-4 mb-4 gap-4">
+                    <div>
+                      <span className="text-brand-silver font-bold uppercase text-[10px] tracking-wider block mb-1">Official Visa Fee (Approx)</span>
+                      <span className="text-brand-red font-black text-lg">{country.visaDetails?.fee || 'Contact Us for latest fees'}</span>
                     </div>
-                  ))}
+                    <div>
+                      <span className="text-brand-silver font-bold uppercase text-[10px] tracking-wider block mb-1">Processing Time</span>
+                      <span className="text-brand-white font-black text-lg">{country.visaDetails?.processingTime || 'Varies'}</span>
+                    </div>
+                  </div>
+                  <ul className="space-y-3">
+                    {(country.visaDetails?.requirements || []).map((req, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckCircle size={18} className="text-brand-red shrink-0 mt-0.5" />
+                        <span className="text-brand-white font-bold text-xs sm:text-sm tracking-wide uppercase leading-tight">{req}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-brand-silver text-[9px] mt-4 uppercase italic">Note: Visa fees and requirements are subject to change without notice based on official embassy updates.</p>
                 </div>
               </div>
 
@@ -330,24 +358,17 @@ const CountryDetail = () => {
                   Destination FAQs
                 </h3>
                 <div className="space-y-4">
-                  <div className="bg-brand-bg-secondary border border-white/5 p-5 rounded-2xl">
-                    <h5 className="text-brand-white font-black uppercase text-xs tracking-wider mb-2">Q: How do I apply for a tourist visa to {country.name}?</h5>
-                    <p className="text-brand-silver text-xs sm:text-sm font-bold uppercase leading-relaxed">
-                      We offer a direct visa consultation service. Submit your valid passport, 6-month bank statement, and we will handle the rest smoothly.
-                    </p>
-                  </div>
-                  <div className="bg-brand-bg-secondary border border-white/5 p-5 rounded-2xl">
-                    <h5 className="text-brand-white font-black uppercase text-xs tracking-wider mb-2">Q: Are halal dining options available in {country.name}?</h5>
-                    <p className="text-brand-silver text-xs sm:text-sm font-bold uppercase leading-relaxed">
-                      Yes! Halal dining is available across major metropolitan areas. We include curated local halal restaurant recommendations in your travel handbook.
-                    </p>
-                  </div>
-                  <div className="bg-brand-bg-secondary border border-white/5 p-5 rounded-2xl">
-                    <h5 className="text-brand-white font-black uppercase text-xs tracking-wider mb-2">Q: Is it safe for solo female travelers?</h5>
-                    <p className="text-brand-silver text-xs sm:text-sm font-bold uppercase leading-relaxed">
-                      Absolutely. {country.name} ranks highly for travel safety and security. Our team provides active 24/7 support throughout your journey.
-                    </p>
-                  </div>
+                  {(country.faq || []).map((faq, idx) => (
+                    <details key={idx} className="group bg-brand-bg-secondary border border-white/5 p-5 rounded-2xl cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                      <summary className="flex justify-between items-center font-black uppercase text-xs tracking-wider text-brand-white outline-none">
+                        <span>Q: {faq.q}</span>
+                        <span className="text-brand-red group-open:rotate-180 transition-transform duration-300">▼</span>
+                      </summary>
+                      <p className="text-brand-silver text-xs sm:text-sm font-bold uppercase leading-relaxed mt-4 pt-4 border-t border-white/5">
+                        {faq.a}
+                      </p>
+                    </details>
+                  ))}
                 </div>
               </div>
             </div>

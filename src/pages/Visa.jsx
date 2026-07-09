@@ -7,22 +7,25 @@ import { ArrowRight, CheckCircle2, Clock, FileText, Globe, ShieldCheck, MapPin, 
 const visaCountries = [
   {
     country: 'United Arab Emirates',
-    type: 'E-Visa / Transit / Tourist',
-    time: '24-48 Hours',
+    type: 'E-Visa (30/60 Days)',
+    time: '2-4 Working Days',
+    fee: 'PKR 28,000 (30 Days)',
     image: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&q=80&w=800',
     popular: true
   },
   {
     country: 'Saudi Arabia',
-    type: 'Tourist / Umrah / Business',
-    time: '3-5 Working Days',
+    type: 'Umrah / Tourist E-Visa',
+    time: '24-48 Hours',
+    fee: 'PKR 45,000 - 55,000',
     image: 'https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&q=80&w=800',
     popular: true
   },
   {
     country: 'Turkey',
-    type: 'E-Visa / Sticker Visa',
-    time: '24 Hrs / 10-15 Days',
+    type: 'Sticker Visa (Anatolia)',
+    time: '15-20 Working Days',
+    fee: 'PKR 45,000',
     image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&q=80&w=800',
     popular: true
   },
@@ -30,6 +33,7 @@ const visaCountries = [
     country: 'Schengen (Europe)',
     type: 'Short Stay (Type C)',
     time: '15-20 Working Days',
+    fee: 'EUR 80 + VFS Fee',
     image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=800',
     popular: false
   },
@@ -37,6 +41,7 @@ const visaCountries = [
     country: 'United Kingdom',
     type: 'Standard Visitor Visa',
     time: '3-4 Weeks',
+    fee: 'GBP 115 + VFS Fee',
     image: 'https://images.unsplash.com/photo-1527866959252-deab85ef7d1b?auto=format&fit=crop&q=80&w=800',
     popular: false
   },
@@ -44,6 +49,7 @@ const visaCountries = [
     country: 'United States',
     type: 'B1/B2 Visitor Visa',
     time: 'Varies by Embassy',
+    fee: 'USD 185',
     image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&q=80&w=800',
     popular: false
   },
@@ -51,53 +57,44 @@ const visaCountries = [
     country: 'Malaysia',
     type: 'E-Visa',
     time: '3-5 Working Days',
+    fee: 'PKR 12,500',
     image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=800',
     popular: false,
     officialDropbox: true
   },
   {
     country: 'Thailand',
-    type: 'Tourist / Sticker Visa',
-    time: '5-7 Working Days',
+    type: 'Sticker Visa',
+    time: '10-15 Working Days',
+    fee: 'PKR 15,000',
     image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=800',
     popular: false,
     officialDropbox: true
   },
   {
     country: 'Indonesia',
-    type: 'Tourist / Business / Transit',
-    time: '5-7 Working Days',
+    type: 'Calling Visa / B211A',
+    time: '10-14 Working Days',
+    fee: 'PKR 35,000 - 45,000',
     image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=800',
     popular: true,
     officialDropbox: true
   },
   {
     country: 'Singapore',
-    type: 'E-Visa',
-    time: '3-5 Working Days',
+    type: 'E-Visa via Agent',
+    time: '5-7 Working Days',
+    fee: 'PKR 16,500',
     image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&q=80&w=800',
     popular: false
   },
   {
     country: 'Azerbaijan',
-    type: 'E-Visa',
+    type: 'ASAN E-Visa',
     time: '3 Working Days',
+    fee: 'USD 26',
     image: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&q=80&w=800',
     popular: true
-  },
-  {
-    country: 'Canada',
-    type: 'Temporary Resident Visa',
-    time: '4-6 Weeks',
-    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=800',
-    popular: false
-  },
-  {
-    country: 'Australia',
-    type: 'Visitor Visa (Subclass 600)',
-    time: '3-4 Weeks',
-    image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800',
-    popular: false
   }
 ];
 
@@ -248,6 +245,12 @@ const Visa = () => {
                       <span className="text-brand-muted text-xs uppercase tracking-widest font-semibold">Processing</span>
                       <span className="text-brand-silver-light text-sm font-medium flex items-center gap-1">
                         <Clock size={14} className="text-brand-red" /> {item.time}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-start border-b border-white/5 pb-3">
+                      <span className="text-brand-muted text-xs uppercase tracking-widest font-semibold">Approx Fee</span>
+                      <span className="text-brand-red text-sm font-black flex items-center gap-1">
+                        {item.fee || 'Contact Us'}
                       </span>
                     </div>
                   </div>
