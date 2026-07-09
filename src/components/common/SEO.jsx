@@ -1,6 +1,10 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, url = "https://harmaintravels.com", image = "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=90&w=1200", schema }) => {
+const SEO = ({ title, description, image = "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=90&w=1200", schema }) => {
+  const location = useLocation();
+  const currentUrl = `https://harmaintravels.com${location.pathname === '/' ? '' : location.pathname}`;
+
   return (
     <Helmet htmlAttributes={{ lang: 'en' }}>
       {/* Standard metadata tags */}
@@ -9,14 +13,14 @@ const SEO = ({ title, description, url = "https://harmaintravels.com", image = "
       <meta name="theme-color" content="#002147" />
       
       {/* Canonical Link */}
-      <link rel="canonical" href={url} />
+      <link rel="canonical" href={currentUrl} />
 
       {/* Open Graph tags */}
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-      <meta property="og:url" content={url} />
+      <meta property="og:url" content={currentUrl} />
       <meta property="og:site_name" content="Harmain Travels" />
 
       {/* Twitter tags */}

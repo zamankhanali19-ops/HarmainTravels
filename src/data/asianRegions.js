@@ -360,7 +360,7 @@ export const asianRegions = [
           }
         ],
         "visaDetails": {
-          "fee": "PKR 15,000 (Approx)",
+          "fee": "PKR 20,000 (Incl. Service)",
           "processingTime": "10-15 Working Days",
           "requirements": [
             "Original Passport (6 months validity).",
@@ -396,7 +396,7 @@ export const asianRegions = [
           }
         ],
         "visaDetails": {
-          "fee": "PKR 12,500 (Approx)",
+          "fee": "PKR 15,000 (Incl. Service)",
           "processingTime": "3-5 Working Days",
           "requirements": [
             "Scanned Passport copy (bio page).",
@@ -727,7 +727,7 @@ export const asianRegions = [
           }
         ],
         "visaDetails": {
-          "fee": "PKR 45,000 - 55,000 (Umrah Visa)",
+          "fee": "PKR 65,000 (Incl. Service)",
           "processingTime": "24-48 Hours",
           "requirements": [
             "Scanned Passport copy (Valid for 6 months).",
@@ -762,7 +762,7 @@ export const asianRegions = [
           }
         ],
         "visaDetails": {
-          "fee": "PKR 28,000 (30 Days) / PKR 48,000 (60 Days)",
+          "fee": "PKR 30,000 (30-Day Incl. Service) / PKR 50,000 (60-Day)",
           "processingTime": "2-4 Working Days",
           "requirements": [
             "Clear Passport copy (Bio page).",
@@ -833,7 +833,7 @@ export const asianRegions = [
           }
         ],
         "visaDetails": {
-          "fee": "PKR 45,000 (Sticker Visa incl. insurance & drop box fee)",
+          "fee": "PKR 55,000 (Incl. Service)",
           "processingTime": "15-20 Working Days",
           "requirements": [
             "Original Passport (6 months validity).",

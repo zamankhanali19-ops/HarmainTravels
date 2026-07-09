@@ -26,9 +26,16 @@ const Home = () => {
       "foundingDate": "2010",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Harmain Travels Head Office",
+        "streetAddress": "Office No.15 1st floor Aalay Plaza Fazal-e-Haq road Blue Area",
         "addressLocality": "Islamabad",
+        "addressRegion": "Islamabad Capital Territory",
+        "postalCode": "44000",
         "addressCountry": "PK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.7294,
+        "longitude": 73.0931
       },
       "priceRange": "$$$",
       "openingHoursSpecification": {

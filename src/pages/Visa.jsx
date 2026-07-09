@@ -9,7 +9,7 @@ const visaCountries = [
     country: 'United Arab Emirates',
     type: 'E-Visa (30/60 Days)',
     time: '2-4 Working Days',
-    fee: 'PKR 28,000 (30 Days)',
+    fee: 'PKR 30,000 (30-Day Incl. Service)',
     image: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&q=80&w=800',
     popular: true
   },
@@ -17,7 +17,7 @@ const visaCountries = [
     country: 'Saudi Arabia',
     type: 'Umrah / Tourist E-Visa',
     time: '24-48 Hours',
-    fee: 'PKR 45,000 - 55,000',
+    fee: 'PKR 65,000 (Incl. Service)',
     image: 'https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&q=80&w=800',
     popular: true
   },
@@ -25,7 +25,7 @@ const visaCountries = [
     country: 'Turkey',
     type: 'Sticker Visa (Anatolia)',
     time: '15-20 Working Days',
-    fee: 'PKR 45,000',
+    fee: 'PKR 55,000 (Incl. Service)',
     image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&q=80&w=800',
     popular: true
   },
@@ -33,7 +33,7 @@ const visaCountries = [
     country: 'Schengen (Europe)',
     type: 'Short Stay (Type C)',
     time: '15-20 Working Days',
-    fee: 'EUR 80 + VFS Fee',
+    fee: 'EUR 102 (Incl. VFS Fee)',
     image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=800',
     popular: false
   },
@@ -49,7 +49,7 @@ const visaCountries = [
     country: 'United States',
     type: 'B1/B2 Visitor Visa',
     time: 'Varies by Embassy',
-    fee: 'USD 185',
+    fee: 'USD 185 (MRV Fee)',
     image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&q=80&w=800',
     popular: false
   },
@@ -57,7 +57,7 @@ const visaCountries = [
     country: 'Malaysia',
     type: 'E-Visa',
     time: '3-5 Working Days',
-    fee: 'PKR 12,500',
+    fee: 'PKR 15,000 (Incl. Service)',
     image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=800',
     popular: false,
     officialDropbox: true
@@ -66,7 +66,7 @@ const visaCountries = [
     country: 'Thailand',
     type: 'Sticker Visa',
     time: '10-15 Working Days',
-    fee: 'PKR 15,000',
+    fee: 'PKR 20,000 (Incl. Service)',
     image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=800',
     popular: false,
     officialDropbox: true
@@ -75,7 +75,7 @@ const visaCountries = [
     country: 'Indonesia',
     type: 'Calling Visa / B211A',
     time: '10-14 Working Days',
-    fee: 'PKR 35,000 - 45,000',
+    fee: 'PKR 30,000 (Drop-box Incl. Service)',
     image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=800',
     popular: true,
     officialDropbox: true
@@ -84,7 +84,7 @@ const visaCountries = [
     country: 'Singapore',
     type: 'E-Visa via Agent',
     time: '5-7 Working Days',
-    fee: 'PKR 16,500',
+    fee: 'PKR 25,000 (Incl. Service)',
     image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&q=80&w=800',
     popular: false
   },
@@ -92,7 +92,7 @@ const visaCountries = [
     country: 'Azerbaijan',
     type: 'ASAN E-Visa',
     time: '3 Working Days',
-    fee: 'USD 26',
+    fee: 'PKR 12,000 (Incl. Service)',
     image: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&q=80&w=800',
     popular: true
   }

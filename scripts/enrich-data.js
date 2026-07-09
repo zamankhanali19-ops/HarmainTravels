@@ -24,7 +24,7 @@ const specificData = {
       { q: 'How long does the Umrah visa take?', a: 'Standard Umrah e-visas through our agency take 24 to 48 hours.' }
     ],
     visaDetails: {
-      fee: 'PKR 45,000 - 55,000 (Umrah Visa)',
+      fee: 'PKR 65,000 (Incl. Service)',
       processingTime: '24-48 Hours',
       requirements: [
         'Scanned Passport copy (Valid for 6 months).',
@@ -48,7 +48,7 @@ const specificData = {
       { q: 'What is the age restriction?', a: 'Currently, there are strict approvals for single males under certain ages or professions. Families face no issues.' }
     ],
     visaDetails: {
-      fee: 'PKR 28,000 (30 Days) / PKR 48,000 (60 Days)',
+      fee: 'PKR 30,000 (30-Day Incl. Service) / PKR 50,000 (60-Day)',
       processingTime: '2-4 Working Days',
       requirements: [
         'Clear Passport copy (Bio page).',
@@ -72,7 +72,7 @@ const specificData = {
       { q: 'Where do I apply for the sticker visa?', a: 'Applications must go through Anatolia Travel Services visa drop box centers in Pakistan.' }
     ],
     visaDetails: {
-      fee: 'PKR 45,000 (Sticker Visa incl. insurance & drop box fee)',
+      fee: 'PKR 55,000 (Incl. Service)',
       processingTime: '15-20 Working Days',
       requirements: [
         'Original Passport (6 months validity).',
@@ -97,7 +97,7 @@ const specificData = {
       { q: 'Is polio vaccination required?', a: 'A polio vaccination certificate is highly recommended when departing from Pakistan.' }
     ],
     visaDetails: {
-      fee: 'PKR 12,500 (Approx)',
+      fee: 'PKR 15,000 (Incl. Service)',
       processingTime: '3-5 Working Days',
       requirements: [
         'Scanned Passport copy (bio page).',
@@ -122,7 +122,7 @@ const specificData = {
       { q: 'What is the minimum bank balance required?', a: 'A closing balance of at least PKR 500,000 for a single person is recommended.' }
     ],
     visaDetails: {
-      fee: 'PKR 15,000 (Approx)',
+      fee: 'PKR 20,000 (Incl. Service)',
       processingTime: '10-15 Working Days',
       requirements: [
         'Original Passport (6 months validity).',
