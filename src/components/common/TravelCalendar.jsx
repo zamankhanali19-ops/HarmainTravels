@@ -40,30 +40,30 @@ export const TravelCalendar = ({ selectedDate, onDateSelect }) => {
   return (
     <div className="w-full max-w-sm mx-auto">
       <div className="flex items-center justify-between mb-4">
-        <h4 className="text-sm font-black text-[#002147] uppercase tracking-wider">
+        <h4 className="text-sm font-black text-brand-white uppercase tracking-wider">
           {months[month]} {year}
         </h4>
         <div className="flex items-center gap-2">
           <button 
             type="button"
             onClick={prevMonth} 
-            className="p-1.5 hover:bg-slate-50 rounded-full transition-colors border border-slate-100"
+            className="p-1.5 hover:bg-brand-bg-primary rounded-full transition-colors border border-white/5"
           >
-            <ChevronLeft size={18} className="text-[#A61D24]" />
+            <ChevronLeft size={18} className="text-brand-red" />
           </button>
           <button 
             type="button"
             onClick={nextMonth} 
-            className="p-1.5 hover:bg-slate-50 rounded-full transition-colors border border-slate-100"
+            className="p-1.5 hover:bg-brand-bg-primary rounded-full transition-colors border border-white/5"
           >
-            <ChevronRight size={18} className="text-[#A61D24]" />
+            <ChevronRight size={18} className="text-brand-red" />
           </button>
         </div>
       </div>
 
       <div className="grid grid-cols-7 gap-1 text-center mb-2">
         {days.map((d, index) => (
-          <span key={index} className="text-[10px] font-black uppercase tracking-wider text-slate-400">
+          <span key={index} className="text-[10px] font-black uppercase tracking-wider text-brand-muted">
             {d}
           </span>
         ))}
@@ -88,8 +88,8 @@ export const TravelCalendar = ({ selectedDate, onDateSelect }) => {
               onClick={() => handleSelect(day)}
               className={`p-2 text-xs font-bold rounded-xl transition-all ${
                 isSelected 
-                  ? 'bg-[#A61D24] text-white shadow-lg' 
-                  : 'hover:bg-slate-100 text-[#002147] border border-transparent'
+                  ? 'bg-brand-red text-white shadow-lg' 
+                  : 'hover:bg-white/10 text-brand-white border border-transparent'
               }`}
             >
               {day}

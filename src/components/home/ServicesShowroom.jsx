@@ -1,30 +1,44 @@
-import { Plane, Map, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ShieldCheck, Clock, Crown, Globe, Briefcase, HeartHandshake } from 'lucide-react';
 
 const ServicesShowroom = () => {
+  const services = [
+    { icon: Crown, title: 'VIP Corporate Travel', desc: 'Bespoke executive itineraries with elite ground transport and priority boardings.' },
+    { icon: Globe, title: 'Global Concierge', desc: 'Dedicated 24/7 travel concierge to manage all your bookings and sudden changes.' },
+    { icon: ShieldCheck, title: 'Secure Visas', desc: 'Streamlined, expert e-visa consulting maximizing your approval rates.' },
+    { icon: HeartHandshake, title: 'Spiritual Journeys', desc: 'Premium Umrah & Hajj packages with stays at 5-star Haram-view properties.' },
+    { icon: Briefcase, title: 'Event Logistics', desc: 'Complete travel coordination for destination weddings and corporate retreats.' },
+    { icon: Clock, title: 'Fast-Track Services', desc: 'Skip the lines with our exclusive airport meet & greet and fast-track immigration.' },
+  ];
+
   return (
-    <section className="py-20 md:py-40 bg-slate-50 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#A61D24]/5 rounded-full blur-[150px] translate-x-1/2 -translate-y-1/2"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 md:mb-32">
-          <h2 className="text-4xl sm:text-6xl md:text-8xl font-black text-[#002147] uppercase tracking-tighter mb-4 md:mb-8">
-            Why <span className="text-[#A61D24]">Harmain</span>?
+    <section className="py-24 bg-brand-bg-primary relative border-t border-white/5">
+      <div className="max-w-[1500px] mx-auto px-6 sm:px-8 lg:px-10">
+        <div className="text-center mb-16">
+          <span className="text-brand-red font-display font-semibold uppercase tracking-[0.3em] text-xs mb-4 block">World Class Offerings</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-brand-white uppercase tracking-tight">
+            Our Signature <span className="text-brand-red">Services</span>
           </h2>
-          <div className="w-16 md:w-24 h-2 bg-[#A61D24] mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
-          {[
-            { t: "VIP Ticketing", i: <Plane size={36} className="md:w-[48px]" />, d: "First-class flight management with zero-wait support." },
-            { t: "Elite Planning", i: <Map size={36} className="md:w-[48px]" />, d: "Bespoke itineraries crafted by local regional experts." },
-            { t: "Global Shield", i: <ShieldCheck size={36} className="md:w-[48px]" />, d: "24/7 dedicated concierge during your entire journey." }
-          ].map((s, i) => (
-            <div key={i} className="text-center group">
-              <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl flex items-center justify-center mx-auto mb-6 md:mb-10 text-[#A61D24] group-hover:bg-[#A61D24] group-hover:text-white transition-all duration-500 group-hover:-rotate-12">
-                {s.i}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((s, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="glass-card p-8 group cursor-pointer"
+            >
+              <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                <s.icon size={24} />
               </div>
-              <h3 className="text-xl md:text-3xl font-black text-[#002147] uppercase tracking-tighter mb-3 md:mb-6">{s.t}</h3>
-              <p className="text-slate-500 text-sm md:text-lg font-medium leading-relaxed max-w-xs mx-auto">{s.d}</p>
-            </div>
+              <h3 className="text-xl font-display font-bold text-brand-white mb-3 group-hover:text-brand-red transition-colors">{s.title}</h3>
+              <p className="text-brand-muted font-body text-sm leading-relaxed">
+                {s.desc}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>

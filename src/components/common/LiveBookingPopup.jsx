@@ -48,29 +48,29 @@ const LiveBookingPopup = () => {
         isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-20 opacity-0 scale-95 pointer-events-none'
       }`}
     >
-      <div className="bg-white/95 backdrop-blur-md border border-slate-100 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] rounded-2xl p-3 sm:p-4 pr-10 flex items-center gap-3 sm:gap-4 max-w-[280px] sm:max-w-[320px] relative group">
+      <div className="bg-brand-bg-secondary/95 backdrop-blur-md border border-white/5 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] rounded-2xl p-3 sm:p-4 pr-10 flex items-center gap-3 sm:gap-4 max-w-[280px] sm:max-w-[320px] relative group">
         <button 
           onClick={() => setIsVisible(false)}
-          className="absolute top-2 right-2 text-slate-300 hover:text-slate-500 transition-colors"
+          className="absolute top-2 right-2 text-brand-muted hover:text-brand-muted transition-colors"
         >
           <X size={14} />
         </button>
 
-        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[#A61D24] to-[#002147] flex items-center justify-center shrink-0 shadow-inner relative">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-brand-red to-brand-bg-primary flex items-center justify-center shrink-0 shadow-inner relative">
           <Plane size={18} className="text-white" />
-          <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5">
+          <div className="absolute -bottom-1 -right-1 bg-brand-bg-secondary rounded-full p-0.5">
             <CheckCircle2 size={12} className="text-green-500 fill-green-100" />
           </div>
         </div>
         
         <div className="flex flex-col">
-          <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5 flex items-center gap-1">
+          <span className="text-[9px] sm:text-[10px] font-bold text-brand-muted uppercase tracking-widest mb-0.5 flex items-center gap-1">
             Verified Booking
           </span>
-          <p className="text-xs sm:text-sm font-extrabold text-[#002147] leading-tight">
-            {currentBooking.name} from {currentBooking.location} booked a trip to <span className="text-[#A61D24]">{currentBooking.destination}</span>
+          <p className="text-xs sm:text-sm font-extrabold text-brand-white leading-tight">
+            {currentBooking.name} from {currentBooking.location} booked a trip to <span className="text-brand-red">{currentBooking.destination}</span>
           </p>
-          <span className="text-[10px] font-medium text-slate-400 mt-1">
+          <span className="text-[10px] font-medium text-brand-muted mt-1">
             {currentBooking.time}
           </span>
         </div>

@@ -9,13 +9,13 @@ import { Calendar, User, ArrowLeft, Share2 } from 'lucide-react';
 // A simple Markdown parser to render HTML for this specific use case
 const renderMarkdown = (content) => {
   let html = content
-    .replace(/^### (.*$)/gim, '<h3 class="text-2xl md:text-3xl font-black text-[#002147] mt-10 mb-4 tracking-tighter uppercase">$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2 class="text-3xl md:text-4xl font-black text-[#002147] mt-12 mb-6 tracking-tighter uppercase">$1</h2>')
+    .replace(/^### (.*$)/gim, '<h3 class="text-2xl md:text-3xl font-black text-brand-white mt-10 mb-4 tracking-tighter uppercase">$1</h3>')
+    .replace(/^## (.*$)/gim, '<h2 class="text-3xl md:text-4xl font-black text-brand-white mt-12 mb-6 tracking-tighter uppercase">$1</h2>')
     .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
     .replace(/\*(.*?)\*/gim, '<em>$1</em>')
     .replace(/^\* (.*$)/gim, '<li class="ml-6 mb-2 list-disc">$1</li>')
     .replace(/^- (.*$)/gim, '<li class="ml-6 mb-2 list-disc">$1</li>')
-    .replace(/^\d\. (.*$)/gim, '<li class="ml-6 mb-2 list-decimal font-bold text-[#A61D24]"><span class="font-normal text-slate-600">$1</span></li>')
+    .replace(/^\d\. (.*$)/gim, '<li class="ml-6 mb-2 list-decimal font-bold text-brand-red"><span class="font-normal text-brand-silver">$1</span></li>')
     .replace(/\n\n/gim, '</p><p class="mb-6 leading-relaxed">')
     .replace(/<\/p><p class="mb-6 leading-relaxed"><li/gim, '<ul class="mb-6"><li')
     .replace(/<\/li><\/p>/gim, '</li></ul>');
@@ -38,8 +38,8 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center p-8">
-        <h2 className="text-3xl font-black text-[#002147] mb-4 uppercase tracking-tighter">Article Not Found</h2>
+      <div className="min-h-screen bg-brand-bg-secondary flex flex-col items-center justify-center p-8">
+        <h2 className="text-3xl font-black text-brand-white mb-4 uppercase tracking-tighter">Article Not Found</h2>
         <Link to="/blog" className="btn-primary !px-6 !py-3">Go Back to Insights</Link>
       </div>
     );
@@ -66,7 +66,7 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
         title={`${post.title} | Harmain Travels`}
         description={post.excerpt}
@@ -77,17 +77,17 @@ const BlogPost = () => {
       <Navbar />
       
       {/* Article Header */}
-      <section className="pt-40 pb-12 bg-slate-50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#A61D24]/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2"></div>
+      <section className="pt-40 pb-12 bg-brand-bg-primary relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-500 hover:text-[#A61D24] transition-colors mb-8">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-brand-muted hover:text-brand-red transition-colors mb-8">
             <ArrowLeft size={16} /> Back to All Insights
           </Link>
-          <div className="flex items-center gap-6 text-xs font-bold text-slate-400 mb-6 uppercase tracking-wider">
-            <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm"><Calendar size={14} className="text-[#A61D24]" /> {post.date}</span>
-            <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm"><User size={14} className="text-[#A61D24]" /> {post.author}</span>
+          <div className="flex items-center gap-6 text-xs font-bold text-brand-muted mb-6 uppercase tracking-wider">
+            <span className="flex items-center gap-2 bg-brand-bg-secondary px-4 py-2 rounded-full shadow-sm"><Calendar size={14} className="text-brand-red" /> {post.date}</span>
+            <span className="flex items-center gap-2 bg-brand-bg-secondary px-4 py-2 rounded-full shadow-sm"><User size={14} className="text-brand-red" /> {post.author}</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#002147] uppercase tracking-tighter leading-tight mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-brand-white uppercase tracking-tighter leading-tight mb-8">
             {post.title}
           </h1>
         </div>
@@ -104,15 +104,15 @@ const BlogPost = () => {
 
       {/* Article Content */}
       <section className="py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="prose prose-lg prose-slate max-w-none text-slate-600">
+        <div className="prose prose-lg prose-slate max-w-none text-brand-silver">
           <div dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }} />
         </div>
         
         {/* Share & Tags */}
-        <div className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <span className="text-xs font-black uppercase tracking-widest text-[#002147]">Share this guide:</span>
-            <button className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-500 hover:bg-[#002147] hover:text-white transition-all">
+            <span className="text-xs font-black uppercase tracking-widest text-brand-white">Share this guide:</span>
+            <button className="w-10 h-10 bg-brand-bg-primary rounded-full flex items-center justify-center text-brand-muted hover:bg-brand-bg-primary hover:text-white transition-all">
               <Share2 size={16} />
             </button>
           </div>

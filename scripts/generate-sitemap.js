@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { asianRegions } from '../src/data/asianRegions.js';
+import { blogPosts } from '../src/data/blogPosts.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,11 +12,14 @@ const currentDate = new Date().toISOString().split('T')[0];
 
 const staticRoutes = [
   { path: '', priority: '1.0', changefreq: 'daily' },
-  { path: 'destinations', priority: '0.8', changefreq: 'weekly' },
+  { path: 'asia-tours', priority: '0.8', changefreq: 'weekly' },
   { path: 'hotels', priority: '0.8', changefreq: 'weekly' },
   { path: 'flights', priority: '0.8', changefreq: 'weekly' },
   { path: 'services', priority: '0.8', changefreq: 'weekly' },
-  { path: 'umrah', priority: '0.8', changefreq: 'weekly' },
+  { path: 'umrah-packages', priority: '0.8', changefreq: 'weekly' },
+  { path: 'hajj-packages', priority: '0.8', changefreq: 'weekly' },
+  { path: 'visa-services', priority: '0.8', changefreq: 'weekly' },
+  { path: 'blog', priority: '0.8', changefreq: 'weekly' },
   { path: 'about', priority: '0.8', changefreq: 'monthly' },
   { path: 'contact', priority: '0.8', changefreq: 'monthly' }
 ];
@@ -38,12 +42,22 @@ for (const region of asianRegions) {
   for (const country of region.countries) {
     const slug = country.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     urls.push({
-      loc: `${BASE_URL}/destinations/${slug}`,
+      loc: `${BASE_URL}/asia-tours/${slug}`,
       lastmod: currentDate,
       changefreq: 'weekly',
       priority: '0.6'
     });
   }
+}
+
+// Add blog routes
+for (const post of blogPosts) {
+  urls.push({
+    loc: `${BASE_URL}/blog/${post.slug}`,
+    lastmod: post.date || currentDate,
+    changefreq: 'monthly',
+    priority: '0.7'
+  });
 }
 
 // Generate XML

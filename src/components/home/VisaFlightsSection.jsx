@@ -1,0 +1,55 @@
+import { motion } from 'framer-motion';
+import { PlaneTakeoff, FileCheck } from 'lucide-react';
+
+const VisaFlightsSection = () => {
+  return (
+    <section className="py-24 bg-brand-bg-primary border-t border-white/5">
+      <div className="max-w-[1500px] mx-auto px-6 sm:px-8 lg:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-card p-10 md:p-14 overflow-hidden relative group"
+          >
+            <div className="absolute right-0 top-0 w-64 h-64 bg-brand-red/5 rounded-full blur-[80px] group-hover:bg-brand-red/10 transition-colors"></div>
+            <div className="w-16 h-16 bg-brand-red rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg">
+              <FileCheck size={28} />
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-display font-bold text-brand-white uppercase tracking-tight mb-4">
+              Global Visa Services
+            </h3>
+            <p className="text-brand-muted font-body text-base leading-relaxed mb-8">
+              Navigate the complexities of international travel with our expert visa consulting. We provide end-to-end assistance for tourist, business, and transit visas across major destinations in Asia, Europe, and the Americas, ensuring a high approval rate.
+            </p>
+            <button className="btn-secondary">Explore Visas</button>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="glass-card p-10 md:p-14 overflow-hidden relative group"
+          >
+            <div className="absolute right-0 top-0 w-64 h-64 bg-brand-silver/5 rounded-full blur-[80px] group-hover:bg-brand-silver/10 transition-colors"></div>
+            <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-brand-silver mb-8 shadow-lg group-hover:border-brand-silver transition-colors">
+              <PlaneTakeoff size={28} />
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-display font-bold text-brand-white uppercase tracking-tight mb-4">
+              Premium Air Tickets
+            </h3>
+            <p className="text-brand-muted font-body text-base leading-relaxed mb-8">
+              Fly with the world's best airlines. As an authorized IATA partner, we offer competitive rates on First Class, Business, and Economy flights. Benefit from our exclusive corporate affiliations with Emirates, Qatar Airways, and Saudia.
+            </p>
+            <button className="btn-primary">Book Flights</button>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default VisaFlightsSection;

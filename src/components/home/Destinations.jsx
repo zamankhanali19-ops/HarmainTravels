@@ -30,10 +30,10 @@ const destinations = [
 
 const Destinations = () => {
   return (
-    <section id="destinations" className="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-slate-50">
+    <section id="destinations" className="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-brand-bg-primary">
       <div className="flex flex-col items-center mb-24">
         <span className="text-[#931328] font-black uppercase tracking-[0.5em] text-xs mb-4">Our Specialty</span>
-        <h2 className="text-5xl md:text-7xl font-black text-[#002147] uppercase tracking-tighter">Asian Hub</h2>
+        <h2 className="text-5xl md:text-7xl font-black text-brand-white uppercase tracking-tighter">Asian Hub</h2>
         <div className="w-24 h-2 bg-[#931328] mt-4 rounded-full"></div>
       </div>
 
@@ -46,10 +46,10 @@ const Destinations = () => {
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#002147] via-[#002147]/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-bg-primary via-brand-bg-primary/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-5 md:p-10 text-white w-full">
               <h3 className="text-xl md:text-3xl font-black mb-2 md:mb-4 uppercase tracking-tighter break-words leading-tight line-clamp-1">{dest.name}</h3>
-              <p className="text-slate-200 mb-4 md:mb-8 opacity-0 group-hover:opacity-100 transition-all duration-500 line-clamp-2 md:line-clamp-3">
+              <p className="text-brand-silver-light mb-4 md:mb-8 opacity-0 group-hover:opacity-100 transition-all duration-500 line-clamp-2 md:line-clamp-3">
                 {dest.description}
               </p>
               <button className="text-[#931328] font-black uppercase tracking-widest text-xs border-b-2 border-[#931328] pb-2">

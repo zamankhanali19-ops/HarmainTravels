@@ -27,7 +27,7 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
         title="Premium Travel Services & Visa Consulting | Harmain Travels"
         description="Comprehensive travel services including luxury bookings, corporate tours, and expedited visa processing for destinations across Asia."
@@ -36,9 +36,9 @@ const Services = () => {
       />
       <Navbar />
       
-      <section className="pt-48 pb-24 bg-slate-50 text-center px-4">
+      <section className="pt-48 pb-24 bg-brand-bg-primary text-center px-4">
         <span className="text-[#931328] font-black uppercase tracking-[0.5em] text-xs mb-6 block">What We Do</span>
-        <h1 className="text-5xl md:text-8xl font-black text-[#002147] uppercase tracking-tighter mb-8 leading-none">
+        <h1 className="text-5xl md:text-8xl font-black text-brand-white uppercase tracking-tighter mb-8 leading-none">
           Professional <br/> <span className="text-[#931328]">Travel Services</span>
         </h1>
       </section>
@@ -46,12 +46,12 @@ const Services = () => {
       <section className="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {allServices.map((s, i) => (
-            <div key={i} className="p-12 rounded-[3.5rem] bg-white shadow-2xl border-l-8 border-[#931328] hover:bg-[#002147] group transition-all duration-500">
+            <div key={i} className="p-12 rounded-[3.5rem] bg-brand-bg-secondary shadow-2xl border-l-8 border-[#931328] hover:bg-brand-bg-primary group transition-all duration-500">
               <div className="text-[#931328] group-hover:text-white transition-colors mb-10">
                 {s.icon}
               </div>
-              <h3 className="text-3xl font-black text-[#002147] group-hover:text-white mb-6 uppercase tracking-tighter transition-colors">{s.title}</h3>
-              <p className="text-slate-500 group-hover:text-slate-300 text-lg font-medium transition-colors leading-relaxed">{s.desc}</p>
+              <h3 className="text-3xl font-black text-brand-white group-hover:text-white mb-6 uppercase tracking-tighter transition-colors">{s.title}</h3>
+              <p className="text-brand-muted group-hover:text-brand-muted text-lg font-medium transition-colors leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>

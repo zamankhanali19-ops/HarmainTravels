@@ -1,21 +1,63 @@
-import { Quote } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Quote, Star } from 'lucide-react';
 
 const Testimonials = () => {
+  const reviews = [
+    {
+      name: "Ahmed Raza",
+      role: "Corporate Executive",
+      text: "The VIP Umrah package was beyond our expectations. The attention to detail, from the private airport transfer in Jeddah to the Fairmont suites, was impeccable.",
+      rating: 5
+    },
+    {
+      name: "Sarah Khan",
+      role: "Frequent Traveler",
+      text: "Harmain Travels arranged our honeymoon in the Maldives. The luxury resort selection and the seamless flight connections made it a truly memorable experience.",
+      rating: 5
+    },
+    {
+      name: "Usman Ali",
+      role: "Business Consultant",
+      text: "I rely on Harmain for all my international corporate travel. Their visa team is incredibly efficient and has saved me from multiple last-minute travel disasters.",
+      rating: 5
+    }
+  ];
+
   return (
-    <section className="py-20 md:py-40 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Quote size={48} className="md:w-[80px] mx-auto text-slate-100 mb-6 md:mb-12" />
-        <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-[#002147] italic mb-8 md:mb-20 leading-tight max-w-5xl mx-auto uppercase tracking-tighter">
-          "Harmain Travels transformed our Asian tour into a masterpiece of architectural wonder and luxury."
-        </h2>
-        <div className="flex items-center justify-center gap-4 md:gap-6">
-          <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-slate-100 overflow-hidden">
-             <img src="https://i.pravatar.cc/150?u=1" alt="Avatar" className="w-full h-full object-cover" />
-          </div>
-          <div className="text-left">
-            <div className="font-black text-[#002147] uppercase tracking-widest text-[10px] md:text-xs">Ayesha Khan</div>
-            <div className="text-[#A61D24] text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em]">VIP Client, Karachi</div>
-          </div>
+    <section className="py-24 bg-brand-bg-primary relative border-t border-white/5">
+      <div className="max-w-[1500px] mx-auto px-6 sm:px-8 lg:px-10">
+        <div className="text-center mb-16">
+          <span className="text-brand-red font-display font-semibold uppercase tracking-[0.3em] text-xs mb-4 block">Client Experiences</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-brand-white uppercase tracking-tight">
+            Word on the <span className="text-brand-red">Street</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {reviews.map((review, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="glass-card p-8 relative"
+            >
+              <Quote size={40} className="text-brand-red/20 absolute top-6 right-6" />
+              <div className="flex gap-1 mb-6">
+                {[...Array(review.rating)].map((_, idx) => (
+                  <Star key={idx} size={16} className="text-brand-red fill-brand-red" />
+                ))}
+              </div>
+              <p className="text-brand-silver font-body leading-relaxed mb-8 italic">
+                "{review.text}"
+              </p>
+              <div>
+                <h5 className="font-display font-bold text-brand-white uppercase tracking-wider text-sm">{review.name}</h5>
+                <span className="text-brand-muted text-xs font-medium tracking-widest uppercase">{review.role}</span>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

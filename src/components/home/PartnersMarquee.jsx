@@ -22,8 +22,8 @@ const PartnersMarquee = () => {
           <div key={i} className="flex flex-col items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 cursor-pointer group">
             <h4 className="text-white font-black text-xl sm:text-2xl uppercase tracking-[0.2em]">{partner.name}</h4>
             <div className="flex items-center gap-2 mt-1">
-              <Star size={10} className="text-[#A61D24] group-hover:text-[#FFC107] transition-colors" />
-              <span className="text-slate-400 text-[8px] sm:text-[10px] uppercase tracking-widest font-bold">{partner.desc}</span>
+              <Star size={10} className="text-brand-red group-hover:text-[#FFC107] transition-colors" />
+              <span className="text-brand-muted text-[8px] sm:text-[10px] uppercase tracking-widest font-bold">{partner.desc}</span>
             </div>
           </div>
         ))}
