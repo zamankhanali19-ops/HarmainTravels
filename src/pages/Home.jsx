@@ -16,14 +16,47 @@ const Home = () => {
   const schema = [
     {
       "@context": "https://schema.org",
-      "@type": "TravelAgency",
+      "@type": "Organization",
+      "@id": "https://harmaintravels.com/#organization",
       "name": "Harmain Travels",
+      "alternateName": "Harmain Travel & Tours",
+      "url": "https://harmaintravels.com/",
+      "logo": "https://harmaintravels.com/logo.png",
+      "foundingDate": "2010",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Ali Zaman"
+        },
+        {
+          "@type": "Person",
+          "name": "Arslan Ahmed"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+92325880050",
+        "contactType": "customer service",
+        "email": "harmaintravelisb@gmail.com",
+        "areaServed": "PK",
+        "availableLanguage": ["English", "Urdu"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/harmaintravels",
+        "https://www.instagram.com/harmaintravels"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "@id": "https://harmaintravels.com/#localbusiness",
+      "name": "Harmain Travels Islamabad",
       "image": "https://harmaintravels.com/logo.png",
-      "@id": "https://harmaintravels.com/",
       "url": "https://harmaintravels.com/",
       "telephone": "+92325880050",
-      "email": "harmaintravelisb@gmail.com",
-      "foundingDate": "2010",
+      "parentOrganization": {
+        "@id": "https://harmaintravels.com/#organization"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Office No.15 1st floor Aalay Plaza Fazal-e-Haq road Blue Area",
@@ -50,11 +83,7 @@ const Home = () => {
         ],
         "opens": "09:00",
         "closes": "18:00"
-      },
-      "sameAs": [
-        "https://www.facebook.com/harmaintravels",
-        "https://www.instagram.com/harmaintravels"
-      ]
+      }
     }
   ];
 

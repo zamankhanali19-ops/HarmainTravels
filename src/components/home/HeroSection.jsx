@@ -7,12 +7,17 @@ const HeroSection = () => {
   const [activeTab, setActiveTab] = useState('flights');
   const [field1, setField1] = useState('');
   const [field2, setField2] = useState('');
+  const [shakeField, setShakeField] = useState(false);
   const navigate = useNavigate();
 
   const isFormValid = field1.trim() !== '' && field2.trim() !== '';
 
   const handleSearch = () => {
-    if (!isFormValid) return;
+    if (!isFormValid) {
+      setShakeField(true);
+      setTimeout(() => setShakeField(false), 500);
+      return;
+    }
     if (activeTab === 'flights') navigate('/flights');
     if (activeTab === 'hotels') navigate('/hotels');
     if (activeTab === 'umrah') navigate('/umrah-packages');
@@ -92,7 +97,7 @@ const HeroSection = () => {
                 <button
                   key={tab.id}
                   onClick={() => { setActiveTab(tab.id); setField1(''); setField2(''); }}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg font-display font-medium text-xs sm:text-sm transition-all duration-300 ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-lg font-display font-medium text-xs sm:text-sm transition-all duration-300 ${
                     activeTab === tab.id 
                       ? 'bg-brand-red text-brand-white shadow-md' 
                       : 'text-brand-silver hover:text-brand-white hover:bg-white/5'
@@ -105,47 +110,52 @@ const HeroSection = () => {
 
             {/* Form */}
             <div className="space-y-4">
-              <div className="bg-brand-bg-primary/50 border border-white/10 rounded-xl px-4 py-3 flex items-center focus-within:border-brand-red transition-colors">
+              <motion.div 
+                animate={shakeField && !field1 ? { x: [-10, 10, -10, 10, 0] } : {}}
+                transition={{ duration: 0.4 }}
+                className={`bg-brand-bg-primary/50 border ${shakeField && !field1 ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 flex items-center focus-within:border-brand-red transition-colors`}
+              >
                 <MapPin size={20} className="text-brand-red mr-3 shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <div className="text-[10px] font-display font-semibold text-brand-muted uppercase tracking-widest mb-1">
+                  <label htmlFor="search-location" className="block text-[10px] font-display font-semibold text-brand-muted uppercase tracking-widest mb-1">
                     {activeTab === 'flights' ? 'Destination' : activeTab === 'hotels' ? 'City / Hotel' : 'Location'}
-                  </div>
+                  </label>
                   <input 
+                    id="search-location"
                     type="text" 
                     value={field1}
                     onChange={(e) => setField1(e.target.value)}
                     placeholder={activeTab === 'flights' ? 'Where to fly?' : activeTab === 'hotels' ? 'Where to stay?' : 'Makkah / Madinah'} 
-                    className="w-full bg-transparent text-sm sm:text-base font-body text-brand-white outline-none placeholder:text-brand-muted truncate" 
+                    className="w-full bg-transparent text-sm sm:text-base font-body text-brand-white outline-none placeholder:text-brand-muted" 
                   />
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="bg-brand-bg-primary/50 border border-white/10 rounded-xl px-4 py-3 flex items-center focus-within:border-brand-red transition-colors">
+              <motion.div 
+                animate={shakeField && !field2 ? { x: [-10, 10, -10, 10, 0] } : {}}
+                transition={{ duration: 0.4 }}
+                className={`bg-brand-bg-primary/50 border ${shakeField && !field2 ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 flex items-center focus-within:border-brand-red transition-colors`}
+              >
                 <Calendar size={20} className="text-brand-red mr-3 shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <div className="text-[10px] font-display font-semibold text-brand-muted uppercase tracking-widest mb-1">
+                  <label htmlFor="search-date" className="block text-[10px] font-display font-semibold text-brand-muted uppercase tracking-widest mb-1">
                     {activeTab === 'flights' ? 'Travel Date' : activeTab === 'hotels' ? 'Check-In' : 'Departure Date'}
-                  </div>
+                  </label>
                   <input 
+                    id="search-date"
                     type="text" 
                     value={field2}
                     onChange={(e) => setField2(e.target.value)}
                     placeholder="Select dates" 
-                    className="w-full bg-transparent text-sm sm:text-base font-body text-brand-white outline-none placeholder:text-brand-muted truncate" 
+                    className="w-full bg-transparent text-sm sm:text-base font-body text-brand-white outline-none placeholder:text-brand-muted" 
                   />
                 </div>
-              </div>
+              </motion.div>
 
               <button 
                 onClick={handleSearch}
-                disabled={!isFormValid}
                 aria-label={`Search for ${activeTab}`}
-                className={`w-full py-4 rounded-xl font-display font-semibold uppercase tracking-widest text-xs transition-all duration-300 flex items-center justify-center gap-2 mt-2 ${
-                  isFormValid 
-                    ? 'bg-gradient-to-r from-brand-red to-brand-red-dark hover:from-brand-red-dark hover:to-brand-red text-white shadow-lg cursor-pointer' 
-                    : 'bg-white/5 border border-white/10 text-brand-muted cursor-not-allowed'
-                }`}
+                className="w-full py-4 rounded-xl font-display font-semibold uppercase tracking-widest text-xs transition-all duration-300 flex items-center justify-center gap-2 mt-2 bg-gradient-to-r from-brand-red to-brand-red-dark hover:from-brand-red-dark hover:to-brand-red text-white shadow-lg cursor-pointer transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Search size={16} /> 
                 {activeTab === 'flights' ? 'Search Flights' : activeTab === 'hotels' ? 'Search Hotels' : 'Explore Packages'}

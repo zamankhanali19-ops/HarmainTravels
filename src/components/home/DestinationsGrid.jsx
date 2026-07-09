@@ -50,7 +50,7 @@ const DestinationsGrid = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s]" 
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-bg-primary via-brand-bg-primary/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-bg-primary via-brand-bg-primary/50 group-hover:via-brand-bg-primary/70 to-transparent opacity-90 group-hover:opacity-100 transition-all duration-500"></div>
                 <div className="absolute inset-0 p-8 flex flex-col justify-end text-brand-white">
                   <div className="flex justify-between items-end gap-4">
                     <div className="min-w-0 flex-1">

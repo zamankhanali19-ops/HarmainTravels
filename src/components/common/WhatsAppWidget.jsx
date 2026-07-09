@@ -25,7 +25,7 @@ const WhatsAppWidget = () => {
   ];
 
   return (
-    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100] flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[110] flex flex-col items-end">
       <AnimatePresence>
         {isOpen && (
           <motion.div 
@@ -58,18 +58,24 @@ const WhatsAppWidget = () => {
         )}
       </AnimatePresence>
       
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center relative"
-      >
-        {isOpen ? <X size={26} strokeWidth={2.5} /> : <MessageCircle size={26} fill="white" />}
+      <div className="relative">
         {!isOpen && (
-          <span className="absolute -top-1 -right-1 flex h-4 w-4">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-4 w-4 bg-brand-red border-2 border-[#25D366]"></span>
-          </span>
+          <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-20 scale-150"></div>
         )}
-      </button>
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="relative bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
+          aria-label="Open WhatsApp Chat"
+        >
+          {isOpen ? <X size={26} strokeWidth={2.5} /> : <MessageCircle size={26} fill="white" />}
+          {!isOpen && (
+            <span className="absolute -top-1 -right-1 flex h-4 w-4">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-4 w-4 bg-brand-red border-2 border-[#25D366]"></span>
+            </span>
+          )}
+        </button>
+      </div>
     </div>
   );
 };
