@@ -36,7 +36,7 @@ To ensure a smooth approval process, you must prepare the following documents in
 ### Need Professional Assistance?
 Why risk a rejection due to a technical error? Let the experts at Harmain Travels handle your visa processing. 
 
-<a href="https://wa.me/923175477919?text=Hello%20Harmain%20Travels,%20I%20need%20help%20with%20a%20Malaysia%20Visa." target="_blank" rel="noopener noreferrer" class="inline-block bg-[#A61D24] text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-[#002147] transition-colors">Chat with our Visa Experts on WhatsApp</a>
+<button onclick="window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: 'Hello Harmain Travels, I need help with a Malaysia Visa.' } }))" class="inline-block bg-[#A61D24] text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-[#002147] transition-colors">Chat with our Visa Experts on WhatsApp</button>
     `
   },
   {
@@ -76,7 +76,7 @@ If budget is your primary concern and you are physically fit to walk longer dist
 
 If you prioritize comfort, have elderly family members, or wish to focus 100% on your prayers without logistical worries, our **Premium Umrah Packages** are an investment in a seamless, spiritually uplifting experience.
 
-<a href="https://wa.me/923175477919?text=Hello%20Harmain%20Travels,%20I%20want%20to%20inquire%20about%20Umrah%20Packages." target="_blank" rel="noopener noreferrer" class="inline-block bg-[#A61D24] text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-[#002147] transition-colors">Inquire About Umrah Packages</a>
+<button onclick="window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: 'Hello Harmain Travels, I want to inquire about Umrah Packages.' } }))" class="inline-block bg-[#A61D24] text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-[#002147] transition-colors">Inquire About Umrah Packages</button>
     `
   },
   {
@@ -129,7 +129,7 @@ Standard economy Umrah packages typically only cover the most common Ziyarats (Q
 Don't miss out on Medina's most fascinating natural wonder. At **Harmain Travels**, our premium Umrah packages from Islamabad include dedicated, private GMC transport for Ziyarat. Let our expert local guides handle the driving while you experience the impossible.
 
 <a href="/umrah-packages" class="inline-block bg-[#A61D24] text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-[#002147] transition-colors">Explore Our VIP Umrah Packages</a>
-<a href="https://wa.me/923175477919?text=Hello%20Harmain%20Travels,%20I%20want%20to%20visit%20Wadi%20Al-Jinn%20during%20my%20Umrah." target="_blank" rel="noopener noreferrer" class="inline-block bg-[#25D366] text-white font-bold py-3 px-6 rounded-full mt-4 sm:ml-4 hover:bg-[#128C7E] transition-colors">WhatsApp a Travel Consultant</a>
+<button onclick="window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: 'Hello Harmain Travels, I want to visit Wadi Al-Jinn during my Umrah.' } }))" class="inline-block bg-[#25D366] text-white font-bold py-3 px-6 rounded-full mt-4 sm:ml-4 hover:bg-[#128C7E] transition-colors">WhatsApp a Travel Consultant</button>
     `,
     customSchema: {
       "@context": "https://schema.org",

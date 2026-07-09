@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { MessageCircle } from 'lucide-react';
 import LoadingSpinner from './components/common/LoadingSpinner';
+import WhatsAppWidget from './components/common/WhatsAppWidget';
+import InquiryWhatsAppModal from './components/common/InquiryWhatsAppModal';
 import { Analytics } from "@vercel/analytics/react";
 
 const Home = lazy(() => import('./pages/Home'));
@@ -40,15 +41,9 @@ const App = () => {
           </Routes>
         </Suspense>
 
-        {/* Floating WhatsApp Button */}
-        <a 
-          href="https://wa.me/92325880050?text=Hello%20Harmain%20Travels%2C%20I%20need%20assistance." 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center animate-bounce"
-        >
-          <MessageCircle size={24} fill="white" />
-        </a>
+        {/* Floating WhatsApp Widget */}
+        <WhatsAppWidget />
+        <InquiryWhatsAppModal />
 
         {/* Global Live Booking Social Proof removed */}
         <Analytics />

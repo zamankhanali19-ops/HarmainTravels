@@ -51,13 +51,12 @@ const InteractiveModal = ({ selectedCountry, setSelectedCountry, standardRequire
                 Our visa architects handle the entire process for you. From documentation to interview prep, we ensure a seamless approval journey.
               </p>
             </div>
-            <a 
-              href={`https://wa.me/92325880050?text=Hello Harmain Travels, I am interested in a trip to ${selectedCountry.name}. Please guide me about the visa process.`}
-              target="_blank"
+            <button 
+              onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: `Hello Harmain Travels, I am interested in a trip to ${selectedCountry.name}. Please guide me about the visa process.` } }))}
               className="btn-primary w-full text-center flex items-center justify-center gap-4 !rounded-xl sm:!rounded-2xl !py-4 md:!py-6 !text-xs md:!text-sm"
             >
               Apply Now via WhatsApp <ArrowRight size={18} />
-            </a>
+            </button>
           </div>
         </div>
       </div>

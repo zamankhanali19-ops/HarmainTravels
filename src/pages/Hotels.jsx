@@ -296,7 +296,7 @@ const Hotels = () => {
 - Check-in Date: ${checkInDate ? checkInDate.toLocaleDateString() : 'Not provided'}
 - Check-out Date: ${checkOutDate ? checkOutDate.toLocaleDateString() : 'Not provided'}
 - Guests: ${adults} Adults, ${children} Children, ${infants} Infants`;
-                      window.open(`https://wa.me/92325880050?text=${encodeURIComponent(msg)}`, '_blank');
+                      window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: msg } }));
                     }}
                     className={`w-full !py-4 !rounded-2xl shadow-xl flex items-center justify-center gap-3 font-black uppercase text-xs tracking-wider transition-all duration-300 ${
                       isValid 
@@ -367,14 +367,13 @@ const Hotels = () => {
                       {[...Array(hotel.rating)].map((_, i) => <Star key={i} size={12} className="md:w-[14px]" fill="#D1D5DB" color="#D1D5DB" />)}
                     </div>
                   </div>
-                  <a 
-                    href={`https://wa.me/92325880050?text=I am interested in booking a stay at ${hotel.name} in ${hotel.location}.`}
-                    target="_blank"
+                  <button 
+                    onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: `I am interested in booking a stay at ${hotel.name} in ${hotel.location}.` } }))}
                     className="flex items-center justify-between w-full p-3.5 border-2 border-white/10 rounded-2xl group-hover:bg-brand-bg-primary group-hover:border-brand-bg-primary group-hover:text-white transition-all duration-500"
                   >
                     <span className="font-black uppercase tracking-widest text-[10px]">Check Availability</span>
                     <ArrowRight size={16} />
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}
@@ -392,9 +391,9 @@ const Hotels = () => {
           <p className="text-xl md:text-2xl text-white/60 font-medium tracking-widest uppercase mb-16 relative z-10 leading-relaxed">
             We have access to private villas, boutique estates, and long-term residences across Asia.
           </p>
-          <a href="https://wa.me/92325880050?text=Hello%20Harmain%20Travels%2C%20I%20am%20looking%20for%20a%20bespoke%20hotel%20stay." target="_blank" rel="noopener noreferrer" className="btn-primary !rounded-full !px-16 !py-8 !text-sm shadow-2xl inline-block relative z-10">
+          <button onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: 'Hello Harmain Travels, I am looking for a bespoke hotel stay.' } }))} className="btn-primary !rounded-full !px-16 !py-8 !text-sm shadow-2xl inline-block relative z-10">
             Consult a Travel Architect
-          </a>
+          </button>
         </div>
       </section>
 

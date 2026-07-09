@@ -147,7 +147,7 @@ const Visa = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#destinations" className="btn-primary w-full sm:w-auto">Explore Destinations</a>
-            <a href="https://wa.me/92325880050?text=Hello%20Harmain%20Travels,%20I%20need%20help%20with%20a%20visa%20application." target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto">Consult an Expert</a>
+            <button onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: 'Hello Harmain Travels, I need help with a visa application.' } }))} className="btn-secondary w-full sm:w-auto">Consult an Expert</button>
           </div>
         </div>
       </section>
@@ -252,15 +252,13 @@ const Visa = () => {
                     </div>
                   </div>
                   
-                  <a 
-                    href={`https://wa.me/92325880050?text=${encodeURIComponent(`Hello Harmain Travels, I need details regarding the ${item.country} visa.`)}`}
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <button 
+                    onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: `Hello Harmain Travels, I need details regarding the ${item.country} visa.` } }))}
                     className="flex items-center justify-between w-full p-3.5 border border-white/10 rounded-xl group-hover:bg-brand-red group-hover:border-brand-red group-hover:text-white transition-all duration-300 text-brand-silver-light font-display font-medium uppercase text-xs tracking-wider mt-auto"
                   >
                     <span>Inquire Now</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}
@@ -278,9 +276,9 @@ const Visa = () => {
           <p className="text-brand-muted font-body text-lg mb-8 max-w-2xl mx-auto">
             We process visas for over 50+ countries. Contact our visa experts to discuss your specific travel requirements.
           </p>
-          <a href="https://wa.me/92325880050" target="_blank" rel="noopener noreferrer" className="btn-primary">
+          <button onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal'))} className="btn-primary">
             Contact Visa Expert
-          </a>
+          </button>
         </div>
       </section>
 

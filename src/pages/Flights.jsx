@@ -292,7 +292,7 @@ const Flights = () => {
 - Departure Date: ${travelDate ? travelDate.toLocaleDateString() : 'Not provided'}
 ${tripType === 'round' ? `- Return Date: ${returnDate ? returnDate.toLocaleDateString() : 'Not provided'}` : ''}
 - Passengers: ${adults} Adults, ${children} Children, ${infants} Infants`;
-                      window.open(`https://wa.me/92325880050?text=${encodeURIComponent(msg)}`, '_blank');
+                      window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: msg } }));
                     }}
                     className={`w-full !py-4 !rounded-2xl shadow-xl flex items-center justify-center gap-3 font-black uppercase text-xs tracking-wider transition-all duration-300 ${
                       isValid 
@@ -356,13 +356,12 @@ ${tripType === 'round' ? `- Return Date: ${returnDate ? returnDate.toLocaleDateS
                     <span className="text-brand-muted font-bold text-[10px] uppercase tracking-widest block mb-1 text-left truncate">Starting at</span>
                     <span className="text-base md:text-xl font-black text-brand-white truncate">{route.price}</span>
                   </div>
-                  <a 
-                    href={`https://wa.me/92325880050?text=I am looking for a flight from ${route.from} to ${route.to}. Please provide current fares and availability.`}
-                    target="_blank"
+                  <button 
+                    onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: `I am looking for a flight from ${route.from} to ${route.to}. Please provide current fares and availability.` } }))}
                     className="w-12 h-12 md:w-16 md:h-16 bg-brand-bg-primary rounded-2xl flex items-center justify-center text-brand-red group-hover:bg-brand-bg-primary group-hover:text-white transition-all duration-500 shrink-0"
                   >
                     <ArrowRight size={20} className="md:w-6 md:h-6" />
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}

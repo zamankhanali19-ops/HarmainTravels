@@ -58,8 +58,8 @@ const Header = ({ children }) => {
             <div className="hidden lg:flex items-center gap-2 text-brand-muted">
               <MapPin size={14} className="text-brand-red" /> Office No.15, Aalay Plaza, Blue Area, Islamabad
             </div>
-            <a href="tel:+92325880050" className="flex items-center gap-2 hover:text-brand-red transition-colors">
-              <Phone size={14} className="text-brand-red" /> +92 325 880050
+            <a href="tel:+923258880050" className="flex items-center gap-2 hover:text-brand-red transition-colors">
+              <Phone size={14} className="text-brand-red" /> +92 325 8880050
             </a>
             <a href="mailto:harmaintravelisb@gmail.com" className="hidden md:flex items-center gap-2 hover:text-brand-red transition-colors">
               <Mail size={14} className="text-brand-red" /> harmaintravelisb@gmail.com
@@ -108,12 +108,12 @@ const Header = ({ children }) => {
                   )}
                 </Link>
               ))}
-              <a href="https://wa.me/92325880050?text=Hello" target="_blank" rel="noopener noreferrer" className="btn-primary !py-2.5 !px-6 !text-[11px]">Book Now</a>
+              <button onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: 'Hello' } }))} className="btn-primary !py-2.5 !px-6 !text-[11px]">Book Now</button>
             </div>
 
             {/* Mobile Toggle */}
             <div className="xl:hidden flex items-center gap-4">
-              <a href="tel:+92325880050" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-brand-silver hover:bg-brand-red hover:text-white transition-all">
+              <a href="tel:+923258880050" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-brand-silver hover:bg-brand-red hover:text-white transition-all">
                 <Phone size={16} />
               </a>
               <button onClick={() => setIsOpen(!isOpen)} className="w-10 h-10 rounded-xl bg-brand-red flex items-center justify-center text-white hover:bg-brand-red-dark transition-all">
@@ -144,7 +144,7 @@ const Header = ({ children }) => {
                   </Link>
                 ))}
                 <div className="pt-6 border-t border-white/10">
-                  <a href="https://wa.me/92325880050" target="_blank" rel="noopener noreferrer" className="btn-primary w-full">Book Your Journey</a>
+                  <button onClick={() => { setIsOpen(false); window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: 'I want to book a journey' } })); }} className="btn-primary w-full">Book Your Journey</button>
                 </div>
               </div>
             </motion.div>

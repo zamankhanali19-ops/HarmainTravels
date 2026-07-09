@@ -379,7 +379,7 @@ const Umrah = () => {
 - Airline: ${selectedAirline || 'Not provided'}
 - Date: ${travelDate ? travelDate.toLocaleDateString() : 'Not provided'}
 - Travelers: ${adults} Adults, ${children} Children, ${infants} Infants`;
-                        window.open(`https://wa.me/923471234567?text=${encodeURIComponent(msg)}`, '_blank');
+                        window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: msg } }));
                       }}
                       className={`w-full h-full min-h-[60px] xl:min-h-[75px] rounded-xl sm:rounded-2xl font-black text-xs uppercase tracking-wider transition-all duration-500 shadow-xl flex items-center justify-center gap-2 py-3.5 xl:py-0 ${
                         isValid 
@@ -557,7 +557,10 @@ const Umrah = () => {
                 <textarea rows="4" placeholder="Any special arrangements for elderly or infants..." className="w-full p-4 bg-brand-bg-primary border border-white/5 rounded-xl outline-none focus:ring-2 focus:ring-brand-red font-bold text-brand-white transition-all"></textarea>
               </div>
 
-              <button type="submit" onClick={(e) => e.preventDefault()} className="btn-primary w-full flex items-center justify-center gap-4 py-4 sm:py-5 font-black uppercase tracking-[0.2em] shadow-lg hover:scale-[1.01] transition-transform">
+              <button type="button" onClick={(e) => {
+                e.preventDefault();
+                window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: 'Assalam o Alaikum Harmain Travels, I want to inquire about an Umrah package.' } }));
+              }} className="btn-primary w-full flex items-center justify-center gap-4 py-4 sm:py-5 font-black uppercase tracking-[0.2em] shadow-lg hover:scale-[1.01] transition-transform">
                 Book Umrah Package <Send size={20} />
               </button>
             </form>

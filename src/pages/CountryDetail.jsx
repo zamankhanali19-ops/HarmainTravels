@@ -129,22 +129,18 @@ const CountryDetail = () => {
 
               {/* Conversion / Call to Action */}
               <div className="flex flex-col sm:flex-row items-center gap-4 border-t border-white/5 pt-8 mt-4">
-                <a
-                  href={`https://wa.me/92325880050?text=${encodeURIComponent(`Hello Harmain Travels, I would like to book a journey to ${country.name}.`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: `Hello Harmain Travels, I would like to book a journey to ${country.name}.` } }))}
                   className="btn-primary w-full sm:w-auto !px-8 !py-4 !rounded-2xl !text-[11px] shadow-xl hover:shadow-2xl flex items-center justify-center gap-2.5"
                 >
                   <Send size={16} /> Book Journey Now
-                </a>
-                <a
-                  href={`https://wa.me/92325880050?text=${encodeURIComponent(`Hello Harmain Travels, I want to inquire about ${country.name}.`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                </button>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: `Hello Harmain Travels, I want to inquire about ${country.name}.` } }))}
                   className="w-full sm:w-auto bg-brand-bg-secondary hover:bg-white/10 text-brand-white font-black uppercase text-[11px] tracking-wider py-4 px-8 rounded-2xl text-center transition-all border border-white/10/50"
                 >
                   Inquire via WhatsApp
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -204,9 +200,9 @@ const CountryDetail = () => {
                     </li>
                   </ul>
                 </div>
-                <a href={`https://wa.me/92325880050?text=${encodeURIComponent(`Hello Harmain Travels, I am interested in the 3-Day Express Plan for ${country.name}.`)}`} target="_blank" rel="noopener noreferrer" className="text-center bg-brand-bg-secondary hover:bg-white/10 text-brand-white font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all border border-white/10/50">
+                <button onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: `Hello Harmain Travels, I am interested in the 3-Day Express Plan for ${country.name}.` } }))} className="text-center bg-brand-bg-secondary hover:bg-white/10 text-brand-white font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all border border-white/10/50 w-full">
                   Select Express Itinerary
-                </a>
+                </button>
               </div>
 
               {/* 5-Day Plan */}
@@ -230,9 +226,9 @@ const CountryDetail = () => {
                     </li>
                   </ul>
                 </div>
-                <a href={`https://wa.me/92325880050?text=${encodeURIComponent(`Hello Harmain Travels, I am interested in the 5-Day Classic Plan for ${country.name}.`)}`} target="_blank" rel="noopener noreferrer" className="text-center bg-brand-red hover:bg-brand-bg-primary text-white font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all shadow-lg">
+                <button onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: `Hello Harmain Travels, I am interested in the 5-Day Classic Plan for ${country.name}.` } }))} className="text-center bg-brand-red hover:bg-brand-bg-primary text-white font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all shadow-lg w-full">
                   Select Classic Itinerary
-                </a>
+                </button>
               </div>
 
               {/* 10-Day Plan */}
@@ -255,9 +251,9 @@ const CountryDetail = () => {
                     </li>
                   </ul>
                 </div>
-                <a href={`https://wa.me/92325880050?text=${encodeURIComponent(`Hello Harmain Travels, I am interested in the 10-Day Grande Plan for ${country.name}.`)}`} target="_blank" rel="noopener noreferrer" className="text-center bg-brand-bg-secondary hover:bg-white/10 text-brand-white font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all border border-white/10/50">
+                <button onClick={() => window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: `Hello Harmain Travels, I am interested in the 10-Day Grande Plan for ${country.name}.` } }))} className="text-center bg-brand-bg-secondary hover:bg-white/10 text-brand-white font-black uppercase text-xs tracking-wider py-4 px-6 rounded-xl transition-all border border-white/10/50 w-full">
                   Select Grande Itinerary
-                </a>
+                </button>
               </div>
             </div>
           </div>

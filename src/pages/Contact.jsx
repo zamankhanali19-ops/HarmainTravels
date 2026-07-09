@@ -127,7 +127,10 @@ const Contact = () => {
                 <label className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-muted">Message</label>
                 <textarea rows="4" className="w-full p-4 bg-brand-bg-primary rounded-xl outline-none focus:ring-2 focus:ring-[#931328] font-bold text-brand-white"></textarea>
               </div>
-              <button className="btn-primary w-full flex items-center justify-center gap-4">
+              <button type="button" onClick={(e) => {
+                e.preventDefault();
+                window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: 'Hello Harmain Travels, I would like to send an inquiry.' } }));
+              }} className="btn-primary w-full flex items-center justify-center gap-4">
                 Send Inquiry <Send size={20} />
               </button>
             </form>
