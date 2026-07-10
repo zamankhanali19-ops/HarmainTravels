@@ -75,9 +75,21 @@ async function prerender() {
   const { server, port } = await startServer();
   const baseUrl = `http://localhost:${port}`;
   
-  const browser = await puppeteer.launch({
-    headless: true,
-  });
+  let browser;
+  if (process.env.VERCEL === '1') {
+    const chromium = (await import('@sparticuz/chromium')).default;
+    const puppeteerCore = (await import('puppeteer-core')).default;
+    browser = await puppeteerCore.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    });
+  } else {
+    browser = await puppeteer.launch({
+      headless: true,
+    });
+  }
   const page = await browser.newPage();
   
   let successCount = 0;
