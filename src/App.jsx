@@ -4,6 +4,7 @@ import LoadingSpinner from './components/common/LoadingSpinner';
 import WhatsAppWidget from './components/common/WhatsAppWidget';
 import InquiryWhatsAppModal from './components/common/InquiryWhatsAppModal';
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const Home = lazy(() => import('./pages/Home'));
 const Destinations = lazy(() => import('./pages/Destinations'));
@@ -47,6 +48,7 @@ const App = () => {
 
         {/* Global Live Booking Social Proof removed */}
         <Analytics />
+        <SpeedInsights />
       </div>
     </Router>
   );
