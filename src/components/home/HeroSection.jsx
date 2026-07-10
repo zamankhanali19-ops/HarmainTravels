@@ -72,7 +72,7 @@ const HeroSection = () => {
   );
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-brand-bg-primary pt-24 pb-16 md:pt-32 md:pb-24">
+    <section className="relative min-h-screen flex items-center justify-center bg-brand-bg-primary pt-36 pb-16 md:pt-48 md:pb-24">
       {/* Background with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <img 

@@ -50,9 +50,9 @@ const Header = ({ children }) => {
   ];
 
   return (
-    <header className="fixed w-full z-[100] transition-all duration-500">
+    <header className="fixed top-0 left-0 w-full z-[100] transition-all duration-500">
       {/* Top Contact Bar */}
-      <div className={`bg-[#B11226]/30 backdrop-blur-2xl border-b border-red-500/15 text-brand-silver-light py-2 transition-all duration-500 ${scrolled ? 'h-0 opacity-0 overflow-hidden py-0 border-0' : 'h-auto opacity-100'}`}>
+      <div className={`bg-[#B11226]/30 backdrop-blur-2xl border-red-500/15 text-brand-silver-light transition-all duration-500 overflow-hidden ${scrolled ? 'max-h-0 py-0 border-b-0 opacity-0' : 'max-h-[50px] py-2 border-b opacity-100'}`}>
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[10px] md:text-[11px] font-display font-medium uppercase tracking-[0.2em]">
           <div className="flex items-center gap-10">
             <div className="hidden lg:flex items-center gap-2 text-brand-muted">
@@ -75,12 +75,12 @@ const Header = ({ children }) => {
         </div>
       </div>
 
-      {/* Main Navigation Bar — Red Shiny Glassmorphism */}
-      <nav 
-        className={`relative transition-all duration-500 backdrop-blur-2xl backdrop-saturate-150 ${
-          scrolled 
-            ? 'bg-[#B11226]/55 border-b border-red-400/20 shadow-[0_8px_32px_rgba(177,18,38,0.5)] py-2' 
-            : 'bg-[#B11226]/35 border-b border-red-400/15 shadow-[0_4px_24px_rgba(177,18,38,0.3)] py-4'
+      {/* Main Navigation Bar */}
+      <nav
+        className={`relative w-full transition-all duration-500 backdrop-blur-3xl backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[4rem] ${
+          scrolled
+            ? 'bg-[#B11226]/80 border-b-2 border-red-400/50 shadow-[0_20px_40px_rgba(177,18,38,0.5)] py-2'
+            : 'bg-[#B11226]/50 border-b-2 border-red-400/40 shadow-[0_20px_50px_rgba(177,18,38,0.4)] py-4'
         }`}
       >
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,13 +95,12 @@ const Header = ({ children }) => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`nav-link font-display ${
-                    location.pathname === link.path ? 'text-brand-red active' : ''
-                  }`}
+                  className={`nav-link font-display ${location.pathname === link.path ? 'text-brand-red active' : ''
+                    }`}
                 >
                   {link.name}
                   {location.pathname === link.path && (
-                    <motion.div 
+                    <motion.div
                       layoutId="underline"
                       className="absolute left-0 bottom-0 w-full h-[2px] bg-brand-red"
                     />
@@ -126,7 +125,7 @@ const Header = ({ children }) => {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
