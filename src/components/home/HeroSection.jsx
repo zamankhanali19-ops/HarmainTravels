@@ -1,16 +1,39 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Plane, Building2, Moon, Search, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Plane, Building2, Moon, Search, Calendar, MapPin, CheckCircle2, ChevronDown } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { globalAirports } from '../../data/airports';
+import { TravelCalendar } from '../common/TravelCalendar';
+
+const searchSuggestions = {
+  flights: globalAirports,
+  hotels: [
+    { code: 'DXB', city: 'Dubai', desc: 'United Arab Emirates' },
+    { code: 'MAK', city: 'Makkah', desc: 'Saudi Arabia' },
+    { code: 'MED', city: 'Madinah', desc: 'Saudi Arabia' },
+    { code: 'IST', city: 'Istanbul', desc: 'Turkey' },
+    { code: 'KUL', city: 'Kuala Lumpur', desc: 'Malaysia' },
+  ],
+  umrah: [
+    { code: 'MAK', city: 'Makkah', desc: 'Saudi Arabia' },
+    { code: 'MED', city: 'Madinah', desc: 'Saudi Arabia' },
+    { code: 'JED', city: 'Jeddah', desc: 'Saudi Arabia' },
+  ]
+};
 
 const HeroSection = () => {
   const [activeTab, setActiveTab] = useState('flights');
   const [field1, setField1] = useState('');
-  const [field2, setField2] = useState('');
+  const [selectedDate, setSelectedDate] = useState(null);
   const [shakeField, setShakeField] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showCalendarDropdown, setShowCalendarDropdown] = useState(false);
+  
+  const dropdownRef = useRef(null);
+  const calendarRef = useRef(null);
   const navigate = useNavigate();
 
-  const isFormValid = field1.trim() !== '' && field2.trim() !== '';
+  const isFormValid = field1.trim() !== '' && selectedDate !== null;
 
   const handleSearch = () => {
     if (!isFormValid) {
@@ -23,8 +46,33 @@ const HeroSection = () => {
     if (activeTab === 'umrah') navigate('/umrah-packages');
   };
 
+  // Click outside handler for dropdown
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+      if (calendarRef.current && !calendarRef.current.contains(event.target)) {
+        setShowCalendarDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSuggestionClick = (suggestion) => {
+    setField1(`${suggestion.city} (${suggestion.code})`);
+    setShowDropdown(false);
+  };
+
+  const filteredSuggestions = searchSuggestions[activeTab].filter(
+    (s) => s.city.toLowerCase().includes(field1.toLowerCase()) || 
+           s.code.toLowerCase().includes(field1.toLowerCase()) ||
+           s.desc.toLowerCase().includes(field1.toLowerCase())
+  );
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-bg-primary pt-24 pb-16 md:pt-32 md:pb-24">
+    <section className="relative min-h-screen flex items-center justify-center bg-brand-bg-primary pt-24 pb-16 md:pt-32 md:pb-24">
       {/* Background with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -84,7 +132,7 @@ const HeroSection = () => {
           className="lg:col-span-5 w-full"
           id="booking-search"
         >
-          <div className="glass-card p-6 md:p-8 rounded-2xl md:rounded-[2rem] w-full max-w-lg mx-auto lg:ml-auto">
+          <div className="glass-card p-6 md:p-8 rounded-2xl md:rounded-[2rem] w-full max-w-lg mx-auto lg:ml-auto border border-white/5 shadow-2xl backdrop-blur-xl">
             <h3 className="font-display font-semibold text-brand-white text-xl md:text-2xl mb-6">Search & Book</h3>
             
             {/* Tabs */}
@@ -96,7 +144,7 @@ const HeroSection = () => {
               ].map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => { setActiveTab(tab.id); setField1(''); setField2(''); }}
+                  onClick={() => { setActiveTab(tab.id); setField1(''); setSelectedDate(null); setShowDropdown(false); setShowCalendarDropdown(false); }}
                   className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-lg font-display font-medium text-xs sm:text-sm transition-all duration-300 ${
                     activeTab === tab.id 
                       ? 'bg-brand-red text-brand-white shadow-md' 
@@ -110,52 +158,122 @@ const HeroSection = () => {
 
             {/* Form */}
             <div className="space-y-4">
-              <motion.div 
-                animate={shakeField && !field1 ? { x: [-10, 10, -10, 10, 0] } : {}}
-                transition={{ duration: 0.4 }}
-                className={`bg-brand-bg-primary/50 border ${shakeField && !field1 ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 flex items-center focus-within:border-brand-red transition-colors`}
-              >
-                <MapPin size={20} className="text-brand-red mr-3 shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <label htmlFor="search-location" className="block text-[10px] font-display font-semibold text-brand-muted uppercase tracking-widest mb-1">
-                    {activeTab === 'flights' ? 'Destination' : activeTab === 'hotels' ? 'City / Hotel' : 'Location'}
-                  </label>
-                  <input 
-                    id="search-location"
-                    type="text" 
-                    value={field1}
-                    onChange={(e) => setField1(e.target.value)}
-                    placeholder={activeTab === 'flights' ? 'Where to fly?' : activeTab === 'hotels' ? 'Where to stay?' : 'Makkah / Madinah'} 
-                    className="w-full bg-transparent text-sm sm:text-base font-body text-brand-white outline-none placeholder:text-brand-muted" 
-                  />
-                </div>
-              </motion.div>
+              {/* Destination Dropdown Field */}
+              <div className="relative" ref={dropdownRef}>
+                <motion.div 
+                  animate={shakeField && !field1 ? { x: [-10, 10, -10, 10, 0] } : {}}
+                  transition={{ duration: 0.4 }}
+                  className={`bg-brand-bg-primary/50 border ${shakeField && !field1 ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 flex items-center focus-within:border-brand-red focus-within:bg-brand-bg-primary/80 transition-all cursor-text`}
+                  onClick={() => setShowDropdown(true)}
+                >
+                  <MapPin size={20} className="text-brand-red mr-3 shrink-0" />
+                  <div className="flex-1 min-w-0 relative">
+                    <label htmlFor="search-location" className="block text-[10px] font-display font-semibold text-brand-muted uppercase tracking-widest mb-1">
+                      {activeTab === 'flights' ? 'Destination / Airport' : activeTab === 'hotels' ? 'City / Hotel' : 'Location'}
+                    </label>
+                    <div className="flex items-center">
+                      <input 
+                        id="search-location"
+                        type="text" 
+                        value={field1}
+                        onChange={(e) => {
+                          setField1(e.target.value);
+                          setShowDropdown(true);
+                        }}
+                        onFocus={() => setShowDropdown(true)}
+                        placeholder={activeTab === 'flights' ? 'Where to fly?' : activeTab === 'hotels' ? 'Where to stay?' : 'Makkah / Madinah'} 
+                        className="w-full bg-transparent text-sm sm:text-base font-body text-brand-white outline-none placeholder:text-brand-muted/70" 
+                        autoComplete="off"
+                      />
+                      <ChevronDown size={16} className={`text-brand-muted transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`} />
+                    </div>
+                  </div>
+                </motion.div>
 
-              <motion.div 
-                animate={shakeField && !field2 ? { x: [-10, 10, -10, 10, 0] } : {}}
-                transition={{ duration: 0.4 }}
-                className={`bg-brand-bg-primary/50 border ${shakeField && !field2 ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 flex items-center focus-within:border-brand-red transition-colors`}
-              >
-                <Calendar size={20} className="text-brand-red mr-3 shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <label htmlFor="search-date" className="block text-[10px] font-display font-semibold text-brand-muted uppercase tracking-widest mb-1">
-                    {activeTab === 'flights' ? 'Travel Date' : activeTab === 'hotels' ? 'Check-In' : 'Departure Date'}
-                  </label>
-                  <input 
-                    id="search-date"
-                    type="text" 
-                    value={field2}
-                    onChange={(e) => setField2(e.target.value)}
-                    placeholder="Select dates" 
-                    className="w-full bg-transparent text-sm sm:text-base font-body text-brand-white outline-none placeholder:text-brand-muted" 
-                  />
-                </div>
-              </motion.div>
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {showDropdown && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 right-0 mt-2 bg-brand-bg-secondary border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50 max-h-60 overflow-y-auto"
+                    >
+                      {filteredSuggestions.length > 0 ? (
+                        filteredSuggestions.map((item, idx) => (
+                          <div 
+                            key={idx}
+                            onClick={() => handleSuggestionClick(item)}
+                            className="px-4 py-3 hover:bg-white/5 cursor-pointer flex items-center gap-3 border-b border-white/5 last:border-0 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-full bg-brand-bg-primary flex items-center justify-center text-brand-red font-display font-bold text-xs shrink-0">
+                              {item.code}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="text-sm font-semibold text-brand-white">{item.city}</div>
+                              <div className="text-xs text-brand-muted truncate">{item.desc}</div>
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <div className="px-4 py-4 text-center text-sm text-brand-muted">
+                          No locations found. Press enter to use "{field1}".
+                        </div>
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Date Field Dropdown */}
+              <div className="relative" ref={calendarRef}>
+                <motion.div 
+                  animate={shakeField && !selectedDate ? { x: [-10, 10, -10, 10, 0] } : {}}
+                  transition={{ duration: 0.4 }}
+                  className={`bg-brand-bg-primary/50 border ${shakeField && !selectedDate ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 flex items-center focus-within:border-brand-red focus-within:bg-brand-bg-primary/80 transition-all cursor-pointer`}
+                  onClick={() => setShowCalendarDropdown(!showCalendarDropdown)}
+                >
+                  <Calendar size={20} className="text-brand-red mr-3 shrink-0" />
+                  <div className="flex-1 min-w-0 relative">
+                    <label className="block text-[10px] font-display font-semibold text-brand-muted uppercase tracking-widest mb-1">
+                      {activeTab === 'flights' ? 'Travel Date' : activeTab === 'hotels' ? 'Check-In' : 'Departure Date'}
+                    </label>
+                    <div className="flex items-center justify-between">
+                      <div className={`text-sm sm:text-base font-body ${selectedDate ? 'text-brand-white' : 'text-brand-muted/70'}`}>
+                        {selectedDate ? selectedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Select dates'}
+                      </div>
+                      <ChevronDown size={16} className={`text-brand-muted transition-transform duration-300 ${showCalendarDropdown ? 'rotate-180' : ''}`} />
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Calendar Dropdown Menu */}
+                <AnimatePresence>
+                  {showCalendarDropdown && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 right-0 mt-2 bg-brand-bg-secondary border border-white/10 rounded-xl shadow-2xl z-50 p-4"
+                    >
+                      <TravelCalendar 
+                        selectedDate={selectedDate} 
+                        onDateSelect={(date) => {
+                          setSelectedDate(date);
+                          setShowCalendarDropdown(false);
+                        }} 
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
               <button 
                 onClick={handleSearch}
                 aria-label={`Search for ${activeTab}`}
-                className="w-full py-4 rounded-xl font-display font-semibold uppercase tracking-widest text-xs transition-all duration-300 flex items-center justify-center gap-2 mt-2 bg-gradient-to-r from-brand-red to-brand-red-dark hover:from-brand-red-dark hover:to-brand-red text-white shadow-lg cursor-pointer transform hover:scale-[1.02] active:scale-[0.98]"
+                className="w-full py-4 rounded-xl font-display font-bold uppercase tracking-widest text-xs transition-all duration-300 flex items-center justify-center gap-2 mt-2 bg-gradient-to-r from-brand-red to-brand-red-dark hover:from-brand-red-dark hover:to-brand-red text-white shadow-[0_0_20px_rgba(230,57,70,0.3)] hover:shadow-[0_0_30px_rgba(230,57,70,0.5)] cursor-pointer transform hover:-translate-y-1"
               >
                 <Search size={16} /> 
                 {activeTab === 'flights' ? 'Search Flights' : activeTab === 'hotels' ? 'Search Hotels' : 'Explore Packages'}
