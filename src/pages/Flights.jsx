@@ -46,8 +46,8 @@ const Flights = () => {
   return (
     <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
-        title="Cheap Flights & Airline Ticketing from Pakistan | Harmain Travels"
-        description="Book affordable international flights instantly. Harmain Travels offers exclusive airfare deals and 24/7 corporate ticketing support."
+        title="Cheap Airline Tickets & Flight Bookings | Harmain Travels"
+        description="Book cheap flights and airline tickets globally with Harmain Travels. We offer premium business and economy class ticketing with expert support."
         url="https://harmaintravels.com/flights"
         schema={schema}
       />

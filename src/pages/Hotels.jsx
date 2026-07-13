@@ -85,8 +85,8 @@ const Hotels = () => {
   return (
     <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
-        title="Luxury Hotels & Premium Stays in Asia | Harmain Travels"
-        description="Book exclusive 5-star hotels, private villas, and premium resorts across Thailand, Malaysia, Indonesia & more with guaranteed best rates."
+        title="Luxury Hotel Bookings Worldwide | Harmain Travels"
+        description="Book premium luxury hotels worldwide with Harmain Travels. Enjoy exclusive rates, VIP amenities, and exceptional service for your global stays."
         url="https://harmaintravels.com/hotels"
         schema={schema}
       />

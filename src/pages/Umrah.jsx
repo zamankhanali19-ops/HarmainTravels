@@ -121,8 +121,8 @@ const Umrah = () => {
   return (
     <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
-        title="Premium Umrah Packages from Islamabad [2026] | Harmain Travels"
-        description="Book your 5-Star VIP Umrah package from Islamabad today. Experience elite comfort with Haram-view hotels, direct flights, and a dedicated 24/7 concierge."
+        title="Premium Umrah Packages from Pakistan | Harmain Travels"
+        description="Book affordable and premium Umrah packages from Pakistan. Harmain Travels provides VIP services, luxury hotels, and seamless visa processing."
         url="https://harmaintravels.com/umrah-packages"
         schema={umrahSchema}
       />

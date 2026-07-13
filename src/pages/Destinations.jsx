@@ -33,8 +33,8 @@ const Destinations = () => {
   return (
     <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
-        title="Luxury Asian Tours from Pakistan [2026] | Harmain Travels"
-        description="Explore curated tours to Thailand, Malaysia, Maldives, and 40+ Asian destinations. Plan your perfect luxury escape with our travel architects."
+        title="Asia Tour Packages | Luxury Travel & Vacations | Harmain"
+        description="Explore breathtaking Asian destinations with Harmain Travels. Book exclusive tour packages to Maldives, Turkey, Dubai, Thailand, and more."
         url="https://harmaintravels.com/asia-tours"
         schema={schema}
       />

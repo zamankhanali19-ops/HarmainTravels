@@ -36,8 +36,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
-        title="About Our Legacy & Excellence | Harmain Travels"
-        description="Learn about the legacy of Harmain Travels. Discover our core values, accredited excellence, and dedication to delivering top-tier global travel services."
+        title="About Harmain Travels | Trusted Travel Experts Pakistan"
+        description="Learn about Harmain Travels, Islamabad's premier travel agency. Since 2010, we've provided trusted Hajj, Umrah, and global luxury tour services."
         url="https://harmaintravels.com/about"
         schema={schema}
       />

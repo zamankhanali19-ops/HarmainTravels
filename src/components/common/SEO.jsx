@@ -44,6 +44,25 @@ const SEO = ({ title, description, image = "https://images.unsplash.com/photo-15
             </script>
           )
       )}
+
+      {/* Automatically generated Breadcrumb Schema */}
+      {location.pathname !== '/' && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": location.pathname
+              .split('/')
+              .filter(p => p)
+              .map((pathSegment, index, array) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "name": pathSegment.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+                "item": `https://harmaintravels.com/${array.slice(0, index + 1).join('/')}`
+              }))
+          })}
+        </script>
+      )}
     </Helmet>
   );
 };

@@ -19,6 +19,9 @@ const Visa = lazy(() => import('./pages/Visa'));
 const CountryDetail = lazy(() => import('./pages/CountryDetail'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const App = () => {
   return (
@@ -39,6 +42,9 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
 

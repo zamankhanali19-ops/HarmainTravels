@@ -22,7 +22,9 @@ const staticRoutes = [
   'visa-services',
   'blog',
   'about',
-  'contact'
+  'contact',
+  'privacy-policy',
+  'terms-and-conditions'
 ];
 
 const pathsToPrerender = [...staticRoutes];
@@ -46,9 +48,15 @@ async function startServer() {
   // Serve static files from dist
   app.use(express.static(distPath));
   
-  // Fallback to index.html for SPA routing (Express v5 syntax)
+  // Create a backup of the original index.html before we start overwriting it
+  const originalIndexPath = path.join(distPath, 'original-index.html');
+  if (!fs.existsSync(originalIndexPath)) {
+    fs.copyFileSync(path.join(distPath, 'index.html'), originalIndexPath);
+  }
+
+  // Fallback to original-index.html for SPA routing (Express v5 syntax)
   app.get('/{*path}', (req, res) => {
-    res.sendFile(path.join(distPath, 'index.html'));
+    res.sendFile(originalIndexPath);
   });
 
   return new Promise((resolve) => {

@@ -34,8 +34,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
-        title="Contact Harmain Travels | Premium Travel Agency in Islamabad"
-        description="Visit our office in Blue Area, Islamabad. Contact Harmain Travels for VIP Umrah packages, customized Asian tours, and priority visa processing."
+        title="Contact Harmain Travels | Islamabad Travel Agency Support"
+        description="Get in touch with Harmain Travels in Islamabad. Contact us for Umrah packages, global tours, flight bookings, and VIP visa assistance."
         url="https://harmaintravels.com/contact"
         schema={schema}
       />

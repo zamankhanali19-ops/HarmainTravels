@@ -118,8 +118,8 @@ const Visa = () => {
   return (
     <div className="min-h-screen bg-brand-bg-primary">
       <SEO 
-        title="Global Visa Services & Consulting | Harmain Travels"
-        description="Fast and reliable visa processing for UAE, Saudi Arabia, Schengen, UK, USA, and more. Expert consultation and documentation support."
+        title="Global Visa Services & Processing | Harmain Travels"
+        description="Expert global visa services in Islamabad. Get hassle-free visa processing for Dubai, Turkey, UK, USA, Schengen, and Asian countries."
         url="https://harmaintravels.com/visa-services"
         schema={schema}
       />

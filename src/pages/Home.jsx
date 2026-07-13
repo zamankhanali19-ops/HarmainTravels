@@ -90,8 +90,8 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-brand-bg-primary text-brand-silver-light selection:bg-brand-red selection:text-white">
       <SEO 
-        title="Harmain Travel & Tours | Premium Aviation & Travel Agency"
-        description="Experience luxury travel with Harmain Travels. We offer bespoke corporate tours, premium Umrah and Hajj packages, exclusive VIP visas, and world-class airline ticketing."
+        title="Harmain Travels | Premium Travel Agency in Islamabad"
+        description="Experience luxury travel with Harmain Travels. We offer bespoke corporate tours, premium Umrah packages, exclusive VIP visas, and airline ticketing."
         schema={schema}
       />
       <Navbar />

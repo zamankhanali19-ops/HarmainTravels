@@ -52,8 +52,9 @@ const BlogPost = () => {
     "image": post.image,
     "datePublished": post.date,
     "author": {
-      "@type": "Organization",
-      "name": post.author
+      "@type": "Person",
+      "name": post.author.name,
+      "description": post.author.bio
     },
     "publisher": {
       "@type": "Organization",
@@ -85,7 +86,7 @@ const BlogPost = () => {
           </Link>
           <div className="flex items-center gap-6 text-xs font-bold text-brand-muted mb-6 uppercase tracking-wider">
             <span className="flex items-center gap-2 bg-brand-bg-secondary px-4 py-2 rounded-full shadow-sm"><Calendar size={14} className="text-brand-red" /> {post.date}</span>
-            <span className="flex items-center gap-2 bg-brand-bg-secondary px-4 py-2 rounded-full shadow-sm"><User size={14} className="text-brand-red" /> {post.author}</span>
+            <span className="flex items-center gap-2 bg-brand-bg-secondary px-4 py-2 rounded-full shadow-sm"><User size={14} className="text-brand-red" /> {post.author.name}</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-brand-white uppercase tracking-tighter leading-tight mb-8">
             {post.title}
@@ -104,9 +105,21 @@ const BlogPost = () => {
 
       {/* Article Content */}
       <section className="py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="prose prose-lg prose-slate max-w-none text-brand-silver">
-          <div dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }} />
-        </div>
+          <div 
+            className="prose prose-invert prose-lg max-w-none prose-headings:text-brand-white prose-a:text-brand-red hover:prose-a:text-brand-red-light prose-strong:text-brand-white"
+            dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
+          />
+
+          {/* Author Bio Section */}
+          <div className="mt-16 p-8 rounded-3xl bg-brand-bg-secondary border border-white/5 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+            <div className="w-20 h-20 rounded-full bg-brand-red/10 flex items-center justify-center shrink-0">
+              <User size={32} className="text-brand-red" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-brand-white mb-2 uppercase tracking-wide">Written by {post.author.name}</h3>
+              <p className="text-brand-muted leading-relaxed">{post.author.bio}</p>
+            </div>
+          </div>
         
         {/* Share & Tags */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-6">

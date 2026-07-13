@@ -5,7 +5,7 @@ export const blogPosts = [
     title: "How to Apply for a Tourist Visa to Malaysia from Pakistan [2026]",
     excerpt: "A complete, step-by-step guide to securing your Malaysian e-Visa from Pakistan. Requirements, processing times, and insider tips from Islamabad's top travel consultants.",
     date: "2026-06-25",
-    author: "Harmain Travels Visa Team",
+    author: { name: "Ahmed Khan", bio: "Senior Visa Consultant at Harmain Travels with over 10 years of experience in Asian and Schengen visas." },
     image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=1200",
     content: `
 ## Getting Your Malaysia Tourist Visa in 2026
@@ -45,7 +45,7 @@ Why risk a rejection due to a technical error? Let the experts at Harmain Travel
     title: "Premium vs Economy Umrah Packages: What's the Difference for Islamabad Pilgrims?",
     excerpt: "Deciding between a premium or economy Umrah package? We break down hotel proximities, transport options, and VIP services to help you choose the right spiritual journey.",
     date: "2026-06-20",
-    author: "Harmain Travels Religious Tours",
+    author: { name: "Zainab Ali", bio: "Head of Umrah Operations. Dedicated to ensuring a spiritual and seamless journey for every pilgrim." },
     image: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=1200",
     content: `
 ## Choosing the Right Umrah Experience from Islamabad
@@ -85,7 +85,7 @@ If you prioritize comfort, have elderly family members, or wish to focus 100% on
     title: "The Ultimate Guide to Medina's Anti-Gravity Hill (Wadi Al-Jinn)",
     excerpt: "Discover the mystery of Wadi Al-Jinn (Medina's Magnetic Hill). Watch cars roll uphill! Learn the science, get directions, and book a VIP Ziyarat tour today.",
     date: "2026-06-29",
-    author: "Harmain Travels Expert Guides",
+    author: { name: "Zainab Ali", bio: "Head of Umrah Operations. Dedicated to ensuring a spiritual and seamless journey for every pilgrim." },
     image: "https://images.unsplash.com/photo-1542044801-44fb17013e89?auto=format&fit=crop&q=80&w=1200",
     content: `
 ## What is the Anti-Gravity Hill in Medina?

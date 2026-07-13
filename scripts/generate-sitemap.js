@@ -21,7 +21,9 @@ const staticRoutes = [
   { path: 'visa-services', priority: '0.8', changefreq: 'weekly' },
   { path: 'blog', priority: '0.8', changefreq: 'weekly' },
   { path: 'about', priority: '0.8', changefreq: 'monthly' },
-  { path: 'contact', priority: '0.8', changefreq: 'monthly' }
+  { path: 'contact', priority: '0.8', changefreq: 'monthly' },
+  { path: 'privacy-policy', priority: '0.5', changefreq: 'yearly' },
+  { path: 'terms-and-conditions', priority: '0.5', changefreq: 'yearly' }
 ];
 
 const urls = [];

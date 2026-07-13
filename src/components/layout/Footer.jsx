@@ -115,8 +115,8 @@ const Footer = () => {
             © {currentYear} Harmain Travel & Tours. The Ultimate Aviation Inspired Travel Authority.
           </p>
           <div className="flex gap-6 text-brand-muted font-display font-medium uppercase tracking-wider text-[10px] sm:text-[11px]">
-            <a href="#" className="hover:text-brand-white transition-all duration-300">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-white transition-all duration-300">Terms of Service</a>
+            <Link to="/privacy-policy" className="hover:text-brand-white transition-all duration-300">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="hover:text-brand-white transition-all duration-300">Terms of Service</Link>
           </div>
         </div>
       </div>

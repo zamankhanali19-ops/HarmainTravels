@@ -29,8 +29,8 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
-        title="Premium Travel Services & Visa Consulting | Harmain Travels"
-        description="Comprehensive travel services including luxury bookings, corporate tours, and expedited visa processing for destinations across Asia."
+        title="Our Travel Services | Tours, Flights & Umrah | Harmain"
+        description="Discover the full range of services by Harmain Travels: corporate tours, premium flight booking, global hotel reservations, and VIP Umrah packages."
         url="https://harmaintravels.com/services"
         schema={schema}
       />
