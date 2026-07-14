@@ -26,7 +26,7 @@ const Destinations = () => {
       "@type": "ListItem",
       "position": index + 1,
       "name": region.name,
-      "url": `https://harmaintravels.com/asia-tours`
+      "url": `https://harmaintravels.com/destinations`
     }))
   };
 
@@ -35,7 +35,7 @@ const Destinations = () => {
       <SEO 
         title="Asia Tour Packages | Luxury Travel & Vacations | Harmain"
         description="Explore breathtaking Asian destinations with Harmain Travels. Book exclusive tour packages to Maldives, Turkey, Dubai, Thailand, and more."
-        url="https://harmaintravels.com/asia-tours"
+        url="https://harmaintravels.com/destinations"
         schema={schema}
       />
       <Navbar>

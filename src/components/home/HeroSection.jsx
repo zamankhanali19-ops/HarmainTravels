@@ -43,7 +43,7 @@ const HeroSection = () => {
     }
     if (activeTab === 'flights') navigate('/flights');
     if (activeTab === 'hotels') navigate('/hotels');
-    if (activeTab === 'umrah') navigate('/umrah-packages');
+    if (activeTab === 'umrah') navigate('/umrah');
   };
 
   // Click outside handler for dropdown

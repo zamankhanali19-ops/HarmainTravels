@@ -22,7 +22,7 @@ const DestinationsGrid = () => {
               Iconic <span className="text-brand-red">Destinations</span>
             </h2>
           </div>
-          <Link to="/asia-tours" className="flex items-center gap-4 text-brand-silver-light font-display font-semibold uppercase tracking-widest text-xs group">
+          <Link to="/destinations" className="flex items-center gap-4 text-brand-silver-light font-display font-semibold uppercase tracking-widest text-xs group">
             View All 
             <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-red group-hover:border-brand-red group-hover:text-white transition-all duration-300">
               <ChevronRight size={20} />
@@ -41,7 +41,7 @@ const DestinationsGrid = () => {
               className={`${i === 0 || i === 3 || i === 5 ? 'md:col-span-8' : 'md:col-span-4'}`}
             >
               <Link 
-                to="/asia-tours"
+                to="/destinations"
                 className="group relative overflow-hidden rounded-[2rem] h-[300px] md:h-[450px] cursor-pointer block border border-white/5"
               >
                 <img 

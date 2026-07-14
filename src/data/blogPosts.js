@@ -128,7 +128,7 @@ Standard economy Umrah packages typically only cover the most common Ziyarats (Q
 
 Don't miss out on Medina's most fascinating natural wonder. At **Harmain Travels**, our premium Umrah packages from Islamabad include dedicated, private GMC transport for Ziyarat. Let our expert local guides handle the driving while you experience the impossible.
 
-<a href="/umrah-packages" class="inline-block bg-[#A61D24] text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-[#002147] transition-colors">Explore Our VIP Umrah Packages</a>
+<a href="/umrah" class="inline-block bg-[#A61D24] text-white font-bold py-3 px-6 rounded-full mt-4 hover:bg-[#002147] transition-colors">Explore Our VIP Umrah Packages</a>
 <button onclick="window.dispatchEvent(new CustomEvent('open-inquiry-modal', { detail: { text: 'Hello Harmain Travels, I want to visit Wadi Al-Jinn during my Umrah.' } }))" class="inline-block bg-[#25D366] text-white font-bold py-3 px-6 rounded-full mt-4 sm:ml-4 hover:bg-[#128C7E] transition-colors">WhatsApp a Travel Consultant</button>
     `,
     customSchema: {
@@ -141,7 +141,7 @@ Don't miss out on Medina's most fascinating natural wonder. At **Harmain Travels
         "addressLocality": "Medina",
         "addressCountry": "SA"
       },
-      "tourBookingPage": "https://harmaintravels.com/umrah-packages",
+      "tourBookingPage": "https://harmaintravels.com/umrah",
       "provider": {
         "@type": "TravelAgency",
         "name": "Harmain Travels",

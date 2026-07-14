@@ -123,7 +123,7 @@ const Umrah = () => {
       <SEO 
         title="Premium Umrah Packages from Pakistan | Harmain Travels"
         description="Book affordable and premium Umrah packages from Pakistan. Harmain Travels provides VIP services, luxury hotels, and seamless visa processing."
-        url="https://harmaintravels.com/umrah-packages"
+        url="https://harmaintravels.com/umrah"
         schema={umrahSchema}
       />
       <Navbar />

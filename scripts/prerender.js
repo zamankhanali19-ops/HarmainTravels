@@ -13,11 +13,11 @@ const distPath = path.join(__dirname, '../dist');
 // --- Static routes matching React Router in App.jsx ---
 const staticRoutes = [
   '',
-  'asia-tours',
+  'destinations',
   'hotels',
   'flights',
   'services',
-  'umrah-packages',
+  'umrah',
   'hajj-packages',
   'visa-services',
   'blog',
@@ -29,11 +29,11 @@ const staticRoutes = [
 
 const pathsToPrerender = [...staticRoutes];
 
-// Add country detail routes (matching /asia-tours/:countrySlug)
+// Add country detail routes (matching /destinations/:countrySlug)
 for (const region of asianRegions) {
   for (const country of region.countries) {
     const slug = country.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
-    pathsToPrerender.push(`asia-tours/${slug}`);
+    pathsToPrerender.push(`destinations/${slug}`);
   }
 }
 

@@ -30,12 +30,12 @@ const App = () => {
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/asia-tours" element={<Destinations />} />
-            <Route path="/asia-tours/:countrySlug" element={<CountryDetail />} />
+            <Route path="/destinations" element={<Destinations />} />
+            <Route path="/destinations/:countrySlug" element={<CountryDetail />} />
             <Route path="/hotels" element={<Hotels />} />
             <Route path="/flights" element={<Flights />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/umrah-packages" element={<Umrah />} />
+            <Route path="/umrah" element={<Umrah />} />
             <Route path="/hajj-packages" element={<Hajj />} />
             <Route path="/visa-services" element={<Visa />} />
             <Route path="/about" element={<About />} />

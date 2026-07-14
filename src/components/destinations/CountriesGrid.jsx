@@ -13,7 +13,7 @@ const CountriesGrid = ({ asianRegions, activeRegion }) => {
                 return (
                   <Link 
                     key={idx} 
-                    to={`/asia-tours/${slug}`}
+                    to={`/destinations/${slug}`}
                     state={{ country }}
                     className="group bg-brand-bg-primary overflow-hidden rounded-[1.5rem] sm:rounded-[3rem] hover:bg-brand-bg-primary transition-all duration-500 cursor-pointer shadow-xl hover:shadow-2xl hover:-translate-y-2 md:hover:-translate-y-4 border border-transparent hover:border-brand-red/30 flex flex-col h-full"
                   >

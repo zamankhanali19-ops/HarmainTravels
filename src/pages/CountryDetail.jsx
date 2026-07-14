@@ -15,7 +15,7 @@ const CountryDetail = () => {
     .flatMap((r) => r.countries)
     .find((c) => c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '') === countrySlug);
 
-  const canonicalUrl = `https://harmaintravels.com/asia-tours/${countrySlug}`;
+  const canonicalUrl = `https://harmaintravels.com/destinations/${countrySlug}`;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,7 +25,7 @@ const CountryDetail = () => {
     return (
       <div className="min-h-screen bg-brand-bg-primary flex flex-col items-center justify-center p-8">
         <h2 className="text-2xl font-black text-brand-white mb-4 uppercase tracking-wider">Country Not Found</h2>
-        <Link to="/asia-tours" className="btn-primary !px-6 !py-3">Go Back to Asia Tours</Link>
+        <Link to="/destinations" className="btn-primary !px-6 !py-3">Go Back to Destinations</Link>
       </div>
     );
   }
@@ -89,7 +89,7 @@ const CountryDetail = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Enhanced Go Back Button */}
           <Link
-            to="/asia-tours"
+            to="/destinations"
             className="inline-flex items-center gap-3 bg-brand-bg-secondary hover:bg-brand-bg-primary text-brand-white hover:text-brand-red font-black uppercase text-xs tracking-wider transition-all mb-8 md:mb-12 px-6 py-3.5 rounded-full border border-white/10/60 shadow-sm hover:shadow-md"
           >
             <ArrowLeft size={16} /> Go Back to Destinations

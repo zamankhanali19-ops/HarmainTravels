@@ -6,7 +6,7 @@ const Footer = () => {
 
   const footerLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Umrah Packages', path: '/umrah-packages' },
+    { name: 'Umrah Packages', path: '/umrah' },
     { name: 'Hajj Packages', path: '/hajj-packages' },
     { name: 'Visa Services', path: '/visa-services' },
     { name: 'Air Tickets', path: '/flights' },
