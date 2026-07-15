@@ -18,10 +18,10 @@ const VisaFlightsSection = () => {
               <FileCheck size={28} />
             </div>
             <h3 className="text-2xl sm:text-3xl font-display font-bold text-brand-white uppercase tracking-tight mb-4">
-              Global Visa Services
+              Visa Processing Services
             </h3>
             <p className="text-brand-muted font-body text-base leading-relaxed mb-8">
-              Navigate the complexities of international travel with our expert visa consulting. We provide end-to-end assistance for tourist, business, and transit visas across major destinations in Asia, Europe, and the Americas, ensuring a high approval rate.
+              Navigate international travel effortlessly with our premium visa processing services in Islamabad. Our top-rated travel agents provide end-to-end assistance for tourist and business e-visas across major destinations, maximizing your approval rates.
             </p>
             <button className="btn-secondary">Explore Visas</button>
           </motion.div>
@@ -38,10 +38,10 @@ const VisaFlightsSection = () => {
               <PlaneTakeoff size={28} />
             </div>
             <h3 className="text-2xl sm:text-3xl font-display font-bold text-brand-white uppercase tracking-tight mb-4">
-              Premium Air Tickets
+              International Flight Booking
             </h3>
             <p className="text-brand-muted font-body text-base leading-relaxed mb-8">
-              Fly with the world's best airlines. As an authorized IATA partner, we offer competitive rates on First Class, Business, and Economy flights. Benefit from our exclusive corporate affiliations with Emirates, Qatar Airways, and Saudia.
+              Book international flights with Pakistan's trusted corporate travel consultants. As an authorized IATA agency, we offer exclusive ticketing rates on First Class and Business flights through global partners like Emirates, Qatar Airways, and Saudia Airlines.
             </p>
             <button className="btn-primary">Book Flights</button>
           </motion.div>

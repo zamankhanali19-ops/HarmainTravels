@@ -44,35 +44,51 @@ const CountryDetail = () => {
     { icon: <CheckCircle size={24} className="text-brand-white" />, title: 'End-to-End Concierge', text: 'Enjoy a frictionless, end-to-end luxury travel experience from premium arrivals to high-end stays.' }
   ];
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "TouristDestination",
-        "name": country.name,
-        "description": country.desc,
-        "touristType": [
-          "Leisure",
-          "Cultural"
-        ],
-        "includesAttraction": {
-          "@type": "TouristAttraction",
-          "name": country.famousPlace
-        }
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristDestination",
+      "name": country.name,
+      "description": country.desc,
+      "image": country.image,
+      "touristType": [
+        "Leisure",
+        "Business",
+        "Family"
+      ],
+      "includesAttraction": {
+        "@type": "TouristAttraction",
+        "name": country.famousPlace
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAction",
+      "name": `Book a trip to ${country.name}`,
+      "target": `https://harmaintravels.com/destinations/${countrySlug}`,
+      "agent": {
+        "@type": "TravelAgency",
+        "name": "Harmain Travels",
+        "url": "https://harmaintravels.com"
       },
-      ...(country.faq ? [{
-        "@type": "FAQPage",
-        "mainEntity": country.faq.map(item => ({
-          "@type": "Question",
-          "name": item.q,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": item.a
-          }
-        }))
-      }] : [])
-    ]
-  };
+      "location": {
+        "@type": "Place",
+        "name": country.name
+      }
+    },
+    ...(country.faq ? [{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": country.faq.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }] : [])
+  ];
 
   return (
     <div className="min-h-screen bg-brand-bg-primary flex flex-col">
@@ -103,6 +119,7 @@ const CountryDetail = () => {
                 src={country.image}
                 alt={country.name}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white z-10">

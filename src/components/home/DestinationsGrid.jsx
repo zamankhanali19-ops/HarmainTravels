@@ -17,9 +17,9 @@ const DestinationsGrid = () => {
       <div className="max-w-[1500px] mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 lg:mb-16 gap-6">
           <div className="max-w-2xl">
-            <span className="text-brand-red font-display font-semibold uppercase tracking-[0.3em] text-xs mb-3 block">Top Choices</span>
+            <span className="text-brand-red font-display font-semibold uppercase tracking-[0.3em] text-xs mb-3 block">Top Vacation Packages</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight text-brand-white">
-              Iconic <span className="text-brand-red">Destinations</span>
+              International <span className="text-brand-red">Tours</span>
             </h2>
           </div>
           <Link to="/destinations" className="flex items-center gap-4 text-brand-silver-light font-display font-semibold uppercase tracking-widest text-xs group">
@@ -41,7 +41,7 @@ const DestinationsGrid = () => {
               className={`${i === 0 || i === 3 || i === 5 ? 'md:col-span-8' : 'md:col-span-4'}`}
             >
               <Link 
-                to="/destinations"
+                to={`/destinations/${dest.name.toLowerCase().replace(/ /g, '-')}`}
                 className="group relative overflow-hidden rounded-[2rem] h-[300px] md:h-[450px] cursor-pointer block border border-white/5"
               >
                 <img 

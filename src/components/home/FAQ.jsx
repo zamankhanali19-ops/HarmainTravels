@@ -47,7 +47,7 @@ const FAQ = () => {
       </Helmet>
       <div className="max-w-[1000px] mx-auto px-6 sm:px-8 lg:px-10">
         <div className="text-center mb-16">
-          <span className="text-brand-red font-display font-semibold uppercase tracking-[0.3em] text-xs mb-4 block">Knowledge Base</span>
+          <span className="text-brand-red font-display font-semibold uppercase tracking-[0.3em] text-xs mb-4 block">Travel Agency Islamabad</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-brand-white uppercase tracking-tight">
             Frequently Asked <span className="text-brand-red">Questions</span>
           </h2>

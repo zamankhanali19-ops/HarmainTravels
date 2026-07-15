@@ -17,16 +17,16 @@ const UmrahHajjSection = () => {
           >
             <div>
               <span className="text-brand-red font-display font-semibold uppercase tracking-[0.3em] text-xs mb-4 block flex items-center gap-2">
-                <Moon size={14} /> Spiritual Excellence
+                <Moon size={14} /> Islamic Pilgrimage Services
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-brand-white uppercase tracking-tight leading-[1.1]">
-                Premium <span className="text-brand-red">Umrah</span> & <br/>
-                Luxury <span className="text-brand-red">Hajj</span>
+                VIP <span className="text-brand-red">Umrah Packages</span> & <br/>
+                Premium <span className="text-brand-red">Hajj Tours</span>
               </h2>
             </div>
             
             <p className="text-brand-muted font-body text-base leading-relaxed">
-              Embark on a sacred journey with absolute peace of mind. Our exclusive religious travel division handles everything from VIP visa processing to securing premium Haram-view suites in Makkah and Madinah. We partner exclusively with 5-star properties to ensure your spiritual focus is never compromised by logistical concerns.
+              Embark on a sacred journey from Pakistan with absolute peace of mind. Our exclusive luxury Umrah services handle everything from VIP Umrah visa processing to securing 5-star Haram-view suites in Makkah and Madinah. Focus entirely on your spiritual rituals while our expert travel agents manage your premium Hajj and Umrah logistics.
             </p>
 
             <ul className="space-y-4">
@@ -55,7 +55,7 @@ const UmrahHajjSection = () => {
           >
             <div className="space-y-4 pt-12">
               <div className="glass-card rounded-[2rem] overflow-hidden aspect-[4/5] relative group">
-                <img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&q=80&w=800" alt="Makkah" className="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+                <img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&q=80&w=800" alt="Makkah" className="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0E2240] via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6">
                   <h4 className="text-white font-display font-bold text-xl uppercase tracking-wider">Makkah</h4>
@@ -64,7 +64,7 @@ const UmrahHajjSection = () => {
             </div>
             <div className="space-y-4">
               <div className="glass-card rounded-[2rem] overflow-hidden aspect-[4/5] relative group">
-                <img src="https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?auto=format&fit=crop&q=80&w=800" alt="Madinah" className="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+                <img src="https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?auto=format&fit=crop&q=80&w=800" alt="Madinah" className="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0E2240] via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6">
                   <h4 className="text-white font-display font-bold text-xl uppercase tracking-wider">Madinah</h4>

@@ -79,6 +79,9 @@ const HeroSection = () => {
           src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=2400" 
           className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
           alt="Premium airplane wing view at sunset - Harmain Travels VIP Aviation"
+          width="2400"
+          height="1600"
+          decoding="async"
           fetchpriority="high"
           loading="eager"
         />
@@ -100,12 +103,12 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-display font-bold mb-6 text-brand-white leading-[1.1] tracking-tight">
-            Elevate Your <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-red-dark">Journey Beyond</span>
+            Premier Travel Agency <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-red-dark">in Islamabad</span>
           </h1>
           
           <p className="text-sm sm:text-base md:text-lg mb-10 text-brand-silver font-body max-w-2xl leading-relaxed">
-            Experience the pinnacle of luxury travel. From exclusive Umrah packages to bespoke Asian tours and elite flight bookings, Harmain Travels sets the standard for modern exploration.
+            Experience luxury travel management with Pakistan's most trusted experts. From VIP Umrah packages to bespoke corporate tours and elite flight bookings, Harmain Travels elevates your journey.
           </p>
 
           <div className="flex flex-wrap gap-4">

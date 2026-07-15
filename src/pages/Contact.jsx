@@ -14,21 +14,31 @@ const Contact = () => {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "TravelAgency",
     "name": "Harmain Travels",
     "image": "https://harmaintravels.com/logo.png",
     "url": "https://harmaintravels.com/contact",
-    "telephone": "+92325880050",
+    "telephone": "+923258880050",
     "email": "harmaintravelisb@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Office No.15 1st floor Aalay Plaza Fazal-e-Haq road Blue Area Islamabad",
+      "streetAddress": "Office No.15 1st floor Aalay Plaza Fazal-e-Haq road Blue Area",
       "addressLocality": "Islamabad",
       "addressRegion": "ICT",
       "postalCode": "44000",
       "addressCountry": "PK"
     },
-    "openingHours": "Mo,Tu,We,Th,Fr,Sa 09:00-18:00"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.7294,
+      "longitude": 73.0931
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
   };
 
   return (

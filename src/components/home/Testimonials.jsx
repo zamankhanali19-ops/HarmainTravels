@@ -29,7 +29,7 @@ const Testimonials = () => {
         <div className="text-center mb-16">
           <span className="text-brand-red font-display font-semibold uppercase tracking-[0.3em] text-xs mb-4 block">Client Experiences</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-brand-white uppercase tracking-tight">
-            Word on the <span className="text-brand-red">Street</span>
+            Luxury Travel <span className="text-brand-red">Reviews</span>
           </h2>
         </div>
 

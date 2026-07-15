@@ -76,10 +76,16 @@ const Hotels = () => {
     "name": "Luxury Hotel Reservations",
     "provider": {
       "@type": "TravelAgency",
-      "name": "Harmain Travels"
+      "name": "Harmain Travels",
+      "url": "https://harmaintravels.com",
+      "telephone": "+923258880050"
     },
     "serviceType": "Hotel Booking",
-    "description": "Exclusive 5-star hotel, private villa, and premium resort bookings across Asia with VIP perks."
+    "description": "Exclusive 5-star hotel, private villa, and premium resort bookings across Asia with VIP perks.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Pakistan"
+    }
   };
 
   return (

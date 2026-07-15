@@ -105,14 +105,25 @@ const Visa = () => {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Global Visa Consulting",
-    "provider": {
-      "@type": "TravelAgency",
-      "name": "Harmain Travels"
-    },
-    "serviceType": "Visa Application Services",
-    "description": "Expert visa consulting and processing for UAE, Saudi Arabia, UK, USA, Schengen, and global destinations."
+    "@type": "ItemList",
+    "name": "Global Visa Consulting Services",
+    "description": "Expert visa consulting and processing for UAE, Saudi Arabia, UK, USA, Schengen, and global destinations.",
+    "numberOfItems": visaCountries.length,
+    "itemListElement": visaCountries.map((visa, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": `${visa.country} Visa Service`,
+        "description": `${visa.type} processing for ${visa.country}. Time: ${visa.time}.`,
+        "provider": {
+          "@type": "TravelAgency",
+          "name": "Harmain Travels",
+          "url": "https://harmaintravels.com",
+          "telephone": "+923258880050"
+        }
+      }
+    }))
   };
 
   return (

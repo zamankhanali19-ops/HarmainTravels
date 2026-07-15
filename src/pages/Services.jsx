@@ -1,10 +1,15 @@
 
+import { useEffect } from 'react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { Plane, Map, ShieldCheck, Ticket, Users, Globe } from 'lucide-react';
 import SEO from '../components/common/SEO';
 
 const Services = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const allServices = [
     { title: "Flight Ticketing", icon: <Plane size={40} />, desc: "Domestic & International flight bookings with the best corporate rates." },
     { title: "Tour Planning", icon: <Map size={40} />, desc: "Customized family and group tour packages across Thailand, Malaysia, and beyond." },
@@ -16,14 +21,24 @@ const Services = () => {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Comprehensive Travel Services",
-    "provider": {
-      "@type": "TravelAgency",
-      "name": "Harmain Travels"
-    },
-    "serviceType": "Travel Management",
-    "description": "Comprehensive travel services including luxury bookings, corporate tours, and expedited visa processing."
+    "@type": "ItemList",
+    "name": "Travel Services by Harmain Travels",
+    "description": "Comprehensive travel services including luxury bookings, corporate tours, and expedited visa processing.",
+    "numberOfItems": allServices.length,
+    "itemListElement": allServices.map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": service.title,
+        "description": service.desc,
+        "provider": {
+          "@type": "TravelAgency",
+          "name": "Harmain Travels",
+          "url": "https://harmaintravels.com"
+        }
+      }
+    }))
   };
 
   return (

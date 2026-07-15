@@ -31,10 +31,10 @@ const OfficialDropbox = () => {
             <Award size={14} /> Official Authorization
           </div>
           <h2 className="text-3xl md:text-5xl font-display font-bold text-brand-white uppercase tracking-tight mb-6">
-            Authorized <span className="text-[#D4AF37]">Dropbox Center</span>
+            Official <span className="text-[#D4AF37]">Visa Dropbox Center</span>
           </h2>
           <p className="text-brand-muted max-w-2xl mx-auto font-body text-lg leading-relaxed">
-            Harmain Travels holds the prestigious status of being the official Dropbox center for key Southeast Asian destinations, offering you unparalleled speed and reliability.
+            As an authorized Visa Dropbox Center in Islamabad, Harmain Travels offers priority visa processing and VIP embassy handling for top Southeast Asian destinations like Malaysia and Thailand.
           </p>
         </div>
 
@@ -52,6 +52,7 @@ const OfficialDropbox = () => {
                     src={country.flag} 
                     alt={`${country.name} Flag`} 
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 

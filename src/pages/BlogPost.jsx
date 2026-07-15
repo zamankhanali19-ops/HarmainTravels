@@ -49,8 +49,15 @@ const BlogPost = () => {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
+    "description": post.excerpt,
     "image": post.image,
     "datePublished": post.date,
+    "dateModified": post.date,
+    "url": `https://harmaintravels.com/blog/${post.slug}`,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://harmaintravels.com/blog/${post.slug}`
+    },
     "author": {
       "@type": "Person",
       "name": post.author.name,
@@ -73,6 +80,10 @@ const BlogPost = () => {
         description={post.excerpt}
         url={`https://harmaintravels.com/blog/${post.slug}`}
         image={post.image}
+        type="article"
+        publishedTime={post.date}
+        modifiedTime={post.date}
+        author={post.author.name}
         schema={post.customSchema ? [postSchema, post.customSchema] : postSchema}
       />
       <Navbar />

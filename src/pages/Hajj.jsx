@@ -6,15 +6,22 @@ import SEO from '../components/common/SEO';
 const Hajj = () => {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     "name": "Luxury Hajj Packages from Pakistan",
     "description": "Premium Hajj packages with 5-star accommodations, VIP tents in Mina, and expert guidance from Harmain Travels.",
-    "brand": {
-      "@type": "Organization",
-      "name": "Harmain Travels"
+    "serviceType": "Hajj Pilgrimage Package",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Harmain Travels",
+      "url": "https://harmaintravels.com",
+      "telephone": "+923258880050"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Pakistan"
     },
     "offers": {
-      "@type": "AggregateOffer",
+      "@type": "Offer",
       "priceCurrency": "PKR",
       "availability": "https://schema.org/InStock",
       "url": "https://harmaintravels.com/hajj-packages"

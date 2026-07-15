@@ -11,12 +11,25 @@ const Blog = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Travel Insights & Visa Guides",
+    "description": "Read expert travel insights, visa guides, and premium package comparisons from Islamabad's leading travel consultants.",
+    "url": "https://harmaintravels.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Harmain Travels"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
         title="Travel Insights & Visa Guides | Harmain Travels Blog"
         description="Read expert travel insights, visa guides, and premium package comparisons from Islamabad's leading travel consultants."
         url="https://harmaintravels.com/blog"
+        schema={schema}
       />
       <Navbar />
       
@@ -41,6 +54,7 @@ const Blog = () => {
                 <img 
                   src={post.image} 
                   alt={post.title} 
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute top-4 right-4 bg-brand-bg-secondary/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-brand-white">
@@ -54,7 +68,7 @@ const Blog = () => {
                 <h2 className="text-2xl font-black text-brand-white mb-4 leading-tight group-hover:text-brand-red transition-colors">{post.title}</h2>
                 <p className="text-brand-silver mb-6 flex-grow line-clamp-3">{post.excerpt}</p>
                 <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                  <span className="flex items-center gap-2 text-xs font-bold text-brand-white uppercase tracking-wider"><User size={14} className="text-brand-red" /> {post.author}</span>
+                  <span className="flex items-center gap-2 text-xs font-bold text-brand-white uppercase tracking-wider"><User size={14} className="text-brand-red" /> {post.author.name}</span>
                   <span className="text-xs font-black text-brand-red uppercase tracking-widest">Read More &rarr;</span>
                 </div>
               </div>

@@ -3,21 +3,21 @@ import { ShieldCheck, Clock, Crown, Globe, Briefcase, HeartHandshake } from 'luc
 
 const ServicesShowroom = () => {
   const services = [
-    { icon: Crown, title: 'VIP Corporate Travel', desc: 'Bespoke executive itineraries with elite ground transport and priority boardings.' },
-    { icon: Globe, title: 'Global Concierge', desc: 'Dedicated 24/7 travel concierge to manage all your bookings and sudden changes.' },
-    { icon: ShieldCheck, title: 'Secure Visas', desc: 'Streamlined, expert e-visa consulting maximizing your approval rates.' },
-    { icon: HeartHandshake, title: 'Spiritual Journeys', desc: 'Premium Umrah & Hajj packages with stays at 5-star Haram-view properties.' },
-    { icon: Briefcase, title: 'Event Logistics', desc: 'Complete travel coordination for destination weddings and corporate retreats.' },
-    { icon: Clock, title: 'Fast-Track Services', desc: 'Skip the lines with our exclusive airport meet & greet and fast-track immigration.' },
+    { icon: Crown, title: 'Corporate Tours', desc: 'Bespoke executive itineraries and luxury corporate travel management for businesses in Pakistan.' },
+    { icon: Globe, title: 'Global Concierge', desc: 'Dedicated 24/7 travel agents in Islamabad handling international flight bookings and sudden changes.' },
+    { icon: ShieldCheck, title: 'Visa Services', desc: 'Streamlined, expert e-visa processing and consulting for top international destinations.' },
+    { icon: HeartHandshake, title: 'Spiritual Journeys', desc: 'Premium Umrah & Hajj packages from Pakistan with 5-star Haram-view properties.' },
+    { icon: Briefcase, title: 'Event Logistics', desc: 'Complete destination management and travel coordination for high-end international retreats.' },
+    { icon: Clock, title: 'Fast-Track Services', desc: 'Exclusive airport meet & greet and fast-track immigration for our VIP corporate clients.' },
   ];
 
   return (
     <section className="py-24 bg-brand-bg-primary relative border-t border-white/5">
       <div className="max-w-[1500px] mx-auto px-6 sm:px-8 lg:px-10">
         <div className="text-center mb-16">
-          <span className="text-brand-red font-display font-semibold uppercase tracking-[0.3em] text-xs mb-4 block">World Class Offerings</span>
+          <span className="text-brand-red font-display font-semibold uppercase tracking-[0.3em] text-xs mb-4 block">Premium Travel Management</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-brand-white uppercase tracking-tight">
-            Our Signature <span className="text-brand-red">Services</span>
+            Exclusive <span className="text-brand-red">Travel Services</span>
           </h2>
         </div>
 

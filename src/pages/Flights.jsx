@@ -37,10 +37,16 @@ const Flights = () => {
     "name": "International Airline Ticketing",
     "provider": {
       "@type": "TravelAgency",
-      "name": "Harmain Travels"
+      "name": "Harmain Travels",
+      "url": "https://harmaintravels.com",
+      "telephone": "+923258880050"
     },
     "serviceType": "Flight Reservations",
-    "description": "Premium corporate and leisure airline ticketing services specializing in fast processing and VIP connections."
+    "description": "Premium corporate and leisure airline ticketing services specializing in fast processing and VIP connections.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Pakistan"
+    }
   };
 
   return (

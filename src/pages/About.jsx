@@ -16,11 +16,11 @@ const About = () => {
     "name": "Harmain Travels",
     "url": "https://harmaintravels.com",
     "logo": "https://harmaintravels.com/logo.png",
-    "foundingDate": "2011",
+    "foundingDate": "2010",
     "description": "Harmain Travels is a premium travel agency based in Islamabad, Pakistan, specializing in VIP Umrah packages, corporate travel management, and luxury Asian tours.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Office No.15 1st floor Aalay Plaza Fazal-e-Haq road Blue Area Islamabad",
+      "streetAddress": "Office No.15 1st floor Aalay Plaza Fazal-e-Haq road Blue Area",
       "addressLocality": "Islamabad",
       "addressRegion": "ICT",
       "postalCode": "44000",
@@ -28,9 +28,16 @@ const About = () => {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+92-317-5477919",
-      "contactType": "customer service"
-    }
+      "telephone": "+923258880050",
+      "contactType": "customer service",
+      "email": "harmaintravelisb@gmail.com",
+      "areaServed": "PK",
+      "availableLanguage": ["English", "Urdu"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/harmaintravels",
+      "https://www.instagram.com/harmaintravels"
+    ]
   };
 
   return (
@@ -72,6 +79,7 @@ const About = () => {
               src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200" 
               className="rounded-[2.5rem] md:rounded-[4rem] shadow-2xl relative z-10 w-full object-cover aspect-[4/5] bg-brand-bg-secondary" 
               alt="Harmain Travels Legacy" 
+              loading="lazy"
             />
             <div className="absolute bottom-4 right-4 md:-bottom-10 md:-right-10 bg-brand-bg-secondary p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-2xl z-20 border-b-[8px] md:border-b-[12px] border-[#931328]">
               <div className="text-4xl md:text-6xl font-black text-brand-white">15+</div>

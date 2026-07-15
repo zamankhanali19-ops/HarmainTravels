@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { Send, CheckCircle, Sparkles, ShieldCheck, Heart, Moon, Calendar } from 'lucide-react';
@@ -76,22 +77,27 @@ const Umrah = () => {
   const umrahSchema = [
     {
       "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "14-Day Premium VIP Umrah Package from Islamabad",
+      "@type": "Service",
+      "name": "Premium VIP Umrah Packages from Islamabad",
       "description": "5-Star accommodations at Fairmont Makkah and Pullman Zamzam, including direct flights from ISB and VIP transport.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Harmain Travels"
+      "serviceType": "Umrah Pilgrimage Package",
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "Harmain Travels",
+        "url": "https://harmaintravels.com",
+        "telephone": "+923258880050"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Pakistan"
       },
       "offers": {
-        "@type": "Offer",
+        "@type": "AggregateOffer",
         "priceCurrency": "PKR",
-        "price": "345000",
+        "lowPrice": "275000",
+        "highPrice": "445000",
         "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Harmain Travels"
-        }
+        "url": "https://harmaintravels.com/umrah"
       }
     },
     {
@@ -121,8 +127,8 @@ const Umrah = () => {
   return (
     <div className="min-h-screen bg-brand-bg-secondary">
       <SEO 
-        title="Premium Umrah Packages from Pakistan | Harmain Travels"
-        description="Book affordable and premium Umrah packages from Pakistan. Harmain Travels provides VIP services, luxury hotels, and seamless visa processing."
+        title="VIP Umrah Packages from Pakistan | 5-Star Luxury Umrah Services"
+        description="Book premium 5-star Umrah packages from Pakistan. Harmain Travels in Islamabad provides VIP luxury Umrah services, Fairmont Makkah stays, and seamless visa processing."
         url="https://harmaintravels.com/umrah"
         schema={umrahSchema}
       />
@@ -135,16 +141,18 @@ const Umrah = () => {
             src="https://images.unsplash.com/photo-1591604129939-f1efa4d8f7ec?auto=format&fit=crop&q=80&w=2000" 
             alt="Holy Mosque Makkah Background" 
             className="w-full h-full object-cover brightness-[0.7]"
+            fetchpriority="high"
+            loading="eager"
           />
         </div>
         <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-[#931328]/30 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2"></div>
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <span className="text-brand-red font-black uppercase tracking-[0.4em] text-xs mb-4 block animate-reveal">Spiritual Awakening</span>
           <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter mb-6 sm:mb-8 leading-none animate-reveal [text-shadow:0_4px_24px_rgba(0,0,0,0.6)]">
-            Elite <span className="text-brand-red">Umrah</span> Services
+            VIP <span className="text-brand-red">Umrah Packages</span>
           </h1>
           <p className="text-brand-silver-light max-w-3xl mx-auto text-sm sm:text-lg md:text-xl font-medium tracking-wide leading-relaxed px-2 mb-10 sm:mb-14 animate-reveal drop-shadow-md">
-            Embark on a completely tailored spiritual journey with Harmain Travels. Experience the ultimate luxury and convenience with our all-inclusive Premium Umrah itineraries.
+            Experience the ultimate luxury and convenience with our 5-star Umrah packages from Pakistan. We manage everything from Haram-view Makkah hotel bookings to <Link to="/visa-services" className="text-brand-red hover:underline decoration-brand-red underline-offset-4">premium Umrah visa processing</Link>, ensuring a spiritually fulfilling journey.
           </p>
 
           {/* Squeezed into 1 line for desktop and responsive to phone screen */}

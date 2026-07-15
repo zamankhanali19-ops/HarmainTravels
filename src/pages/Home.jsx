@@ -35,7 +35,7 @@ const Home = () => {
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+92325880050",
+        "telephone": "+923258880050",
         "contactType": "customer service",
         "email": "harmaintravelisb@gmail.com",
         "areaServed": "PK",
@@ -53,7 +53,7 @@ const Home = () => {
       "name": "Harmain Travels Islamabad",
       "image": "https://harmaintravels.com/logo.png",
       "url": "https://harmaintravels.com/",
-      "telephone": "+92325880050",
+      "telephone": "+923258880050",
       "parentOrganization": {
         "@id": "https://harmaintravels.com/#organization"
       },
@@ -84,14 +84,28 @@ const Home = () => {
         "opens": "09:00",
         "closes": "18:00"
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Harmain Travels",
+      "url": "https://harmaintravels.com/",
+      "publisher": {
+        "@id": "https://harmaintravels.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://harmaintravels.com/destinations?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
   ];
 
   return (
     <div className="min-h-screen bg-brand-bg-primary text-brand-silver-light selection:bg-brand-red selection:text-white">
       <SEO 
-        title="Harmain Travels | Premium Travel Agency in Islamabad"
-        description="Experience luxury travel with Harmain Travels. We offer bespoke corporate tours, premium Umrah packages, exclusive VIP visas, and airline ticketing."
+        title="Premium Travel Agency in Islamabad | Harmain Travels"
+        description="Harmain Travels is the best travel agency in Islamabad, Pakistan. Book VIP Umrah packages, corporate tours, flights & visas. Contact our experts today!"
         schema={schema}
       />
       <Navbar />
