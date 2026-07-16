@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
-const SEO = ({ title, description, image = "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=90&w=1200", schema, type = "website", publishedTime, modifiedTime, author }) => {
+const SEO = ({ title, description, image = "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=90&w=1200", schema, type = "website", publishedTime, modifiedTime, author, noindex = false }) => {
   const location = useLocation();
   const currentUrl = `https://harmaintravels.com${location.pathname === '/' ? '' : location.pathname}`;
 
@@ -11,6 +11,7 @@ const SEO = ({ title, description, image = "https://images.unsplash.com/photo-15
       <title>{title}</title>
       <meta name='description' content={description} />
       <meta name="theme-color" content="#002147" />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       
       {/* Canonical Link */}
       <link rel="canonical" href={currentUrl} />
