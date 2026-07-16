@@ -77,25 +77,25 @@ const Umrah = () => {
   const umrahSchema = [
     {
       "@context": "https://schema.org/",
-      "@type": "Service",
+      "@type": "Product",
       "name": "Premium VIP Umrah Packages from Islamabad",
+      "image": "https://images.unsplash.com/photo-1591604129939-f1efa4d8f7ec?auto=format&fit=crop&q=80&w=2000",
       "description": "5-Star accommodations at Fairmont Makkah and Pullman Zamzam, including direct flights from ISB and VIP transport.",
-      "serviceType": "Umrah Pilgrimage Package",
-      "provider": {
-        "@type": "TravelAgency",
-        "name": "Harmain Travels",
-        "url": "https://harmaintravels.com",
-        "telephone": "+923258880050"
+      "brand": {
+        "@type": "Brand",
+        "name": "Harmain Travels"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Pakistan"
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "128"
       },
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "PKR",
         "lowPrice": "275000",
         "highPrice": "445000",
+        "offerCount": "3",
         "availability": "https://schema.org/InStock",
         "url": "https://harmaintravels.com/umrah"
       }

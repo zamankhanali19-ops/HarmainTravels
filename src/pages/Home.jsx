@@ -71,6 +71,62 @@ const Home = () => {
         "longitude": 73.0931
       },
       "priceRange": "$$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "312"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Islamabad",
+          "@id": "https://www.wikidata.org/wiki/Q1860"
+        },
+        {
+          "@type": "City",
+          "name": "Rawalpindi"
+        },
+        {
+          "@type": "Country",
+          "name": "Pakistan"
+        }
+      ],
+      "hasMap": "https://maps.google.com/?cid=harmaintravels",
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "VIP Umrah Packages from Islamabad",
+            "serviceType": "Umrah Pilgrimage"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Luxury Hajj Packages from Pakistan",
+            "serviceType": "Hajj Pilgrimage"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Global Visa Processing Services",
+            "serviceType": "Visa Advisory"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "International Flight Ticketing",
+            "serviceType": "Airline Ticketing"
+          }
+        }
+      ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [

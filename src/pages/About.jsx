@@ -54,9 +54,9 @@ const About = () => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#931328]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
         <div className="relative z-10">
           <History size={48} className="text-[#931328] mx-auto mb-8 animate-float-slow" />
-          <span className="text-[#931328] font-black uppercase tracking-[0.5em] text-xs mb-6 block">Our Story</span>
+          <span className="text-[#931328] font-black uppercase tracking-[0.5em] text-xs mb-6 block">Our Story in the Capital</span>
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black text-white uppercase tracking-tighter mb-8 leading-none">
-            Legacy of <br/> <span className="text-[#931328]">Harmain Travels</span>
+            Islamabad's Legacy <br/> <span className="text-[#931328]">Harmain Travels</span>
           </h1>
         </div>
       </section>
@@ -65,7 +65,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center mb-16 md:mb-32">
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-brand-white uppercase tracking-tighter mb-6 md:mb-10 leading-tight">
-              Redefining the <br/> <span className="text-[#931328]">Asian Gateway</span>
+              The Twin Cities' <br/> <span className="text-[#931328]">Asian Gateway</span>
             </h2>
             <p className="text-brand-silver text-base md:text-lg lg:text-xl font-medium leading-relaxed mb-6 md:mb-10">
               Founded on the principles of integrity and excellence, Harmain Travels has become the architectural bridge to Asia's most iconic wonders. We specialize in providing high-end, seamless travel experiences that go beyond mere ticketing.

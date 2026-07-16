@@ -38,7 +38,18 @@ const Contact = () => {
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       "opens": "09:00",
       "closes": "18:00"
-    }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "ratingCount": "312"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Islamabad" },
+      { "@type": "City", "name": "Rawalpindi" }
+    ],
+    "hasMap": "https://maps.google.com/?cid=harmaintravels"
   };
 
   return (
@@ -52,11 +63,12 @@ const Contact = () => {
       <Navbar />
       
       <section className="pt-48 pb-24 bg-brand-bg-primary text-center px-4">
-        <h1 className="text-5xl md:text-9xl font-black text-brand-white uppercase tracking-tighter mb-8 leading-none">
+        <span className="text-brand-red font-black uppercase tracking-[0.4em] text-xs mb-4 block">Islamabad's Premier Travel Agency</span>
+        <h1 className="text-5xl md:text-8xl font-black text-brand-white uppercase tracking-tighter mb-8 leading-none">
           Get in <span className="text-[#931328]">Touch</span>
         </h1>
-        <p className="text-brand-muted max-w-2xl mx-auto text-xl font-medium tracking-widest uppercase">
-          Your journey to Asia starts with a conversation.
+        <p className="text-brand-muted max-w-2xl mx-auto text-lg sm:text-xl font-medium tracking-widest uppercase">
+          Visit our Blue Area office or contact us today for VIP Umrah packages, flight bookings, and global visa services in the Twin Cities.
         </p>
       </section>
 

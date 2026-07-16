@@ -7,7 +7,8 @@ const Hero = ({ Logo }) => {
         <img 
           src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=2000" 
           className="w-full h-full object-cover opacity-30"
-          alt="Hero Background"
+          alt="Luxury Umrah pilgrimage tour from Islamabad - Harmain Travels"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-bg-primary via-transparent to-brand-bg-primary"></div>
       </div>

@@ -111,6 +111,7 @@ const BlogPost = () => {
           src={post.image} 
           alt={post.title} 
           className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover rounded-[2rem] md:rounded-[3rem] shadow-2xl"
+          loading="lazy"
         />
       </div>
 
