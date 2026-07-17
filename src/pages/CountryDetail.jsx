@@ -93,8 +93,8 @@ const CountryDetail = () => {
   return (
     <div className="min-h-screen bg-brand-bg-primary flex flex-col">
       <SEO 
-        title={`${country.name} Tours & Visa Requirements | Harmain Travels`}
-        description={`Plan your next premium tour to ${country.name} with Harmain Travels. Check the must-visit spots, complete document requirements, and apply for a visa today.`}
+        title={country.seoTitle || `${country.name} Tours & Visa Requirements | Harmain Travels`}
+        description={country.seoDescription || `Plan your next premium tour to ${country.name} with Harmain Travels. Check the must-visit spots, complete document requirements, and apply for a visa today.`}
         url={canonicalUrl}
         schema={schema}
       />
@@ -138,6 +138,12 @@ const CountryDetail = () => {
                 <p className="text-brand-white font-bold text-sm sm:text-lg tracking-[0.2em] leading-relaxed uppercase opacity-85 mb-8">
                   {country.desc}
                 </p>
+
+                {country.longDescription && (
+                  <div className="mb-10 text-brand-silver font-medium text-sm sm:text-base leading-relaxed whitespace-pre-wrap opacity-90 border-l-2 border-white/10 pl-6 py-2">
+                    {country.longDescription}
+                  </div>
+                )}
 
                 {/* Country Specific Visa Highlight */}
                 <div className="bg-gradient-to-r from-brand-red/10 via-brand-red/5 to-transparent border-l-4 border-brand-red p-5 sm:p-6 rounded-r-2xl mb-8">
@@ -190,31 +196,95 @@ const CountryDetail = () => {
             </div>
           </div>
 
-          {/* 1. Masterclass: Know Before You Go Section */}
+          {/* Dynamic Top Attractions */}
+          {country.topAttractions && (
+            <div className="border-t border-white/10/60 pt-16 mt-16">
+              <span className="text-brand-red font-black uppercase tracking-[0.4em] text-xs mb-4 block text-center">Must Visit Places</span>
+              <h2 className="text-3xl sm:text-5xl font-black text-brand-white text-center tracking-tight uppercase leading-none mb-12">
+                Top Attractions in {country.name}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                {country.topAttractions.map((attr, idx) => (
+                  <div key={idx} className="bg-brand-bg-secondary border border-white/5 p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                    <div>
+                      <h4 className="text-brand-white font-black uppercase text-sm tracking-wider mb-2">{attr.name}</h4>
+                      <p className="text-brand-silver text-[10px] font-bold uppercase tracking-widest text-brand-red mb-3">{attr.location}</p>
+                      <p className="text-brand-silver text-xs sm:text-sm font-bold tracking-wide uppercase leading-relaxed mb-4">
+                        {attr.description}
+                      </p>
+                    </div>
+                    {attr.tip && (
+                      <div className="bg-brand-bg-primary p-3 rounded-xl border border-brand-red/10 mt-auto">
+                        <span className="text-brand-red font-black uppercase text-[9px] tracking-wider block mb-1">Pro Tip</span>
+                        <p className="text-brand-white text-[10px] sm:text-xs font-semibold uppercase">{attr.tip}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Smart Traveler Handbook & Islamic Info */}
           <div className="border-t border-white/10/60 pt-16 mt-16">
             <span className="text-brand-red font-black uppercase tracking-[0.4em] text-xs mb-4 block text-center">Smart Traveler Handbook</span>
             <h2 className="text-3xl sm:text-5xl font-black text-brand-white text-center tracking-tight uppercase leading-none mb-12">
-              Know Before You Go to {country.name}
+              Essential Travel Guide
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-              <div className="bg-brand-bg-secondary border border-white/5 p-8 rounded-[2rem] shadow-sm hover:shadow-lg transition-all">
-                <h4 className="text-brand-white font-black uppercase text-sm tracking-wider mb-4 border-b border-white/5 pb-2">Local Etiquette & Dress</h4>
-                <p className="text-brand-silver text-xs sm:text-sm font-bold tracking-wide uppercase leading-relaxed">
-                  Modest dress is highly appreciated across public and religious locations in {country.name}. Always ask permission before taking photos of local residents or spiritual buildings.
-                </p>
-              </div>
-              <div className="bg-brand-bg-secondary border border-white/5 p-8 rounded-[2rem] shadow-sm hover:shadow-lg transition-all">
-                <h4 className="text-brand-white font-black uppercase text-sm tracking-wider mb-4 border-b border-white/5 pb-2">Currency & Payment</h4>
-                <p className="text-brand-silver text-xs sm:text-sm font-bold tracking-wide uppercase leading-relaxed">
-                  Card acceptance is excellent in metropolitan spots. For traditional street bazaars or high-end local craft vendors, having local paper currency readily available is best.
-                </p>
-              </div>
-              <div className="bg-brand-bg-secondary border border-white/5 p-8 rounded-[2rem] shadow-sm hover:shadow-lg transition-all">
-                <h4 className="text-brand-white font-black uppercase text-sm tracking-wider mb-4 border-b border-white/5 pb-2">Transportation Modes</h4>
-                <p className="text-brand-silver text-xs sm:text-sm font-bold tracking-wide uppercase leading-relaxed">
-                  Public transit networks are fast and clean in modern hubs. Private premium air-conditioned shuttles and high-end rideshare platforms are best for personalized itineraries.
-                </p>
-              </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {country.travelGuide ? (
+                <div className="space-y-4">
+                  <h3 className="text-xl font-black text-brand-white uppercase mb-4">General Information</h3>
+                  <div className="bg-brand-bg-secondary border border-white/5 p-5 rounded-2xl">
+                    <span className="text-brand-red font-black uppercase text-[10px] block mb-1">Flight Info from PK</span>
+                    <p className="text-brand-silver text-xs font-bold uppercase">{country.travelGuide.flightInfo}</p>
+                  </div>
+                  <div className="bg-brand-bg-secondary border border-white/5 p-5 rounded-2xl">
+                    <span className="text-brand-red font-black uppercase text-[10px] block mb-1">Currency & Exchange</span>
+                    <p className="text-brand-silver text-xs font-bold uppercase">{country.travelGuide.currency}</p>
+                  </div>
+                  <div className="bg-brand-bg-secondary border border-white/5 p-5 rounded-2xl">
+                    <span className="text-brand-red font-black uppercase text-[10px] block mb-1">Language & Communication</span>
+                    <p className="text-brand-silver text-xs font-bold uppercase">{country.travelGuide.language}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  <h3 className="text-xl font-black text-brand-white uppercase mb-4">Local Etiquette</h3>
+                  <div className="bg-brand-bg-secondary border border-white/5 p-5 rounded-2xl">
+                    <p className="text-brand-silver text-xs font-bold uppercase leading-relaxed">
+                      Modest dress is highly appreciated across public and religious locations in {country.name}. Always ask permission before taking photos.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {country.islamicInfo ? (
+                <div className="space-y-4">
+                  <h3 className="text-xl font-black text-brand-white uppercase mb-4">Halal & Islamic Facilities</h3>
+                  <div className="bg-brand-bg-secondary border border-brand-red/10 p-5 rounded-2xl">
+                    <span className="text-brand-red font-black uppercase text-[10px] block mb-1">Halal Food Availability</span>
+                    <p className="text-brand-silver text-xs font-bold uppercase">{country.islamicInfo.halalFood}</p>
+                  </div>
+                  <div className="bg-brand-bg-secondary border border-brand-red/10 p-5 rounded-2xl">
+                    <span className="text-brand-red font-black uppercase text-[10px] block mb-1">Mosques & Centers</span>
+                    <p className="text-brand-silver text-xs font-bold uppercase">{country.islamicInfo.mosques}</p>
+                  </div>
+                  <div className="bg-brand-bg-secondary border border-brand-red/10 p-5 rounded-2xl">
+                    <span className="text-brand-red font-black uppercase text-[10px] block mb-1">Prayer Facilities</span>
+                    <p className="text-brand-silver text-xs font-bold uppercase">{country.islamicInfo.prayerFacilities}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  <h3 className="text-xl font-black text-brand-white uppercase mb-4">Currency & Transport</h3>
+                  <div className="bg-brand-bg-secondary border border-white/5 p-5 rounded-2xl">
+                    <p className="text-brand-silver text-xs font-bold uppercase leading-relaxed">
+                      Card acceptance is excellent in metropolitan spots. Public transit networks are fast and clean in modern hubs.
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
@@ -320,28 +390,70 @@ const CountryDetail = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50">
-                  <tr className="hover:bg-brand-bg-primary/50 transition-colors">
-                    <td className="p-5 font-black text-xs sm:text-sm uppercase text-brand-white">Mar - Jun (Spring/Early Summer)</td>
-                    <td className="p-5 font-bold text-xs text-brand-silver uppercase">Pleasant, moderate warmth with blooming landscapes</td>
-                    <td className="p-5 font-black text-xs uppercase text-brand-red">High / Peak Season</td>
-                    <td className="p-5 font-bold text-xs uppercase text-brand-silver">Standard / Premium Pricing</td>
-                  </tr>
-                  <tr className="hover:bg-brand-bg-primary/50 transition-colors">
-                    <td className="p-5 font-black text-xs sm:text-sm uppercase text-brand-white">Jul - Sep (Peak Summer)</td>
-                    <td className="p-5 font-bold text-xs text-brand-silver uppercase">Warm to hot sun, perfect for coastal retreats</td>
-                    <td className="p-5 font-bold text-xs uppercase text-brand-silver">Moderate Volume</td>
-                    <td className="p-5 font-bold text-xs uppercase text-brand-silver">Competitive / Economy Deals</td>
-                  </tr>
-                  <tr className="hover:bg-brand-bg-primary/50 transition-colors">
-                    <td className="p-5 font-black text-xs sm:text-sm uppercase text-brand-white">Oct - Dec (Autumn/Winter)</td>
-                    <td className="p-5 font-bold text-xs text-brand-silver uppercase">Crisp cool breeze, gorgeous colors, occasional snow</td>
-                    <td className="p-5 font-bold text-xs uppercase text-brand-silver">Lower Volumes</td>
-                    <td className="p-5 font-black text-xs uppercase text-emerald-600">Value Packages</td>
-                  </tr>
+                  {country.seasonalGuide ? (
+                    country.seasonalGuide.map((season, idx) => (
+                      <tr key={idx} className="hover:bg-brand-bg-primary/50 transition-colors">
+                        <td className="p-5 font-black text-xs sm:text-sm uppercase text-brand-white">{season.season}</td>
+                        <td className="p-5 font-bold text-xs text-brand-silver uppercase">{season.weather}</td>
+                        <td className="p-5 font-black text-xs uppercase text-brand-red">{season.crowd}</td>
+                        <td className="p-5 font-bold text-xs uppercase text-brand-silver">{season.price}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <>
+                      <tr className="hover:bg-brand-bg-primary/50 transition-colors">
+                        <td className="p-5 font-black text-xs sm:text-sm uppercase text-brand-white">Mar - Jun (Spring/Early Summer)</td>
+                        <td className="p-5 font-bold text-xs text-brand-silver uppercase">Pleasant, moderate warmth with blooming landscapes</td>
+                        <td className="p-5 font-black text-xs uppercase text-brand-red">High / Peak Season</td>
+                        <td className="p-5 font-bold text-xs uppercase text-brand-silver">Standard / Premium Pricing</td>
+                      </tr>
+                      <tr className="hover:bg-brand-bg-primary/50 transition-colors">
+                        <td className="p-5 font-black text-xs sm:text-sm uppercase text-brand-white">Jul - Sep (Peak Summer)</td>
+                        <td className="p-5 font-bold text-xs text-brand-silver uppercase">Warm to hot sun, perfect for coastal retreats</td>
+                        <td className="p-5 font-bold text-xs uppercase text-brand-silver">Moderate Volume</td>
+                        <td className="p-5 font-bold text-xs uppercase text-brand-silver">Competitive / Economy Deals</td>
+                      </tr>
+                      <tr className="hover:bg-brand-bg-primary/50 transition-colors">
+                        <td className="p-5 font-black text-xs sm:text-sm uppercase text-brand-white">Oct - Dec (Autumn/Winter)</td>
+                        <td className="p-5 font-bold text-xs text-brand-silver uppercase">Crisp cool breeze, gorgeous colors, occasional snow</td>
+                        <td className="p-5 font-bold text-xs uppercase text-brand-silver">Lower Volumes</td>
+                        <td className="p-5 font-black text-xs uppercase text-emerald-600">Value Packages</td>
+                      </tr>
+                    </>
+                  )}
                 </tbody>
               </table>
             </div>
           </div>
+
+          {/* Dynamic Cost Breakdown */}
+          {country.costBreakdown && (
+            <div className="border-t border-white/10/60 pt-16 mt-16">
+              <span className="text-brand-red font-black uppercase tracking-[0.4em] text-xs mb-4 block text-center">Budget Planning</span>
+              <h2 className="text-3xl sm:text-5xl font-black text-brand-white text-center tracking-tight uppercase leading-none mb-12">
+                Estimated Trip Cost Breakdown
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div className="bg-brand-bg-secondary border border-white/5 p-6 rounded-2xl shadow-sm text-center">
+                  <span className="text-brand-red font-black uppercase text-[10px] tracking-wider block mb-2">Flights (Return)</span>
+                  <p className="text-brand-white text-lg font-black uppercase">{country.costBreakdown.flightRange}</p>
+                </div>
+                <div className="bg-brand-bg-secondary border border-white/5 p-6 rounded-2xl shadow-sm text-center">
+                  <span className="text-brand-red font-black uppercase text-[10px] tracking-wider block mb-2">Daily Hotel (Per Night)</span>
+                  <p className="text-brand-white text-lg font-black uppercase">{country.costBreakdown.hotelRange}</p>
+                </div>
+                <div className="bg-brand-bg-secondary border border-white/5 p-6 rounded-2xl shadow-sm text-center">
+                  <span className="text-brand-red font-black uppercase text-[10px] tracking-wider block mb-2">Daily Food (Per Person)</span>
+                  <p className="text-brand-white text-lg font-black uppercase">{country.costBreakdown.foodDaily}</p>
+                </div>
+                <div className="bg-brand-bg-secondary border border-white/5 p-6 rounded-2xl shadow-sm text-center">
+                  <span className="text-brand-red font-black uppercase text-[10px] tracking-wider block mb-2">Local Transport (Daily)</span>
+                  <p className="text-brand-white text-lg font-black uppercase">{country.costBreakdown.transportDaily}</p>
+                </div>
+              </div>
+              <p className="text-center text-brand-silver text-[10px] uppercase font-bold mt-6 italic">* Costs are estimated in PKR (unless stated otherwise) and can vary based on season and luxury level.</p>
+            </div>
+          )}
 
           {/* 4. DIY vs. Harmain Comparison & FAQ */}
           <div className="border-t border-white/10/60 pt-16 mt-16">

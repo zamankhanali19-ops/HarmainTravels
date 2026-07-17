@@ -144,7 +144,7 @@ const Home = () => {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Harmain Travels",
+      "name": "Harmain Travels - Top Travel Agency in Blue Area Islamabad and Pakistan",
       "url": "https://harmaintravels.com/",
       "publisher": {
         "@id": "https://harmaintravels.com/#organization"
@@ -160,8 +160,8 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-brand-bg-primary text-brand-silver-light selection:bg-brand-red selection:text-white">
       <SEO 
-        title="Premium Travel Agency in Islamabad | Harmain Travels"
-        description="Harmain Travels is the best travel agency in Islamabad, Pakistan. Book VIP Umrah packages, corporate tours, flights & visas. Contact our experts today!"
+        title="No. 1 Visa Agent & Top Travel Agency in Blue Area Islamabad and Pakistan | Harmain Travels"
+        description="Harmain Travels is the top travel agency in Blue Area Islamabad and Pakistan. We are the best visa agent for global e-Visa, Visa Requirements from Pakistan, VIP Umrah, and flights."
         schema={schema}
       />
       <Navbar />
