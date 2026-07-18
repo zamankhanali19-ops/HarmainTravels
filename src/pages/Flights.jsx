@@ -31,14 +31,15 @@ const Flights = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "International Airline Ticketing",
-    "provider": {
-      "@type": "TravelAgency",
-      "name": "Harmain Travels",
-      "url": "https://harmaintravels.com",
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "International Airline Ticketing",
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "Harmain Travels",
+        "url": "https://harmaintravels.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Blue Area",
@@ -47,15 +48,38 @@ const Flights = () => {
           "postalCode": "44000",
           "addressCountry": "PK"
         },
-      "telephone": "+923258880050"
+        "telephone": "+923258880050"
+      },
+      "serviceType": "Flight Reservations",
+      "description": "Premium corporate and leisure airline ticketing services specializing in fast processing and VIP connections.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Pakistan"
+      }
     },
-    "serviceType": "Flight Reservations",
-    "description": "Premium corporate and leisure airline ticketing services specializing in fast processing and VIP connections.",
-    "areaServed": {
-      "@type": "Country",
-      "name": "Pakistan"
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I book cheap flights from Islamabad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contact Harmain Travels in Blue Area Islamabad for the best flight deals. We partner with all major airlines including PIA, Emirates, Qatar Airways, and Turkish Airlines to secure competitive fares for both business and economy class."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which airlines fly direct from Islamabad to Jeddah?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PIA and Saudi Airlines offer direct flights from Islamabad to Jeddah. During Umrah and Hajj seasons, additional charter flights are also available. Harmain Travels can book the best options for your travel dates."
+          }
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <div className="min-h-screen bg-brand-bg-secondary">

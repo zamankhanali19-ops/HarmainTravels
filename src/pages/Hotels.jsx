@@ -70,7 +70,8 @@ const Hotels = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const schema = {
+  const schema = [
+    {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Luxury Hotel Reservations",
@@ -94,7 +95,30 @@ const Hotels = () => {
       "@type": "Country",
       "name": "Pakistan"
     }
-  };
+  },
+    {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+                {
+                      "@type": "Question",
+                      "name": "Can Harmain Travels book 5-star hotels near the Haram in Makkah?",
+                      "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes! We are official partners with the Fairmont Makkah Clock Royal Tower, Swissôtel Al Maqam, and Conrad Makkah. We offer exclusive rates and Haram-view rooms for Umrah and Hajj pilgrims from Pakistan."
+                      }
+                },
+                {
+                      "@type": "Question",
+                      "name": "Do you offer hotel booking for international destinations?",
+                      "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Absolutely. Harmain Travels provides luxury hotel bookings worldwide including Dubai, Maldives, Turkey, Thailand, Singapore, and Europe. We secure exclusive VIP rates and amenities at premium properties."
+                      }
+                }
+          ]
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-brand-bg-secondary">

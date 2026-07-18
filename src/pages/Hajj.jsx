@@ -4,7 +4,8 @@ import Footer from '../components/layout/Footer';
 import SEO from '../components/common/SEO';
 
 const Hajj = () => {
-  const schema = {
+  const schema = [
+    {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Luxury Hajj Packages from Pakistan",
@@ -28,7 +29,30 @@ const Hajj = () => {
       "availability": "https://schema.org/InStock",
       "url": "https://harmaintravels.com/hajj-packages"
     }
-  };
+  },
+    {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+                {
+                      "@type": "Question",
+                      "name": "How much does a Hajj package cost from Pakistan in 2026?",
+                      "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Hajj packages from Pakistan vary based on accommodation tier. Economy packages start around PKR 900,000, while our VIP 5-star packages with tents in Mina and proximity to the Haram start from PKR 1,500,000. Contact Harmain Travels for the latest pricing."
+                      }
+                },
+                {
+                      "@type": "Question",
+                      "name": "What is included in a luxury Hajj package from Harmain Travels?",
+                      "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Our premium Hajj packages include 5-star hotel stays near the Haram in Makkah and Madinah, VIP air-conditioned tents in Mina and Arafat, direct flights, ground transport, guided Ziyarat, and 24/7 support from experienced Hajj coordinators."
+                      }
+                }
+          ]
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-brand-bg-primary text-brand-silver-light">

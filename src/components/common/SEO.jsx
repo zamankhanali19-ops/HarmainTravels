@@ -11,7 +11,17 @@ const SEO = ({ title, description, image = "https://images.unsplash.com/photo-15
       <title>{title}</title>
       <meta name='description' content={description} />
       <meta name="theme-color" content="#002147" />
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
+      {noindex ? (
+        <>
+          <meta name="robots" content="noindex, nofollow" />
+          <meta name="googlebot" content="noindex, nofollow" />
+        </>
+      ) : (
+        <>
+          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+          <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        </>
+      )}
       
       {/* Canonical Link */}
       <link rel="canonical" href={currentUrl} />
@@ -25,6 +35,9 @@ const SEO = ({ title, description, image = "https://images.unsplash.com/photo-15
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={title} />
       <meta property="og:url" content={currentUrl} />
       <meta property="og:site_name" content="Harmain Travels" />
       <meta property="og:locale" content="en_US" />

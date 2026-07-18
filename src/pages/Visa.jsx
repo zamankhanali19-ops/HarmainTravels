@@ -103,36 +103,68 @@ const Visa = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Global Visa Consulting Services",
-    "description": "Expert visa consulting and processing for UAE, Saudi Arabia, UK, USA, Schengen, and global destinations.",
-    "numberOfItems": visaCountries.length,
-    "itemListElement": visaCountries.map((visa, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Service",
-        "name": `${visa.country} Visa Service`,
-        "description": `${visa.type} processing for ${visa.country}. Time: ${visa.time}.`,
-        "provider": {
-          "@type": "TravelAgency",
-          "name": "Harmain Travels",
-          "url": "https://harmaintravels.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Blue Area",
-          "addressLocality": "Islamabad",
-          "addressRegion": "Islamabad Capital Territory",
-          "postalCode": "44000",
-          "addressCountry": "PK"
-        },
-          "telephone": "+923258880050"
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Global Visa Consulting Services",
+      "description": "Expert visa consulting and processing for UAE, Saudi Arabia, UK, USA, Schengen, and global destinations.",
+      "numberOfItems": visaCountries.length,
+      "itemListElement": visaCountries.map((visa, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Service",
+          "name": `${visa.country} Visa Service`,
+          "description": `${visa.type} processing for ${visa.country}. Time: ${visa.time}.`,
+          "provider": {
+            "@type": "TravelAgency",
+            "name": "Harmain Travels",
+            "url": "https://harmaintravels.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Blue Area",
+              "addressLocality": "Islamabad",
+              "addressRegion": "Islamabad Capital Territory",
+              "postalCode": "44000",
+              "addressCountry": "PK"
+            },
+            "telephone": "+923258880050"
+          }
         }
-      }
-    }))
-  };
+      }))
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best visa agent in Islamabad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harmain Travels, located in Blue Area Islamabad, is the No. 1 visa agent in Pakistan. We process e-Visas and traditional visas for over 50 countries including Dubai, UK, USA, Schengen, and all Asian destinations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does visa processing take from Pakistan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Processing times vary by country. UAE tourist visas take 3-5 business days, Saudi e-Visas are instant, UK visas take 15-20 working days, and Schengen visas take 10-15 working days. Harmain Travels offers expedited processing for urgent travel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What documents are required for a visa from Pakistan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common requirements include: valid passport (6+ months validity), passport-sized photos, bank statements, confirmed flight and hotel bookings, and employment/business proof. Requirements vary per country—contact our visa consultants for your specific destination."
+          }
+        }
+      ]
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-brand-bg-primary">
