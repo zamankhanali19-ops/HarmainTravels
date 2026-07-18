@@ -138,7 +138,7 @@ const Umrah = () => {
       <section className="relative pt-40 pb-20 sm:pt-48 sm:pb-28 bg-brand-bg-primary text-center px-4 min-h-[90vh] flex flex-col justify-center z-10">
         <div className="absolute inset-0 opacity-45 scale-105 pointer-events-none select-none">
           <img 
-            src="https://images.unsplash.com/photo-1591604129939-f1efa4d8f7ec?auto=format&fit=crop&q=80&w=2000" 
+            src="https://images.unsplash.com/photo-1591604129939-f1efa4d8f7ec?auto=format&fit=crop&q=60&w=1200" 
             alt="Holy Mosque Makkah Background" 
             className="w-full h-full object-cover brightness-[0.7]"
             fetchpriority="high"

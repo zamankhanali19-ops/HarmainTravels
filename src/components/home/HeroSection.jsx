@@ -76,11 +76,11 @@ const HeroSection = () => {
       {/* Background with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=2400" 
+          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=60&w=1200" 
           className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
           alt="Premium airplane wing view at sunset - Harmain Travels VIP Aviation"
-          width="2400"
-          height="1600"
+          width="1200"
+          height="800"
           decoding="async"
           fetchpriority="high"
           loading="eager"

@@ -178,7 +178,7 @@ const Visa = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 relative overflow-hidden bg-brand-bg-secondary">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=2400')] opacity-5 bg-cover bg-center mix-blend-screen"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=60&w=1200')] opacity-5 bg-cover bg-center mix-blend-screen"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-red/10 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-bg-primary/50 rounded-full blur-[100px] -translate-x-1/2 translate-y-1/2"></div>
         
