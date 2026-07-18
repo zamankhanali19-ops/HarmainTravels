@@ -458,7 +458,7 @@ export const asianRegions = [
         "name": "Iran",
         "desc": "Ancient Persian heritage and intricate historical mosques.",
         "famousPlace": "Persepolis Ruins & Isfahan",
-        "image": "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&q=80&w=1200",
+        "image": "https://images.unsplash.com/photo-1534067783941-51c9c23eccfd?auto=format&fit=crop&q=80&w=1200",
         "visa": "Advance E-Visa registration required prior to entry.",
         "highlights": [
           "Experience the unique culture and traditions of Iran.",

@@ -120,6 +120,14 @@ const Visa = () => {
           "@type": "TravelAgency",
           "name": "Harmain Travels",
           "url": "https://harmaintravels.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Blue Area",
+          "addressLocality": "Islamabad",
+          "addressRegion": "Islamabad Capital Territory",
+          "postalCode": "44000",
+          "addressCountry": "PK"
+        },
           "telephone": "+923258880050"
         }
       }

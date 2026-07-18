@@ -159,6 +159,17 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      
+      {/* SEO Content Block */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
+        <h2 className="text-2xl font-display font-bold text-brand-white mb-4">Why Contact Harmain Travels?</h2>
+        <p className="text-brand-muted font-body leading-relaxed mb-4">
+          Harmain Travels is the No. 1 visa agent and top travel agency in Blue Area Islamabad, offering premium services to travelers across Pakistan. Whether you are looking to book a luxury Umrah package, secure an international e-Visa, or plan a corporate trip to an exotic destination like the Maldives or Dubai, our expert consultants are ready to assist you. 
+        </p>
+        <p className="text-brand-muted font-body leading-relaxed">
+          We pride ourselves on providing seamless, hassle-free travel experiences. From fast-track visa processing and complex document handling to 5-star hotel bookings and premium business class flights, our dedicated team ensures your journey is comfortable from start to finish. Reach out today via email, phone, or our convenient WhatsApp widget to schedule a consultation at our Islamabad office.
+        </p>
+      </div>
 
       <Footer />
     </div>

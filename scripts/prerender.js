@@ -5,6 +5,7 @@ import express from 'express';
 import puppeteer from 'puppeteer';
 import { asianRegions } from '../src/data/asianRegions.js';
 import { blogPosts } from '../src/data/blogPosts.js';
+import { minify } from 'html-minifier-terser';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -130,8 +131,18 @@ async function prerender() {
         }
       }
       
+      const fullHtml = doctype + '\n' + html;
+      const minifiedHtml = await minify(fullHtml, {
+        collapseWhitespace: true,
+        removeComments: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeAttributeQuotes: true,
+        collapseBooleanAttributes: true
+      });
+      
       const outputPath = path.join(outputDir, 'index.html');
-      fs.writeFileSync(outputPath, doctype + '\n' + html, 'utf8');
+      fs.writeFileSync(outputPath, minifiedHtml, 'utf8');
       successCount++;
       
     } catch (err) {

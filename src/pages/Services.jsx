@@ -35,7 +35,15 @@ const Services = () => {
         "provider": {
           "@type": "TravelAgency",
           "name": "Harmain Travels",
-          "url": "https://harmaintravels.com"
+          "url": "https://harmaintravels.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Blue Area",
+          "addressLocality": "Islamabad",
+          "addressRegion": "Islamabad Capital Territory",
+          "postalCode": "44000",
+          "addressCountry": "PK"
+        }
         }
       }
     }))
@@ -69,6 +77,22 @@ const Services = () => {
               <p className="text-brand-muted group-hover:text-brand-muted text-lg font-medium transition-colors leading-relaxed">{s.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* SEO Content Block */}
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-brand-bg-primary rounded-[2rem] p-10 md:p-16 shadow-2xl">
+          <h2 className="text-3xl font-display font-bold text-brand-white mb-6">Comprehensive Travel Solutions from Islamabad</h2>
+          <p className="text-brand-muted font-body leading-relaxed mb-6">
+            Harmain Travels offers a complete suite of travel services tailored for the modern traveler. Recognizing the unique challenges of international travel from Pakistan, our dedicated team in Islamabad works tirelessly to provide you with seamless travel solutions. Whether you require expedited visa processing, complex multi-city flight itineraries, or exclusive corporate travel management, we have the expertise to handle it all.
+          </p>
+          <p className="text-brand-muted font-body leading-relaxed mb-6">
+            Our global partnerships with top airlines and luxury hotel chains allow us to secure the best possible rates and VIP amenities for our clients. We specialize in both leisure and religious travel, offering premium Umrah and Hajj packages that guarantee comfort and peace of mind during your sacred journey. 
+          </p>
+          <p className="text-brand-muted font-body leading-relaxed">
+            Choose Harmain Travels as your trusted travel partner. With a proven track record of successful visa applications and thousands of satisfied clients, we are committed to making your global travel dreams a reality. Explore our individual service pages to learn more, or contact our Blue Area office today for a personalized travel consultation.
+          </p>
         </div>
       </section>
 

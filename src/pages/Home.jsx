@@ -160,7 +160,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-brand-bg-primary text-brand-silver-light selection:bg-brand-red selection:text-white">
       <SEO 
-        title="No. 1 Visa Agent & Top Travel Agency in Blue Area Islamabad and Pakistan | Harmain Travels"
+        title="No. 1 Visa Agent & Top Travel Agency in Blue Area Islamabad and Pak..."
         description="Harmain Travels is the top travel agency in Blue Area Islamabad and Pakistan. We are the best visa agent for global e-Visa, Visa Requirements from Pakistan, VIP Umrah, and flights."
         schema={schema}
       />

@@ -46,7 +46,7 @@ Why risk a rejection due to a technical error? Let the experts at Harmain Travel
     excerpt: "Deciding between a premium or economy Umrah package? We break down hotel proximities, transport options, and VIP services to help you choose the right spiritual journey.",
     date: "2026-06-20",
     author: { name: "Zainab Ali", bio: "Head of Umrah Operations. Dedicated to ensuring a spiritual and seamless journey for every pilgrim." },
-    image: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1591604129939-f1efa4d8f7ec?auto=format&fit=crop&q=80&w=1200",
     content: `
 ## Choosing the Right Umrah Experience from Islamabad
 
@@ -145,7 +145,14 @@ Don't miss out on Medina's most fascinating natural wonder. At **Harmain Travels
       "provider": {
         "@type": "TravelAgency",
         "name": "Harmain Travels",
-        "address": "Islamabad, Pakistan"
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Blue Area",
+          "addressLocality": "Islamabad",
+          "addressRegion": "Islamabad Capital Territory",
+          "postalCode": "44000",
+          "addressCountry": "PK"
+        }
       }
     }
   },
@@ -243,7 +250,7 @@ We highly recommend pre-registering your intent with Harmain Travels so we can l
     excerpt: "Everything Pakistani travelers need to know about getting a Dubai (UAE) tourist visa. Fees, processing times, document requirements, and common rejection reasons.",
     date: "2026-07-10",
     author: { name: "Ahmed Khan", bio: "Senior Visa Consultant at Harmain Travels." },
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1512453979798-5eaad0ff3b0d?auto=format&fit=crop&q=80&w=1200",
     content: `
 ## Your Guide to Dubai Visas from Pakistan (2026)
 
