@@ -14,7 +14,6 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Hotels = lazy(() => import('./pages/Hotels'));
 const Flights = lazy(() => import('./pages/Flights'));
 const Umrah = lazy(() => import('./pages/Umrah'));
-const Hajj = lazy(() => import('./pages/Hajj'));
 const Visa = lazy(() => import('./pages/Visa'));
 const CountryDetail = lazy(() => import('./pages/CountryDetail'));
 const Blog = lazy(() => import('./pages/Blog'));
@@ -36,7 +35,6 @@ const App = () => {
             <Route path="/flights" element={<Flights />} />
             <Route path="/services" element={<Services />} />
             <Route path="/umrah" element={<Umrah />} />
-            <Route path="/hajj-packages" element={<Hajj />} />
             <Route path="/visa-services" element={<Visa />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

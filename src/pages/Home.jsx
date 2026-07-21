@@ -106,14 +106,6 @@ const Home = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Luxury Hajj Packages from Pakistan",
-            "serviceType": "Hajj Pilgrimage"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
             "name": "Global Visa Processing Services",
             "serviceType": "Visa Advisory"
           }

@@ -39,6 +39,7 @@ const BlogPost = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-brand-bg-secondary flex flex-col items-center justify-center p-8">
+        <SEO title="Article Not Found" noindex={true} />
         <h2 className="text-3xl font-black text-brand-white mb-4 uppercase tracking-tighter">Article Not Found</h2>
         <Link to="/blog" className="btn-primary !px-6 !py-3">Go Back to Insights</Link>
       </div>

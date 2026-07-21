@@ -17,7 +17,6 @@ const staticRoutes = [
   { path: 'flights', priority: '0.8', changefreq: 'weekly' },
   { path: 'services', priority: '0.8', changefreq: 'weekly' },
   { path: 'umrah', priority: '0.8', changefreq: 'weekly' },
-  { path: 'hajj-packages', priority: '0.8', changefreq: 'weekly' },
   { path: 'visa-services', priority: '0.8', changefreq: 'weekly' },
   { path: 'blog', priority: '0.8', changefreq: 'weekly' },
   { path: 'about', priority: '0.8', changefreq: 'monthly' },

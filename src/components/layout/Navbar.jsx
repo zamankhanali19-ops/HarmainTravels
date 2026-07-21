@@ -42,7 +42,6 @@ const Header = ({ children }) => {
     { name: 'Home', path: '/' },
     { name: 'Destinations', path: '/destinations' },
     { name: 'Umrah Packages', path: '/umrah' },
-    { name: 'Hajj Packages', path: '/hajj-packages' },
     { name: 'Visa Services', path: '/visa-services' },
     { name: 'Air Tickets', path: '/flights' },
     { name: 'Hotels', path: '/hotels' },

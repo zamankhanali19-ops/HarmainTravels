@@ -24,6 +24,7 @@ const CountryDetail = () => {
   if (!country) {
     return (
       <div className="min-h-screen bg-brand-bg-primary flex flex-col items-center justify-center p-8">
+        <SEO title="Country Not Found" noindex={true} />
         <h2 className="text-2xl font-black text-brand-white mb-4 uppercase tracking-wider">Country Not Found</h2>
         <Link to="/destinations" className="btn-primary !px-6 !py-3">Go Back to Destinations</Link>
       </div>
@@ -103,7 +104,6 @@ const CountryDetail = () => {
       <SEO 
         title={country.seoTitle || `${country.name} Tours & Visa Requirements | Harmain Travels`}
         description={country.seoDescription || `Plan your next premium tour to ${country.name} with Harmain Travels. Check the must-visit spots, complete document requirements, and apply for a visa today.`}
-        url={canonicalUrl}
         schema={schema}
       />
       <Navbar />
