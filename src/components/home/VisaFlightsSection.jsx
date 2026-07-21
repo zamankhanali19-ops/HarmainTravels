@@ -21,7 +21,7 @@ const VisaFlightsSection = () => {
               Visa Processing Services
             </h3>
             <p className="text-brand-muted font-body text-base leading-relaxed mb-8">
-              Navigate international travel effortlessly with our premium visa processing services in Islamabad. Our top-rated travel agents provide end-to-end assistance for tourist and business e-visas across major destinations, maximizing your approval rates.
+              Navigate international travel effortlessly with our premium visa processing services in Islamabad. We are the leading experts and official dropbox for <strong className="text-brand-silver">Thailand, Malaysia, and Indonesia</strong> visas, ensuring lightning-fast processing and maximized approval rates for your Southeast Asian tours.
             </p>
             <button className="btn-secondary">Explore Visas</button>
           </motion.div>

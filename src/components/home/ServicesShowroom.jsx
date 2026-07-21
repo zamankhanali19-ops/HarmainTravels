@@ -5,7 +5,7 @@ const ServicesShowroom = () => {
   const services = [
     { icon: Crown, title: 'Corporate Tours', desc: 'Bespoke executive itineraries and luxury corporate travel management for businesses in Pakistan.' },
     { icon: Globe, title: 'Global Concierge', desc: 'Dedicated 24/7 travel agents in Islamabad handling international flight bookings and sudden changes.' },
-    { icon: ShieldCheck, title: 'Visa Services', desc: 'Streamlined, expert e-visa processing and consulting for top international destinations.' },
+    { icon: ShieldCheck, title: 'Visa Services', desc: 'Specialized visa processing experts for Thailand, Malaysia, and Indonesia with official dropbox facilities.' },
     { icon: HeartHandshake, title: 'Spiritual Journeys', desc: 'Premium Umrah & Hajj packages from Pakistan with 5-star Haram-view properties.' },
     { icon: Briefcase, title: 'Event Logistics', desc: 'Complete destination management and travel coordination for high-end international retreats.' },
     { icon: Clock, title: 'Fast-Track Services', desc: 'Exclusive airport meet & greet and fast-track immigration for our VIP corporate clients.' },

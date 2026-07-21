@@ -54,25 +54,6 @@ const visaCountries = [
     popular: false
   },
   {
-    country: 'Malaysia',
-    type: 'E-Visa',
-    time: '3-5 Working Days',
-    fee: 'PKR 15,000 (Incl. Service)',
-    image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=800',
-    popular: false,
-    officialDropbox: true
-  },
-  {
-    country: 'Thailand',
-    type: 'Sticker Visa',
-    time: '10-15 Working Days',
-    fee: 'PKR 20,000 (Incl. Service)',
-    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=800',
-    popular: false,
-    officialDropbox: true
-  },
-  {
-    country: 'Indonesia',
     type: 'Calling Visa / B211A',
     time: '10-14 Working Days',
     fee: 'PKR 30,000 (Drop-box Incl. Service)',

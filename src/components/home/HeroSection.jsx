@@ -8,11 +8,11 @@ import { TravelCalendar } from '../common/TravelCalendar';
 const searchSuggestions = {
   flights: globalAirports,
   hotels: [
+    { code: 'BKK', city: 'Bangkok', desc: 'Thailand' },
+    { code: 'KUL', city: 'Kuala Lumpur', desc: 'Malaysia' },
+    { code: 'CGK', city: 'Jakarta', desc: 'Indonesia' },
     { code: 'DXB', city: 'Dubai', desc: 'United Arab Emirates' },
     { code: 'MAK', city: 'Makkah', desc: 'Saudi Arabia' },
-    { code: 'MED', city: 'Madinah', desc: 'Saudi Arabia' },
-    { code: 'IST', city: 'Istanbul', desc: 'Turkey' },
-    { code: 'KUL', city: 'Kuala Lumpur', desc: 'Malaysia' },
   ],
   umrah: [
     { code: 'MAK', city: 'Makkah', desc: 'Saudi Arabia' },
@@ -184,7 +184,7 @@ const HeroSection = () => {
                           setShowDropdown(true);
                         }}
                         onFocus={() => setShowDropdown(true)}
-                        placeholder={activeTab === 'flights' ? 'Where to fly?' : activeTab === 'hotels' ? 'Where to stay?' : 'Makkah / Madinah'} 
+                        placeholder={activeTab === 'flights' ? 'Where to fly?' : activeTab === 'hotels' ? 'e.g. Bangkok, Kuala Lumpur...' : 'Makkah / Madinah'} 
                         className="w-full bg-transparent text-sm sm:text-base font-body text-brand-white outline-none placeholder:text-brand-muted/70" 
                         autoComplete="off"
                       />
