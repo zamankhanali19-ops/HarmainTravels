@@ -2,7 +2,7 @@ import { useParams, Link, useLocation } from 'react-router-dom';
 import { asianRegions } from '../data/asianRegions';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
-import { FileCheck, Calendar, Wallet, UserCheck, ShieldAlert, ArrowLeft, Send, Sparkles, Compass, CheckCircle } from 'lucide-react';
+import { FileCheck, Calendar, Wallet, UserCheck, ShieldAlert, ArrowLeft, Send, Sparkles, Compass, CheckCircle, ExternalLink, Globe } from 'lucide-react';
 import { useEffect } from 'react';
 import SEO from '../components/common/SEO';
 
@@ -183,6 +183,55 @@ const CountryDetail = () => {
                     ))}
                   </ul>
                   <p className="text-brand-silver text-[9px] mt-4 uppercase italic">Note: Visa fees and requirements are subject to change without notice based on official embassy updates.</p>
+                </div>
+
+                {/* Official Embassy & Immigration Authority Verification (E-E-A-T Outbound Links) */}
+                <div className="bg-brand-bg-primary border border-white/10 rounded-2xl p-5 mb-8">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Globe size={16} className="text-brand-red" />
+                    <h5 className="text-brand-white font-black uppercase text-xs tracking-wider">Official Embassy & Immigration Portals</h5>
+                  </div>
+                  <p className="text-brand-silver text-[11px] font-semibold leading-relaxed mb-4">
+                    Harmain Travels provides official consultation. For direct embassy regulations and passport verification, reference official government resources:
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href={country.officialEmbassy || "https://www.mofa.gov.pk"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-brand-bg-secondary hover:bg-brand-red text-brand-white text-[10px] font-black uppercase tracking-wider px-3.5 py-2 rounded-xl border border-white/10 transition-all"
+                    >
+                      <span>Official {country.name} Embassy / MOFA</span>
+                      <ExternalLink size={12} />
+                    </a>
+                    <a
+                      href={country.officialImmigration || "https://dgip.gov.pk"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-brand-bg-secondary hover:bg-brand-red text-brand-white text-[10px] font-black uppercase tracking-wider px-3.5 py-2 rounded-xl border border-white/10 transition-all"
+                    >
+                      <span>Immigration Authority & E-Visa Portal</span>
+                      <ExternalLink size={12} />
+                    </a>
+                  </div>
+                </div>
+
+                {/* High Search Volume Keyword Signals */}
+                <div className="mb-8">
+                  <span className="text-brand-silver text-[10px] font-bold uppercase tracking-widest block mb-2 opacity-75">Target Travel & Visa Queries:</span>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      `${country.name} visa requirements from pakistan`,
+                      `${country.name} evisa fee pkr 2026`,
+                      `best visa agent for ${country.name} in islamabad`,
+                      `${country.name} tour packages from pakistan`,
+                      `cheap flights to ${country.name} islamabad`
+                    ].map((kw, i) => (
+                      <span key={i} className="text-[9px] font-extrabold uppercase tracking-wider bg-white/5 text-brand-silver-light border border-white/10 px-2.5 py-1 rounded-md">
+                        #{kw}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 

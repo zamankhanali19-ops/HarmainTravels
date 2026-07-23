@@ -46,14 +46,19 @@ for (const post of blogPosts) {
 async function startServer() {
   const app = express();
   
-  // Serve static files from dist
-  app.use(express.static(distPath));
-  
   // Create a backup of the original index.html before we start overwriting it
   const originalIndexPath = path.join(distPath, 'original-index.html');
   if (!fs.existsSync(originalIndexPath)) {
     fs.copyFileSync(path.join(distPath, 'index.html'), originalIndexPath);
   }
+
+  // Serve static files from dist
+  app.use(express.static(distPath));
+
+  // Direct route for original-index.html
+  app.get('/original-index.html', (req, res) => {
+    res.sendFile(originalIndexPath);
+  });
 
   // Fallback to original-index.html for SPA routing (Express v5 syntax)
   app.get('/{*path}', (req, res) => {
